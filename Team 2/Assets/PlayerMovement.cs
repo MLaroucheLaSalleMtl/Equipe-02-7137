@@ -82,7 +82,8 @@ public class PlayerMovement : MonoBehaviour
         
         Debug.Log("attacking");
         GameObject p = Instantiate(projectile,transform);
-
-        p.GetComponent<ProjectileTarget>().target = monster.gameObject.transform;
+        var ptarget = p.GetComponent<ProjectileTarget>();
+        ptarget.target = monster.gameObject.transform;
+        ptarget.owner = this.transform;
     }
 }
