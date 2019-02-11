@@ -11,7 +11,7 @@ public class ProjectileTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 2;
+        speed = 5;
     }
 
     // Update is called once per frame
@@ -28,10 +28,13 @@ public class ProjectileTarget : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        collision.gameObject.GetComponent<OnHit>().Hit(owner);
-        Destroy(this);
+        if(other.gameObject.tag=="Monster")
+        {
+            //monster loses hp
+        }
+        Destroy(this.gameObject);
     }
 
 }

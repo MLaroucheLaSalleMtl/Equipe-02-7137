@@ -85,5 +85,6 @@ public class PlayerMovement : MonoBehaviour
         var ptarget = p.GetComponent<ProjectileTarget>();
         ptarget.target = monster.gameObject.transform;
         ptarget.owner = this.transform;
+        p.transform.parent = null;
     }
 }
