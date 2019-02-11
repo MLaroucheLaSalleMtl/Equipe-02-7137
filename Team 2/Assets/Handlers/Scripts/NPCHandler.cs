@@ -10,14 +10,26 @@ using UnityEngine;
 public class NPCHandler : MonoBehaviour
 {
     //bi directional link to the game manager
-    GameManager manager;
+    GameManager Manager { get; set; }
+
+    //all the prefabs of the npcs
+    public GameObject[] npcPrefabs;
+
+    //list that contains all te npcs currently spawned
+    public List<NPC> SpawnedNPCs { get; set; }
+
+    private void Awake()
+    {
+        Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        SpawnedNPCs = new List<NPC>();
+    }
 
     /// <summary>
     /// Called at the start of the game
     /// </summary>
     void Start()
     {
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     /// <summary>

@@ -9,11 +9,14 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    NPCHandler NpcHandler { get; set; }
+
     /// <summary>
     /// Called when the game is launched
     /// </summary>
     void Start()
     {
+        NpcHandler = GetComponent<NPCHandler>();
         
     }
 
@@ -22,6 +25,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        
+
     }
 }
