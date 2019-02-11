@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Team 2/Assets/Entities/Player/Attacks.meta
 guid: cb4c94a9edbe42a44a8fac36be5e252d
+=======
+guid: 505843ea2398fc54fb4a3e75326dce5c
+>>>>>>> master:Team 2/Assets/Entities/Npcs/impl.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -10,15 +10,17 @@ using UnityEngine;
 public abstract class Entity
 {
 
-    protected int hp;
+    protected int maxHp;
+    protected int currentHp;
     protected Position worldPos;
     protected int level;
-    protected string name;
+    protected string displayName;
 
-    public abstract int HP { get; }
+    public abstract int MaxHP { get; }
+    public abstract int CurrentHp { get; }
     public abstract Position WorldPosition { get; set; }
     public abstract int Level { get; }
-    public abstract string Name { get; protected set; }
+    public abstract string DisplayName { get; }
 
     public abstract void GiveHp(int amount);
     public abstract void RemoveHp(int amount);
@@ -26,5 +28,6 @@ public abstract class Entity
     public abstract void LevelDown();
     public abstract void SetLevel(int level);
     public abstract void Move(Position newPosition);
+    public abstract void Attack(Entity toAttack);
 
 }
