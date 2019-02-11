@@ -7,7 +7,7 @@ using UnityEngine;
 /// @date 1 February 2019
 /// @description The abstract design of an entity in the game
 /// </summary>
-public interface Entity
+public abstract class Entity
 {
 
     protected int hp;
