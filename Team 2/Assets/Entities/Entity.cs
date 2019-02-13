@@ -30,7 +30,7 @@ public abstract class Entity
     public abstract void LevelUp();
     public abstract void LevelDown();
     public abstract void SetLevel(int level);
-    public abstract void Move(Transform transform, Position newPosition);
+    public abstract void Move(Position newPosition);
     public abstract void Attack(Entity toAttack);
 
 }

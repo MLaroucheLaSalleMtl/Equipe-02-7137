@@ -128,9 +128,9 @@ public class Player : Entity
     /// Moves the NPC
     /// </summary>
     /// <param name="newPosition">The position to move the npc to</param>
-    public override void Move(Transform transform, Position newPosition)
+    public override void Move(Position newPosition)
     {
-        Vector3.Lerp(transform.position, new Vector3(newPosition.X, newPosition.Y, newPosition.Z), 0.5f);
+        Vector3.Lerp(WorldModel.transform.position, new Vector3(newPosition.X, newPosition.Y, newPosition.Z), 0.5f);
     }
 
     /// <summary>

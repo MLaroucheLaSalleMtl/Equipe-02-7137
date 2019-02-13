@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// @author Samuel Paquette
@@ -96,6 +97,11 @@ public class NPC : Entity
     /// </summary>
     public override GameObject WorldModel { get; set; }
 
+    /// <summary>
+    /// The overlay of the npc
+    /// </summary>
+    public Text Overlay { get; set; }
+
     #endregion
 
     #region NPC interaction
@@ -125,6 +131,7 @@ public class NPC : Entity
     public override void LevelDown()
     {
         level--;
+        UpdateOverlay();
     }
 
     /// <summary>
@@ -133,15 +140,16 @@ public class NPC : Entity
     public override void LevelUp()
     {
         level++;
+        UpdateOverlay();
     }
 
     /// <summary>
     /// Moves the NPC
     /// </summary>
     /// <param name="newPosition">The position to move the npc to</param>
-    public override void Move(Transform transform, Position newPosition)
+    public override void Move(Position newPosition)
     {
-        Vector3.Lerp(transform.position, new Vector3(newPosition.X, newPosition.Y, newPosition.Z), 0.5f);
+        Vector3.Lerp(WorldModel.transform.position, new Vector3(newPosition.X, newPosition.Y, newPosition.Z), 0.5f);
     }
 
     /// <summary>
@@ -160,6 +168,7 @@ public class NPC : Entity
     public override void SetLevel(int level)
     {
         this.level = level;
+        UpdateOverlay();
     }
 
     /// <summary>
@@ -167,7 +176,8 @@ public class NPC : Entity
     /// </summary>
     public virtual void Spawn(Position pos)
     {
-        Debug.Log("You cannot spawn the abstract NPC.");
+        Overlay = GameObject.Find($"Monster,{SpawnID}").transform.Find("Canvas/MonsterOverlay").GetComponent<Text>();
+        Overlay.text = $"{DisplayName} - Level {Level}";
     }
 
     /// <summary>
@@ -190,11 +200,11 @@ public class NPC : Entity
     }
 
     /// <summary>
-    /// Called once per game tick after the NPC is spawned
+    /// Update the overlay of the npc
     /// </summary>
-    void Update()
+    void UpdateOverlay()
     {
-        
+        Overlay.text = $"{DisplayName} - Level {Level}";
     }
 
     #endregion

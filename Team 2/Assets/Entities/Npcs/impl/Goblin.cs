@@ -52,6 +52,7 @@ public class Goblin : NPC
             WorldModel.name = $"Monster,{SpawnID}";
             WorldModel.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
         }
+        base.Spawn(pos);
     }
 
     /// <summary>

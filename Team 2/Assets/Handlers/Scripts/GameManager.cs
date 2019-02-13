@@ -9,22 +9,23 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    public NPCHandler NpcHandler { get; set; }
-    public PlayerHandler PlyrHandler { get; set; }
+    public NPCHandler npcHandler { get; set; }
+    public PlayerHandler playerHandler { get; set; }
+    public ItemHandler itemHandler { get; set; }
 
     /// <summary>
     /// Called when the game is launched
     /// </summary>
     void Start()
     {
-        NpcHandler = GetComponent<NPCHandler>();
-        PlyrHandler = GetComponent<PlayerHandler>();
+        npcHandler = GetComponent<NPCHandler>();
+        playerHandler = GetComponent<PlayerHandler>();
+        itemHandler = GetComponent<ItemHandler>();
 
         //Spawn a goblin for testing purpose
-        Goblin newGoblin = new Goblin(NpcHandler.GetFreeSpawnId(), "Goblin", 1, 2, 2);
-        NpcHandler.SpawnedNPCs.Add(newGoblin.SpawnID, newGoblin);
+        Goblin newGoblin = new Goblin(npcHandler.GetFreeSpawnId(), "Goblin", 1, 2, 2);
+        npcHandler.SpawnedNPCs.Add(newGoblin.SpawnID, newGoblin);
         newGoblin.Spawn(new Position(0, 0, -2));
-
     }
 
     /// <summary>

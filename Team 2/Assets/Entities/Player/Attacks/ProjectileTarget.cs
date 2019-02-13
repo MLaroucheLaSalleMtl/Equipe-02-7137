@@ -36,12 +36,12 @@ public class ProjectileTarget : MonoBehaviour
         {
             //monster loses hp
             int spawnId = int.Parse(other.gameObject.name.Split(',')[1]);
-            if (manager.NpcHandler.SpawnedNPCs.ContainsKey(spawnId))
+            if (manager.npcHandler.SpawnedNPCs.ContainsKey(spawnId))
             {
-                NPC monster = manager.NpcHandler.SpawnedNPCs[spawnId];
+                NPC monster = manager.npcHandler.SpawnedNPCs[spawnId];
                 if ((monster.CurrentHp - 1) <= 0)
                 {
-                    manager.NpcHandler.HandleDeath(monster);
+                    manager.npcHandler.HandleDeath(monster);
                 }
                 else
                 {

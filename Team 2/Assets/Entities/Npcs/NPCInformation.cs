@@ -7,7 +7,7 @@ using UnityEngine;
 /// @date 11 FEB 2019
 /// @author Samuel Paquette
 /// </summary>
-public class NPCInformation
+public static class NPCInformation
 {
     public const int HPRate = 10;
 }
