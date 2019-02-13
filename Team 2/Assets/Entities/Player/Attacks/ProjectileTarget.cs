@@ -33,6 +33,7 @@ public class ProjectileTarget : MonoBehaviour
         if(other.gameObject.tag=="Monster")
         {
             //monster loses hp
+            Debug.Log("Test");
         }
         Destroy(this.gameObject);
     }

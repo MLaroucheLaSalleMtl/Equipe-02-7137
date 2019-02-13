@@ -16,12 +16,26 @@ public class NPCHandler : MonoBehaviour
     public GameObject[] npcPrefabs;
 
     //list that contains all te npcs currently spawned
-    public List<NPC> SpawnedNPCs { get; set; }
+    public Dictionary<int, NPC> SpawnedNPCs { get; set; }
+
+    /// <summary>
+    /// Returns the smallest spawn id available
+    /// </summary>
+    /// <returns></returns>
+    public int GetFreeSpawnId ()
+    {
+        int spawnId = 0;
+        while (SpawnedNPCs.ContainsKey(spawnId))
+        {
+            spawnId++;
+        }
+        return spawnId;
+    }
 
     private void Awake()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        SpawnedNPCs = new List<NPC>();
+        SpawnedNPCs = new Dictionary<int, NPC>();
     }
 
     /// <summary>
