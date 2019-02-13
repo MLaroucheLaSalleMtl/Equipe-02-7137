@@ -12,7 +12,6 @@ public class Goblin : NPC
 
     private GameObject goblinPrefab;
     public const int PrefabID = 0;
-    private GameObject goblin;
 
     #region Constructors
 
@@ -32,7 +31,7 @@ public class Goblin : NPC
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
-        currentHp = maxHp;
+        this.currentHp = currentHp;
         goblinPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[PrefabID];
     }
 
@@ -49,10 +48,18 @@ public class Goblin : NPC
         {
             isSpawned = true;
             WorldPosition = pos;
-            Debug.Log("You have spawned a goblin.");
-            goblin = Object.Instantiate(goblinPrefab);
-            goblin.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
+            WorldModel = Object.Instantiate(goblinPrefab);
+            WorldModel.name = $"Monster,{SpawnID}";
+            WorldModel.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
         }
+    }
+
+    /// <summary>
+    /// Goblin death
+    /// </summary>
+    public override void Death()
+    {
+        Debug.Log("Goblin is dead.");
     }
 
     #endregion

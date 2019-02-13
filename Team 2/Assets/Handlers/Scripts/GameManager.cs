@@ -9,7 +9,8 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    NPCHandler NpcHandler { get; set; }
+    public NPCHandler NpcHandler { get; set; }
+    public PlayerHandler PlyrHandler { get; set; }
 
     /// <summary>
     /// Called when the game is launched
@@ -17,7 +18,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         NpcHandler = GetComponent<NPCHandler>();
-        
+        PlyrHandler = GetComponent<PlayerHandler>();
+
+        //Spawn a goblin for testing purpose
+        Goblin newGoblin = new Goblin(NpcHandler.GetFreeSpawnId(), "Goblin", 1, 2, 2);
+        NpcHandler.SpawnedNPCs.Add(newGoblin.SpawnID, newGoblin);
+        newGoblin.Spawn(new Position(0, 2, -2));
+
     }
 
     /// <summary>

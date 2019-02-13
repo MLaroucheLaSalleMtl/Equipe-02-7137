@@ -148,14 +148,7 @@ public class Player : Entity
     public override void RemoveHp(int amount)
     {
         int amountToRemove = Mathf.Abs(amount);
-        if (currentHp - amountToRemove <= 0)
-        {
-            Death();
-        }
-        else
-        {
-            currentHp -= amountToRemove;
-        }
+        currentHp -= amountToRemove;
     }
 
     /// <summary>

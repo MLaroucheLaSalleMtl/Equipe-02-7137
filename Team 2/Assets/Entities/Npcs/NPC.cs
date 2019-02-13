@@ -150,15 +150,7 @@ public class NPC : Entity
     /// <param name="amount">amount of hp to remove</param>
     public override void RemoveHp(int amount)
     {
-        int amountToRemove = Mathf.Abs(amount);
-        if (currentHp - amountToRemove <= 0)
-        {
-            Death();
-        }
-        else
-        {
-            currentHp -= Mathf.Abs(amount);
-        }
+        currentHp -= Mathf.Abs(amount);
     }
 
     /// <summary>

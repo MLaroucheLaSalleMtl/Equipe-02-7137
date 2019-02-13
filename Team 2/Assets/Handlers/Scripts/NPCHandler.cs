@@ -32,6 +32,16 @@ public class NPCHandler : MonoBehaviour
         return spawnId;
     }
 
+    /// <summary>
+    /// Handle the death of a npc
+    /// </summary>
+    /// <param name="npc"></param>
+    public void HandleDeath(NPC npc)
+    {
+        npc.Death();
+        Destroy(npc.WorldModel);
+    }
+
     private void Awake()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
