@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         //Spawn a goblin for testing purpose
         Goblin newGoblin = new Goblin(NpcHandler.GetFreeSpawnId(), "Goblin", 1, 2, 2);
         NpcHandler.SpawnedNPCs.Add(newGoblin.SpawnID, newGoblin);
-        newGoblin.Spawn(new Position(0, 2, -2));
+        newGoblin.Spawn(new Position(0, 0, -2));
 
     }
 
