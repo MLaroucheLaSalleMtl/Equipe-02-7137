@@ -10,6 +10,11 @@ using UnityEngine;
 public class Goblin : NPC
 {
 
+    /// <summary>
+    /// The animations of the npc
+    /// </summary>
+    public Animation Animations { get; set; }
+
     private GameObject goblinPrefab;
     public const int PrefabID = 0;
 
@@ -17,7 +22,7 @@ public class Goblin : NPC
 
     public Goblin (int spawnId)
     {
-        SpawnID = spawnId;
+        InstanceId = spawnId;
         level = 1;
         displayName = "Goblin";
         maxHp = level * NPCInformation.HPRate;
@@ -27,7 +32,7 @@ public class Goblin : NPC
 
     public Goblin (int spawnId, string name, int level, int maxHp, int currentHp)
     {
-        SpawnID = spawnId;
+        InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
@@ -49,7 +54,8 @@ public class Goblin : NPC
             isSpawned = true;
             WorldPosition = pos;
             WorldModel = Object.Instantiate(goblinPrefab);
-            WorldModel.name = $"Monster,{SpawnID}";
+            WorldModel.name = $"Monster,{InstanceId}";
+            Animations = WorldModel.GetComponent<Animation>();
             WorldModel.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
         }
         base.Spawn(pos);
@@ -60,7 +66,9 @@ public class Goblin : NPC
     /// </summary>
     public override void Death()
     {
+        Animations.Play("death");
         Debug.Log("Goblin is dead.");
+        base.Death();
     }
 
     #endregion

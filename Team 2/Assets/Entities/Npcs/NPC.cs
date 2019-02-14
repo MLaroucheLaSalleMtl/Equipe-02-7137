@@ -16,7 +16,7 @@ public class NPC : Entity
     /// <summary>
     /// The spawn Id of the npc (currently spawned)
     /// </summary>
-    public int SpawnID { get; set; }
+    public int InstanceId { get; set; }
 
     /// <summary>
     /// If the npc has been spawned
@@ -102,6 +102,11 @@ public class NPC : Entity
     /// </summary>
     public Text Overlay { get; set; }
 
+    /// <summary>
+    /// The drop table of loots of the npc, if empty, npc drops nothing
+    /// </summary>
+    public List<ItemDrop> DropTable { get; set; } = new List<ItemDrop>();
+
     #endregion
 
     #region NPC interaction
@@ -176,7 +181,7 @@ public class NPC : Entity
     /// </summary>
     public virtual void Spawn(Position pos)
     {
-        Overlay = GameObject.Find($"Monster,{SpawnID}").transform.Find("Canvas/MonsterOverlay").GetComponent<Text>();
+        Overlay = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlay").GetComponent<Text>();
         Overlay.text = $"{DisplayName} - Level {Level}";
     }
 
@@ -185,19 +190,15 @@ public class NPC : Entity
     /// </summary>
     public virtual void Death ()
     {
-        Debug.Log("I am dead");
+        if (DropTable.Count > 0)
+        {
+            Debug.Log($"I dropped {DropTable[0].Loot.ItemName}");
+        }
     }
 
     #endregion
    
     #region NPC display / UI
-    /// <summary>
-    /// Called when the NPC is created
-    /// </summary>
-    void Start()
-    {
-        
-    }
 
     /// <summary>
     /// Update the overlay of the npc

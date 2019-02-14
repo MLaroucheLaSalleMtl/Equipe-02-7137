@@ -39,8 +39,20 @@ public class NPCHandler : MonoBehaviour
     public void HandleDeath(NPC npc)
     {
         npc.Death();
-        Destroy(npc.WorldModel);
+        StartCoroutine(DestroyNPC(npc.WorldModel, 5f));
     }
+
+    /// <summary>
+    /// Destroy the npc after a certain amount of time
+    /// </summary>
+    /// <param name="toDestroy"></param>
+    /// <param name="delay"></param>
+    IEnumerator DestroyNPC(GameObject toDestroy, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(toDestroy);
+    }
+
 
     private void Awake()
     {
