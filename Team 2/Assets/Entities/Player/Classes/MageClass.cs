@@ -20,6 +20,7 @@ class MageClass : PlayerClass
     public override Dictionary<int, Spell> Spells { get => spells;  set => spells = value; }
     public override string DisplayName { get => displayName;  set => displayName = value; }
     public override string Description { get => description;  set => description = value; }
+    public override List<Skill> Skills { get => Skills; set => Skills = value; }
 
     public MageClass()
     {

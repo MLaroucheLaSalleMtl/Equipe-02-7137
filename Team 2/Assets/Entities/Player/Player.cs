@@ -76,15 +76,73 @@ public class Player : Entity
     public override int Strength { get; set; }
 
     /// <summary>
+    /// The strength of the player (mage)
+    /// </summary>
+    public int inteligence { get; set; }
+
+    /// <summary>
+    /// The strength of the player (archer)
+    /// </summary>
+    public int dexterity { get; set; }
+
+    /// <summary>
     /// The defence of the player
     /// </summary>
     public override int Defence { get; set; }
+
+    /// <summary>
+    /// The class of the player
+    /// </summary>
+    public PlayerClass Class { get; set; }
 
     /// <summary>
     /// The unity game object associated to the player to interact with the transform, position, etc.
     /// </summary>
     public override GameObject WorldModel { get; set; }
 
+    #region getTotalStats
+
+    public int GetTotalMaxHp()
+    {
+        float mod=0;
+        foreach(Skill s in Class.Skills)
+        {
+            mod += s.HealtModifyer;
+        }
+        return (int)(maxHp* mod);
+    }
+
+    public int GetTotalDexterity()
+    {
+        float mod = 0;
+        foreach (Skill s in Class.Skills)
+        {
+            mod += s.DexterityModifyer;
+        }
+        return (int)(dexterity * mod);
+    }
+
+    public int GetTotalInteligence()
+    {
+        float mod = 0;
+        foreach (Skill s in Class.Skills)
+        {
+            mod += s.InteligenceModifyer;
+        }
+        return (int)(inteligence * mod);
+    }
+
+    public int GetTotalStrength()
+    {
+        float mod = 0;
+        foreach (Skill s in Class.Skills)
+        {
+            mod += s.StrenghtModifyer;
+        }
+        return (int)(Strength * mod);
+    }
+
+    #endregion
     #endregion
 
     #region Player interaction
