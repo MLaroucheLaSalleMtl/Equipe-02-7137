@@ -15,12 +15,6 @@ public abstract class PlayerClass
     public abstract Dictionary<int, Spell> Spells { get; set; }
     public abstract string DisplayName { get; set; }
     public abstract string Description { get; set; }
-    public abstract int Level { get; set; }
-    public abstract double Strengh { get; set; }
-    public abstract double Intelligence { get; set; }
-    public abstract double Agility { get; set; }
+    public abstract List<Skill> Skills { get; set; }
 
-
-    public abstract void Levelup();
-        
 }
