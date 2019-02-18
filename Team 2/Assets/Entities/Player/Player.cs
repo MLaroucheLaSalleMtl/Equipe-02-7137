@@ -56,7 +56,7 @@ public class Player : Entity
         get
         {
             float mod = 0;
-            foreach (Skill s in Class.Skills)
+            foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.HealtModifyer;
             }
@@ -83,7 +83,7 @@ public class Player : Entity
         get
         {
             float mod = 0;
-            foreach (Skill s in Class.Skills)
+            foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.StrenghtModifyer;
             }
@@ -104,7 +104,7 @@ public class Player : Entity
         get
         {
             float mod = 0;
-            foreach (Skill s in Class.Skills)
+            foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.InteligenceModifyer;
             }
@@ -125,7 +125,7 @@ public class Player : Entity
         get
         {
             float mod = 0;
-            foreach (Skill s in Class.Skills)
+            foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.DexterityModifyer;
             }
