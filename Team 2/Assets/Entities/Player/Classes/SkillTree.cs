@@ -49,7 +49,6 @@ namespace Assets.Entities.Player.Classes
             foreach(Skill s in skills)
             {
                 if(s.downStreamSkills.Count<1)
-
                 {
                     if(s.upStreamSkills.Count>0)
                     {

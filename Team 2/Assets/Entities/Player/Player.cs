@@ -12,7 +12,7 @@ public class Player : Entity
 
     #region Fields
     /// <summary>
-    /// The current position of the npc
+    /// The current position of the player
     /// </summary>
     public override Position WorldPosition
     {
@@ -27,7 +27,7 @@ public class Player : Entity
     }
 
     /// <summary>
-    /// The current level of the npc
+    /// The current level of the player
     /// </summary>
     public override int Level
     {
@@ -55,7 +55,12 @@ public class Player : Entity
     {
         get
         {
-            return maxHp;
+            float mod = 0;
+            foreach (Skill s in Class.Skills)
+            {
+                mod += s.HealtModifyer;
+            }
+            return (int)(maxHp * mod);
         }
     }
 
@@ -73,17 +78,64 @@ public class Player : Entity
     /// <summary>
     /// The strength of the player (melee)
     /// </summary>
-    public override int Strength { get; set; }
+    private int strength;
+    public override int Strength {
+        get
+        {
+            float mod = 0;
+            foreach (Skill s in Class.Skills)
+            {
+                mod += s.StrenghtModifyer;
+            }
+            return (int)(strength * mod);
+        }
+        set
+        {
+            strength = value;
+        }
+    }
 
     /// <summary>
     /// The strength of the player (mage)
     /// </summary>
-    public int inteligence { get; set; }
+    private int inteligence;
+    public int Inteligence
+    {
+        get
+        {
+            float mod = 0;
+            foreach (Skill s in Class.Skills)
+            {
+                mod += s.InteligenceModifyer;
+            }
+            return (int)(inteligence * mod);
+        }
+        set
+        {
+            inteligence = value;
+        }
+    }
 
     /// <summary>
     /// The strength of the player (archer)
     /// </summary>
-    public int dexterity { get; set; }
+    private int dexterity;
+    public int Dexterity
+    {
+        get
+        {
+            float mod = 0;
+            foreach (Skill s in Class.Skills)
+            {
+                mod += s.DexterityModifyer;
+            }
+            return (int)(dexterity * mod);
+        }
+        set
+        {
+            dexterity = value;
+        }
+    }
 
     /// <summary>
     /// The defence of the player
@@ -100,49 +152,7 @@ public class Player : Entity
     /// </summary>
     public override GameObject WorldModel { get; set; }
 
-    #region getTotalStats
-
-    public int GetTotalMaxHp()
-    {
-        float mod=0;
-        foreach(Skill s in Class.Skills)
-        {
-            mod += s.HealtModifyer;
-        }
-        return (int)(maxHp* mod);
-    }
-
-    public int GetTotalDexterity()
-    {
-        float mod = 0;
-        foreach (Skill s in Class.Skills)
-        {
-            mod += s.DexterityModifyer;
-        }
-        return (int)(dexterity * mod);
-    }
-
-    public int GetTotalInteligence()
-    {
-        float mod = 0;
-        foreach (Skill s in Class.Skills)
-        {
-            mod += s.InteligenceModifyer;
-        }
-        return (int)(inteligence * mod);
-    }
-
-    public int GetTotalStrength()
-    {
-        float mod = 0;
-        foreach (Skill s in Class.Skills)
-        {
-            mod += s.StrenghtModifyer;
-        }
-        return (int)(Strength * mod);
-    }
-
-    #endregion
+   
     #endregion
 
     #region Player interaction
