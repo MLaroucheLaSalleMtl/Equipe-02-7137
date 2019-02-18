@@ -11,6 +11,17 @@ public class NPC : Entity
 {
 
     #region Fields
+
+    /// <summary>
+    /// The spawn Id of the npc (currently spawned)
+    /// </summary>
+    public int SpawnID { get; set; }
+
+    /// <summary>
+    /// If the npc has been spawned
+    /// </summary>
+    public bool isSpawned = false;
+
     /// <summary>
     /// The current position of the npc
     /// </summary>
@@ -70,6 +81,21 @@ public class NPC : Entity
         }
     }
 
+    /// <summary>
+    /// The defence of the npc
+    /// </summary>
+    public override int Defence { get; set; }
+
+    /// <summary>
+    /// The attack of the npc
+    /// </summary>
+    public override int Strength { get; set; }
+
+    /// <summary>
+    /// The game object in unity to interact with transform, position, etc.
+    /// </summary>
+    public override GameObject WorldModel { get; set; }
+
     #endregion
 
     #region NPC interaction
@@ -80,7 +106,7 @@ public class NPC : Entity
     /// <param name="toAttack">The entity to attack</param>
     public override void Attack(Entity toAttack)
     {
-        throw new System.NotImplementedException();
+        toAttack.RemoveHp(Strength);
     }
 
     /// <summary>
@@ -89,7 +115,8 @@ public class NPC : Entity
     /// <param name="amount">amount of hp to give</param>
     public override void GiveHp(int amount)
     {
-        throw new System.NotImplementedException();
+        int amountToGive = Mathf.Abs(amount);
+        currentHp += amountToGive;
     }
 
     /// <summary>
@@ -97,7 +124,7 @@ public class NPC : Entity
     /// </summary>
     public override void LevelDown()
     {
-        throw new System.NotImplementedException();
+        level--;
     }
 
     /// <summary>
@@ -105,16 +132,16 @@ public class NPC : Entity
     /// </summary>
     public override void LevelUp()
     {
-        throw new System.NotImplementedException();
+        level++;
     }
 
     /// <summary>
     /// Moves the NPC
     /// </summary>
     /// <param name="newPosition">The position to move the npc to</param>
-    public override void Move(Position newPosition)
+    public override void Move(Transform transform, Position newPosition)
     {
-        throw new System.NotImplementedException();
+        Vector3.Lerp(transform.position, new Vector3(newPosition.X, newPosition.Y, newPosition.Z), 0.5f);
     }
 
     /// <summary>
@@ -123,7 +150,7 @@ public class NPC : Entity
     /// <param name="amount">amount of hp to remove</param>
     public override void RemoveHp(int amount)
     {
-        throw new System.NotImplementedException();
+        currentHp -= Mathf.Abs(amount);
     }
 
     /// <summary>
@@ -132,7 +159,7 @@ public class NPC : Entity
     /// <param name="level">the level to set</param>
     public override void SetLevel(int level)
     {
-        throw new System.NotImplementedException();
+        this.level = level;
     }
 
     /// <summary>
@@ -141,6 +168,14 @@ public class NPC : Entity
     public virtual void Spawn(Position pos)
     {
         Debug.Log("You cannot spawn the abstract NPC.");
+    }
+
+    /// <summary>
+    /// Deletes the NPC, he is dead
+    /// </summary>
+    public virtual void Death ()
+    {
+        Debug.Log("I am dead");
     }
 
     #endregion

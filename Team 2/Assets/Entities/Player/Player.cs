@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// @author Samuel Paquette
+/// @date 12 FEB 2019
+/// @description The player class, everything related to a player should be here
+/// </summary>
 public class Player : Entity
 {
 
@@ -65,9 +70,82 @@ public class Player : Entity
         }
     }
 
+    /// <summary>
+    /// The strength of the player (melee)
+    /// </summary>
+    public override int Strength { get; set; }
+
+    /// <summary>
+    /// The strength of the player (mage)
+    /// </summary>
+    public int inteligence { get; set; }
+
+    /// <summary>
+    /// The strength of the player (archer)
+    /// </summary>
+    public int dexterity { get; set; }
+
+    /// <summary>
+    /// The defence of the player
+    /// </summary>
+    public override int Defence { get; set; }
+
+    /// <summary>
+    /// The class of the player
+    /// </summary>
+    public PlayerClass Class { get; set; }
+
+    /// <summary>
+    /// The unity game object associated to the player to interact with the transform, position, etc.
+    /// </summary>
+    public override GameObject WorldModel { get; set; }
+
+    #region getTotalStats
+
+    public int GetTotalMaxHp()
+    {
+        float mod=0;
+        foreach(Skill s in Class.Skills)
+        {
+            mod += s.HealtModifyer;
+        }
+        return (int)(maxHp* mod);
+    }
+
+    public int GetTotalDexterity()
+    {
+        float mod = 0;
+        foreach (Skill s in Class.Skills)
+        {
+            mod += s.DexterityModifyer;
+        }
+        return (int)(dexterity * mod);
+    }
+
+    public int GetTotalInteligence()
+    {
+        float mod = 0;
+        foreach (Skill s in Class.Skills)
+        {
+            mod += s.InteligenceModifyer;
+        }
+        return (int)(inteligence * mod);
+    }
+
+    public int GetTotalStrength()
+    {
+        float mod = 0;
+        foreach (Skill s in Class.Skills)
+        {
+            mod += s.StrenghtModifyer;
+        }
+        return (int)(Strength * mod);
+    }
+
+    #endregion
     #endregion
 
-    #region NPC interaction
+    #region Player interaction
 
     /// <summary>
     /// The NPC attacks another entity (could be a player, another npc, etc.)
@@ -75,7 +153,7 @@ public class Player : Entity
     /// <param name="toAttack">The entity to attack</param>
     public override void Attack(Entity toAttack)
     {
-        throw new System.NotImplementedException();
+        toAttack.RemoveHp(Strength);
     }
 
     /// <summary>
@@ -84,7 +162,8 @@ public class Player : Entity
     /// <param name="amount">amount of hp to give</param>
     public override void GiveHp(int amount)
     {
-        throw new System.NotImplementedException();
+        int amountToGive = Mathf.Abs(amount);
+        currentHp += amountToGive;
     }
 
     /// <summary>
@@ -92,7 +171,7 @@ public class Player : Entity
     /// </summary>
     public override void LevelDown()
     {
-        throw new System.NotImplementedException();
+        level--;
     }
 
     /// <summary>
@@ -100,16 +179,24 @@ public class Player : Entity
     /// </summary>
     public override void LevelUp()
     {
-        throw new System.NotImplementedException();
+        level++;
     }
 
     /// <summary>
     /// Moves the NPC
     /// </summary>
     /// <param name="newPosition">The position to move the npc to</param>
-    public override void Move(Position newPosition)
+    public override void Move(Transform transform, Position newPosition)
     {
-        throw new System.NotImplementedException();
+        Vector3.Lerp(transform.position, new Vector3(newPosition.X, newPosition.Y, newPosition.Z), 0.5f);
+    }
+
+    /// <summary>
+    /// Player is dead
+    /// </summary>
+    public virtual void Death()
+    {
+        Debug.Log("I am dead");
     }
 
     /// <summary>
@@ -118,7 +205,8 @@ public class Player : Entity
     /// <param name="amount">amount of hp to remove</param>
     public override void RemoveHp(int amount)
     {
-        throw new System.NotImplementedException();
+        int amountToRemove = Mathf.Abs(amount);
+        currentHp -= amountToRemove;
     }
 
     /// <summary>
@@ -127,7 +215,7 @@ public class Player : Entity
     /// <param name="level">the level to set</param>
     public override void SetLevel(int level)
     {
-        throw new System.NotImplementedException();
+        this.level = level;
     }
 
     #endregion

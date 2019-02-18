@@ -12,12 +12,12 @@ public class Goblin : NPC
 
     private GameObject goblinPrefab;
     public const int PrefabID = 0;
-    private GameObject goblin;
 
     #region Constructors
 
-    public Goblin ()
+    public Goblin (int spawnId)
     {
+        SpawnID = spawnId;
         level = 1;
         displayName = "Goblin";
         maxHp = level * NPCInformation.HPRate;
@@ -25,12 +25,13 @@ public class Goblin : NPC
         goblinPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[PrefabID];
     }
 
-    public Goblin (string name, int level, int maxHp, int currentHp)
+    public Goblin (int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        SpawnID = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
-        currentHp = maxHp;
+        this.currentHp = currentHp;
         goblinPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[PrefabID];
     }
 
@@ -43,10 +44,22 @@ public class Goblin : NPC
     /// </summary>
     public override void Spawn(Position pos)
     {
-        WorldPosition = pos;
-        Debug.Log("You have spawned a goblin.");
-        goblin = Object.Instantiate(goblinPrefab);
-        goblin.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
+        if (!isSpawned)
+        {
+            isSpawned = true;
+            WorldPosition = pos;
+            WorldModel = Object.Instantiate(goblinPrefab);
+            WorldModel.name = $"Monster,{SpawnID}";
+            WorldModel.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
+        }
+    }
+
+    /// <summary>
+    /// Goblin death
+    /// </summary>
+    public override void Death()
+    {
+        Debug.Log("Goblin is dead.");
     }
 
     #endregion

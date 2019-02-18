@@ -21,13 +21,16 @@ public abstract class Entity
     public abstract Position WorldPosition { get; set; }
     public abstract int Level { get; }
     public abstract string DisplayName { get; }
+    public abstract int Defence { get; set; }
+    public abstract int Strength { get; set; }
+    public abstract GameObject WorldModel { get; set; }
 
     public abstract void GiveHp(int amount);
     public abstract void RemoveHp(int amount);
     public abstract void LevelUp();
     public abstract void LevelDown();
     public abstract void SetLevel(int level);
-    public abstract void Move(Position newPosition);
+    public abstract void Move(Transform transform, Position newPosition);
     public abstract void Attack(Entity toAttack);
 
 }
