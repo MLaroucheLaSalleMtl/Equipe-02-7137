@@ -23,7 +23,7 @@ public class Impling : NPC
     {
         InstanceId = spawnId;
         level = 1;
-        displayName = "Goblin";
+        displayName = "Impling";
         maxHp = level * NPCInformation.HPRate;
         currentHp = maxHp;
         implingPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.IMPLING];

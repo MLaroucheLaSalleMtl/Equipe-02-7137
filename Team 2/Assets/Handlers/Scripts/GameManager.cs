@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviour
         playerHandler = GetComponent<PlayerHandler>();
         itemHandler = GetComponent<ItemHandler>();
 
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.GOBLIN, new Position(-2, 0, 0), "GoblinTest", 5, 4, 4);
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(2, 0, 0), "Impling Lol", 5, 4, 4);
+        //Spawn monsters for testing purposes
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.GOBLIN, new Position(-2, 0, 0), "Goblin", 5, 4, 4);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(2, 0, 0), "Impling", 5, 4, 4);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.SHELLCRAB, new Position(6, 0, 0), "Shell Crab", 5, 4, 4);
     }
 
     /// <summary>

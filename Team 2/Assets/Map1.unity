@@ -1098,7 +1098,7 @@ PrefabInstance:
     - target: {fileID: 5439887086803611262, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
       propertyPath: npcPrefabs.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5439887086803611262, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
@@ -1110,5 +1110,10 @@ PrefabInstance:
       propertyPath: npcPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 3}
+    - target: {fileID: 5439887086803611262, guid: dc826dc3a9a8f144997472abe4784cf8,
+        type: 3}
+      propertyPath: npcPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 119272, guid: 8c66e2fd21d94be41ab66f591a280f29, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}

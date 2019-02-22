@@ -13,12 +13,14 @@ public static class NPCInformation
     {
         GOBLIN,
         IMPLING,
+        SHELLCRAB,
     }
 
     public enum NPCPrefabId
     {
         GOBLIN,
         IMPLING,
+        SHELLCRAB,
     }
 
     public const int HPRate = 10;

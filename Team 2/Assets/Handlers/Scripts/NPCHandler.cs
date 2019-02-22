@@ -28,6 +28,7 @@ public class NPCHandler : MonoBehaviour
         NPCFactories = new List<MonsterFactory>();
         NPCFactories.Add(new GoblinFactory());
         NPCFactories.Add(new ImplingFactory());
+        NPCFactories.Add(new ShellCrabFactory());
     }
 
     /// <summary>
@@ -61,6 +62,11 @@ public class NPCHandler : MonoBehaviour
                 Impling newImpling = (Impling)NPCFactories.Find(x => x.GetType() == typeof(ImplingFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedNPCs.Add(newImpling.InstanceId, newImpling);
                 newImpling.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.SHELLCRAB:
+                ShellCrab newShellCrab = (ShellCrab)NPCFactories.Find(x => x.GetType() == typeof(ShellCrabFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newShellCrab.InstanceId, newShellCrab);
+                newShellCrab.Spawn(position);
                 break;
         }
     }
