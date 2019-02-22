@@ -19,6 +19,11 @@ public class NPC : Entity
     public int InstanceId { get; set; }
 
     /// <summary>
+    /// If the npc is dead or not
+    /// </summary>
+    public bool isDead { get; set; }
+
+    /// <summary>
     /// If the npc has been spawned
     /// </summary>
     public bool isSpawned = false;
@@ -183,6 +188,8 @@ public class NPC : Entity
     {
         Overlay = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlay").GetComponent<Text>();
         Overlay.text = $"{DisplayName} - Level {Level}";
+        isDead = false;
+        isSpawned = true;
     }
 
     /// <summary>
@@ -190,10 +197,14 @@ public class NPC : Entity
     /// </summary>
     public virtual void Death ()
     {
-        if (DropTable.Count > 0)
+        if (!isDead)
         {
-            Debug.Log($"I dropped {DropTable[0].Loot.ItemName}");
+            if (DropTable.Count > 0)
+            {
+                Debug.Log($"I dropped {DropTable[0].Loot.ItemName}");
+            }
         }
+        isDead = true;
     }
 
     #endregion

@@ -16,7 +16,6 @@ public class Goblin : NPC
     public Animation Animations { get; set; }
 
     private GameObject goblinPrefab;
-    public const int PrefabID = 0;
 
     #region Constructors
 
@@ -27,7 +26,7 @@ public class Goblin : NPC
         displayName = "Goblin";
         maxHp = level * NPCInformation.HPRate;
         currentHp = maxHp;
-        goblinPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[PrefabID];
+        goblinPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.GOBLIN];
     }
 
     public Goblin (int spawnId, string name, int level, int maxHp, int currentHp)
@@ -37,7 +36,7 @@ public class Goblin : NPC
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        goblinPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[PrefabID];
+        goblinPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.GOBLIN];
     }
 
     #endregion
@@ -51,7 +50,6 @@ public class Goblin : NPC
     {
         if (!isSpawned)
         {
-            isSpawned = true;
             WorldPosition = pos;
             WorldModel = Object.Instantiate(goblinPrefab);
             WorldModel.name = $"Monster,{InstanceId}";
@@ -66,9 +64,12 @@ public class Goblin : NPC
     /// </summary>
     public override void Death()
     {
-        Animations.Play("death");
-        Debug.Log("Goblin is dead.");
-        base.Death();
+        if (!isDead)
+        {
+            Animations.Play("death");
+            Debug.Log("Goblin is dead.");
+            base.Death();
+        }
     }
 
     #endregion

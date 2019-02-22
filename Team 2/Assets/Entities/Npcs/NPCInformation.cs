@@ -9,5 +9,17 @@ using UnityEngine;
 /// </summary>
 public static class NPCInformation
 {
+    public enum NPCNames
+    {
+        GOBLIN,
+        IMPLING,
+    }
+
+    public enum NPCPrefabId
+    {
+        GOBLIN,
+        IMPLING,
+    }
+
     public const int HPRate = 10;
 }

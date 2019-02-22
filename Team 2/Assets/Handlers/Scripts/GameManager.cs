@@ -22,13 +22,8 @@ public class GameManager : MonoBehaviour
         playerHandler = GetComponent<PlayerHandler>();
         itemHandler = GetComponent<ItemHandler>();
 
-        //Spawn a goblin for testing purpose
-        Goblin newGoblin = new Goblin(npcHandler.GetFreeSpawnId(), "Goblin", 1, 2, 2);
-        npcHandler.SpawnedNPCs.Add(newGoblin.InstanceId, newGoblin);
-        newGoblin.Spawn(new Position(0, 0, -2));
-        //Add sword test drop for testing purpose
-        newGoblin.DropTable.Add(new ItemDrop(new Item(0, 0, "Sword", "Nice sword", 5, null, null, ItemInformation.ItemRarity.LEGENDARY)
-            , ItemInformation.RarityChances.LEGENDARY, 1, 1));
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.GOBLIN, new Position(-2, 0, 0), "GoblinTest", 5, 4, 4);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(2, 0, 0), "Impling Lol", 5, 4, 4);
     }
 
     /// <summary>

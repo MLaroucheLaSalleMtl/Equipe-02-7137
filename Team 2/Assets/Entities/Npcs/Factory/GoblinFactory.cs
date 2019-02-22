@@ -9,39 +9,17 @@ using UnityEngine;
 /// </summary>
 public class GoblinFactory : MonsterFactory
 {
-    /// <summary>
-    /// Fields
-    /// </summary>
-    private readonly int instanceId;
-    private readonly string displayName;
-    private readonly int level;
-    private readonly int maxHp;
-    private readonly int currentHp;
-
-    /// <summary>
-    /// Constructor for the creator
-    /// </summary>
-    /// <param name="instanceId"></param>
-    /// <param name="displayName"></param>
-    /// <param name="level"></param>
-    /// <param name="maxHp"></param>
-    /// <param name="currentHp"></param>
-    public GoblinFactory (int instanceId, string displayName, int level, int maxHp, int currentHp)
-    {
-        this.instanceId = instanceId;
-        this.displayName = displayName;
-        this.level = level;
-        this.maxHp = maxHp;
-        this.currentHp = currentHp;
-    }
 
     /// <summary>
     /// Creates a goblin
     /// </summary>
     /// <returns></returns>
-    public override NPC GetNPC()
+    public override NPC CreateNewNpc(int instanceId, string displayName, int level, int maxHp, int currentHp)
     {
-        return new Goblin(instanceId, displayName, level, maxHp, currentHp);
+        Goblin newGoblin = new Goblin(instanceId, displayName, level, maxHp, currentHp);
+        newGoblin.DropTable.Add(new ItemDrop(new Item(0, 0, "Sword", "Nice sword", 5, null, null, ItemInformation.ItemRarity.LEGENDARY)
+                                    , ItemInformation.RarityChances.LEGENDARY, 1, 1));
+        return newGoblin;
     }
-
+    
 }

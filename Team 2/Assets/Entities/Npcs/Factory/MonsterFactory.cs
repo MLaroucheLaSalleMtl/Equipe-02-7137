@@ -9,5 +9,5 @@ using UnityEngine;
 /// </summary>
 public abstract class MonsterFactory
 {
-    public abstract NPC GetNPC();
+    public abstract NPC CreateNewNpc(int instanceId, string displayName, int level, int maxHp, int currentHp);
 }

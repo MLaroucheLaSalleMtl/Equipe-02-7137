@@ -34,6 +34,7 @@ public class ProjectileTarget : MonoBehaviour
     {
         if(other.gameObject.tag=="Monster")
         {
+            Debug.Log("Collide");
             //monster loses hp
             int spawnId = int.Parse(other.gameObject.name.Split(',')[1]);
             if (manager.npcHandler.SpawnedNPCs.ContainsKey(spawnId))
