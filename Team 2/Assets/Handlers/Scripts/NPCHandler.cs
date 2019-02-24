@@ -18,6 +18,19 @@ public class NPCHandler : MonoBehaviour
     //list that contains all te npcs currently spawned
     public Dictionary<int, NPC> SpawnedNPCs { get; set; }
 
+    private List<MonsterFactory> NPCFactories { get; set; }
+
+    /// <summary>
+    /// Initialize the npc factories
+    /// </summary>
+    private void InitializeFactories ()
+    {
+        NPCFactories = new List<MonsterFactory>();
+        NPCFactories.Add(new GoblinFactory());
+        NPCFactories.Add(new ImplingFactory());
+        NPCFactories.Add(new ShellCrabFactory());
+    }
+
     /// <summary>
     /// Returns the smallest spawn id available
     /// </summary>
@@ -30,6 +43,32 @@ public class NPCHandler : MonoBehaviour
             spawnId++;
         }
         return spawnId;
+    }
+
+    /// <summary>
+    /// Spawns a npc
+    /// </summary>
+    /// <param name="name"></param>
+    public void SpawnNPC(NPCInformation.NPCNames name, Position position, string displayName, int level, int maxHp, int currentHp)
+    {
+        switch (name)
+        {
+            case NPCInformation.NPCNames.GOBLIN:
+                Goblin newGoblin = (Goblin) NPCFactories.Find(x => x.GetType() == typeof(GoblinFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newGoblin.InstanceId, newGoblin);
+                newGoblin.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.IMPLING:
+                Impling newImpling = (Impling)NPCFactories.Find(x => x.GetType() == typeof(ImplingFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newImpling.InstanceId, newImpling);
+                newImpling.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.SHELLCRAB:
+                ShellCrab newShellCrab = (ShellCrab)NPCFactories.Find(x => x.GetType() == typeof(ShellCrabFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newShellCrab.InstanceId, newShellCrab);
+                newShellCrab.Spawn(position);
+                break;
+        }
     }
 
     /// <summary>
@@ -58,21 +97,7 @@ public class NPCHandler : MonoBehaviour
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         SpawnedNPCs = new Dictionary<int, NPC>();
+        InitializeFactories();
     }
 
-    /// <summary>
-    /// Called at the start of the game
-    /// </summary>
-    void Start()
-    {
-
-    }
-
-    /// <summary>
-    /// Called each game tick
-    /// </summary>
-    void Update()
-    {
-        
-    }
 }
