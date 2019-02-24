@@ -7,6 +7,7 @@ using UnityEngine;
 
 public abstract class Skill
 {
+
     public string name;
     public string description;
     public bool isActive;
@@ -17,6 +18,7 @@ public abstract class Skill
     private float healtModifyer;
     private float strenghtModifyer;
     private float inteligenceModifyer;
+    private float spellDamageModifyer;
 
     //modifyer in minus %
     private float cooldownReduction;
@@ -28,6 +30,8 @@ public abstract class Skill
     public float HealtModifyer { get => healtModifyer; set => healtModifyer = value; }
     public float StrenghtModifyer { get => strenghtModifyer; set => strenghtModifyer = value; }
     public float InteligenceModifyer { get => inteligenceModifyer; set => inteligenceModifyer = value; }
+    public float SpellDamageModifyer { get => spellDamageModifyer; set => spellDamageModifyer = value; }
+    public float CooldownReduction { get => cooldownReduction; set => cooldownReduction = value; }
 
 
     //activate the skill
