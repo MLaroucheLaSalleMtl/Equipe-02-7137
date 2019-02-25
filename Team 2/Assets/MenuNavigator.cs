@@ -27,12 +27,10 @@ public class MenuNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Update");
         if (Input.GetButton("Cancel"))
         {
             if (!wasButtonDown)
             {
-                Debug.Log("Update2");
                 if (!isActive)
                 {
                     isActive = true;
