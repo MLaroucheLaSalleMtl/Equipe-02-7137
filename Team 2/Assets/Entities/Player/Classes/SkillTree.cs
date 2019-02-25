@@ -12,6 +12,12 @@ namespace Assets.Entities.Player.Classes
         const int HIGHT = 5;
         const int WIDTH = 5;
 
+        public SkillTree()
+        {
+
+        }
+
+
         public void LinkSkills(Skill downStream,Skill upStream)
         {
             downStream.upStreamSkills.Add(upStream);
@@ -65,7 +71,7 @@ namespace Assets.Entities.Player.Classes
                 getUpStreams(treeGraph[i - 1], treeGraph[i]);
             }
 
-            //
+            
 
         }
 

@@ -19,6 +19,9 @@ public abstract class Skill
     private float strenghtModifyer;
     private float inteligenceModifyer;
     private float spellDamageModifyer;
+    private float rangeModifyer;
+    private float defModifyer;
+    private float speedModifyer;
 
     //modifyer in minus %
     private float cooldownReduction;
@@ -26,12 +29,28 @@ public abstract class Skill
     public List<Skill> upStreamSkills;
     public List<Skill> downStreamSkills;
 
+    protected Skill(float dexMod=0, float healtMod=0, float strenghtMod=0, float intelMod=0, float spellDmgMod=0, float rangeMod=0, float defMod=0, float speedMod=0, float cdRed=0)
+    {
+        dexterityModifyer = dexMod;
+        healtModifyer = healtMod;
+        strenghtModifyer = strenghtMod;
+        inteligenceModifyer = intelMod;
+        spellDamageModifyer = spellDmgMod;
+        rangeModifyer = rangeMod;
+        defModifyer = defMod;
+        speedModifyer = speedMod;
+        cooldownReduction = cdRed;
+    }
+
     public float DexterityModifyer { get => dexterityModifyer; set => dexterityModifyer = value; }
     public float HealtModifyer { get => healtModifyer; set => healtModifyer = value; }
     public float StrenghtModifyer { get => strenghtModifyer; set => strenghtModifyer = value; }
     public float InteligenceModifyer { get => inteligenceModifyer; set => inteligenceModifyer = value; }
     public float SpellDamageModifyer { get => spellDamageModifyer; set => spellDamageModifyer = value; }
     public float CooldownReduction { get => cooldownReduction; set => cooldownReduction = value; }
+    public float RangeModifyer { get => rangeModifyer; set => rangeModifyer = value; }
+    public float DefModifyer { get => defModifyer; set => defModifyer = value; }
+    public float SpeedModifyer { get => speedModifyer; set => speedModifyer = value; }
 
 
     //activate the skill
