@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
                 case monster:
                     Attack(hit.collider);
-                    //monsterTarget = hit.collider;
                     break;
             }
         }
@@ -65,27 +64,45 @@ public class PlayerMovement : MonoBehaviour
         //    }
         //}
     }
-    void Move(RaycastHit hit)
+    public void Move(RaycastHit hit)
     {
         moveTarget.transform.position = hit.point;
         destination = moveTarget.transform.position;
         agent.destination = destination;
     }
-    void Move(Collider monster)
+    public void Move(Collider monster)
     {
         moveTarget.transform.position = transform.position;
+        destination = moveTarget.transform.position;
+        agent.destination = destination;
+    }
+    public void Move(Transform pTransform)
+    {
+        moveTarget.transform.position = pTransform.position;
         destination = moveTarget.transform.position;
         agent.destination = destination;
     }
 
     void Attack(Collider monster)
     {
-        
-        Debug.Log("attacking");
-        GameObject p = Instantiate(projectile,transform);
-        var ptarget = p.GetComponent<ProjectileTarget>();
-        ptarget.target = monster.gameObject.transform;
-        ptarget.owner = this.transform;
-        p.transform.parent = null;
+        GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        switch (manager.player.Class.Id)
+        {
+            case ClassesInformation.ClassesId.WARRIOR:
+                if (manager.combatHandler.CanAttack(manager.npcHandler.SpawnedNPCs[0]))
+                {
+                    manager.combatHandler.Attack(manager.npcHandler.SpawnedNPCs[0]);
+                }
+                else
+                {
+                    Move(monster.gameObject.transform);
+                }
+                break;
+        }
+        //GameObject p = Instantiate(projectile,transform);
+        //var ptarget = p.GetComponent<ProjectileTarget>();
+        //ptarget.target = monster.gameObject.transform;
+        //ptarget.owner = this.transform;
+        //p.transform.parent = null;
     }
 }

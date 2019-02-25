@@ -18,11 +18,13 @@ class MageClass : PlayerClass
     public override string DisplayName { get => displayName;  set => displayName = value; }
     public override string Description { get => description;  set => description = value; }
     public override List<Skill> UnlockedSkills { get => UnlockedSkills; set => UnlockedSkills = value; }
+    public override ClassesInformation.ClassesId Id { get; set; }
 
     public MageClass()
     {
         Range = 5;
         IsMelee = false;
+        Id = ClassesInformation.ClassesId.MAGE;
         Spells = new Dictionary<int, Spell>();
         DisplayName = "Mage";
         Description = "A ranged class with intelligence as main stat";
