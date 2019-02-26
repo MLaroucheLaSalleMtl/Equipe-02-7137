@@ -47,6 +47,6 @@ public class WarriorClass : PlayerClass
     public void BasicAttack(NPC npcToAttack)
     {
         manager.npcHandler.RemoveHp(npcToAttack, GetBasicAttackDamage(1));
-        manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("Attack");
+        //manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("Attack");
     }
 }

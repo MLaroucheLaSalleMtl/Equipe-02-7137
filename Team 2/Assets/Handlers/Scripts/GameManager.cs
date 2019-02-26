@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         itemHandler = GetComponent<ItemHandler>();
         combatHandler = GetComponent<CombatHandler>();
 
-        player.WorldModel = GameObject.Find("Player");
+        player.WorldModel = GameObject.Find("WarriorPrefab");
         player.Class = new WarriorClass();
         
         //Spawn monsters for testing purposes
