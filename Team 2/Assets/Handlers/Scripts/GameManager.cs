@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         combatHandler = GetComponent<CombatHandler>();
 
         player.WorldModel = GameObject.Find("Player");
-        player.Class = new WarriorClass(Instantiate(combatHandler.hitboxesPrefab[(int)ClassesInformation.ClassesId.WARRIOR], player.WorldModel.transform));
+        player.Class = new WarriorClass();
         
         //Spawn monsters for testing purposes
         npcHandler.SpawnNPC(NPCInformation.NPCNames.GOBLIN, new Position(-2, 0, 0), "Goblin", 5, 4, 4);

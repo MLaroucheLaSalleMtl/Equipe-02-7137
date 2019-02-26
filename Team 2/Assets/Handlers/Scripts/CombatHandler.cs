@@ -13,7 +13,7 @@ public class CombatHandler : MonoBehaviour
     GameManager Manager { get; set; }
 
     //hitboxes for the classes
-    public GameObject[] hitboxesPrefab;
+    public Animator[] attacksAnimator;
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class CombatHandler : MonoBehaviour
             {
                 case ClassesInformation.ClassesId.WARRIOR:
                     WarriorClass playerClass = Manager.player.Class as WarriorClass;
-                    playerClass.BasicAttack();
+                    playerClass.BasicAttack(npcToAttack);
                     break;
             }
         }

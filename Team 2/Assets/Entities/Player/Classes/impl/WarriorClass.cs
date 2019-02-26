@@ -9,9 +9,8 @@ using UnityEngine;
 /// </summary>
 public class WarriorClass : PlayerClass
 {
-
-    //the invisible trigger to know if the spells/attacks hit
-    private GameObject hitbox;
+    
+    private GameManager manager;
 
     public override double Range { get; set; }
     public override bool IsMelee { get; set; }
@@ -21,18 +20,16 @@ public class WarriorClass : PlayerClass
     public override List<Skill> UnlockedSkills { get; set; }
     public override ClassesInformation.ClassesId Id { get; set; }
 
-    public WarriorClass (GameObject hitboxObject)
+    public WarriorClass ()
     {
-        Range = 2;
+        Range = 3.5;
         IsMelee = true;
         Spells = new Dictionary<int, Spell>();
         DisplayName = "Warrior";
         Id = ClassesInformation.ClassesId.WARRIOR;
         Description = "A close combat class which is tankier than others.";
         UnlockedSkills = new List<Skill>();
-        hitbox = hitboxObject;
-        hitbox.transform.parent = GameObject.Find("Player").transform;
-        hitbox.transform.position = new Vector3(hitbox.transform.position.x, hitbox.transform.position.y, hitbox.transform.position.z + 1);
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     /// <summary>
@@ -47,8 +44,9 @@ public class WarriorClass : PlayerClass
     /// <summary>
     /// Does a basic attack
     /// </summary>
-    public void BasicAttack()
+    public void BasicAttack(NPC npcToAttack)
     {
-
+        manager.npcHandler.RemoveHp(npcToAttack, GetBasicAttackDamage(1));
+        manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("Attack");
     }
 }
