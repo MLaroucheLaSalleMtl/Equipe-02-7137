@@ -7,7 +7,7 @@ public class MenuNavigator : MonoBehaviour
 {
     [SerializeField] GameObject[] panels;
     Dictionary<string, GameObject> pan;
-    Stack<GameObject> acivePanels;
+    Stack<GameObject> activePanels;
     bool isActive = false;
     bool wasButtonDown = false;
 
@@ -16,7 +16,7 @@ public class MenuNavigator : MonoBehaviour
     void Start()
     {
         pan = new Dictionary<string, GameObject>();
-        acivePanels = new Stack<GameObject>();
+        activePanels = new Stack<GameObject>();
         foreach (GameObject p in panels)
         {
             pan.Add(p.name, p);
@@ -27,49 +27,54 @@ public class MenuNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Cancel"))
+
+        if (Input.GetButtonDown("Escape"))
         {
-            if (!wasButtonDown)
+            if (activePanels.Count > 0)
             {
-                if (!isActive)
-                {
-                    isActive = true;
-                    acivePanels.Push(pan["Main"]);
-                    acivePanels.Peek().SetActive(true);
-                }
-                else
-                {
-                    ReturnToPrevPanel();
-                }
+                ReturnToPrevPanel();
             }
-            wasButtonDown = true;
+            else
+            {
+                activePanels.Push(pan["Main"]);
+                activePanels.Peek().SetActive(true);
+            }
         }
-        else
+        else if (Input.GetButtonDown("Inventory"))
         {
-            wasButtonDown = false;
+            activePanels.Push(pan["Inventory"]);
+            activePanels.Peek().SetActive(true);
         }
+        else if (Input.GetButtonUp("Inventory"))
+        {
+            activePanels.Peek().SetActive(false);
+            activePanels.Pop();
+
+        }
+
+
     }
 
     public void SelectPanel(string s)
     {
-
-        acivePanels.Peek().SetActive(false);
-        acivePanels.Push(pan[s]);
-        acivePanels.Peek().SetActive(true);
+        if (activePanels.Count > 0)
+        {
+            activePanels.Peek().SetActive(false);
+        }
+        activePanels.Push(pan[s]);
+        activePanels.Peek().SetActive(true);
     }
 
     public void ReturnToPrevPanel()
     {
-
-        if (!acivePanels.Peek().Equals(pan["Main"]))
+        if (activePanels.Count > 0)
         {
-            acivePanels.Pop().SetActive(false);
-            acivePanels.Peek().SetActive(true);
+            activePanels.Pop().SetActive(false);
+            activePanels.Peek().SetActive(true);
         }
         else
         {
-            isActive = false;
-            acivePanels.Pop().SetActive(false);
+            activePanels.Pop().SetActive(false);
         }
     }
 
