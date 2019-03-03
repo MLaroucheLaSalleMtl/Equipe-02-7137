@@ -23,9 +23,12 @@ class MageClass : PlayerClass
     public override double Strengh { get => strengh; set => strengh = value; }
     public override double Agility { get => agility; set => agility = value; }
     public override double Intelligence { get => intelligence; set => intelligence = value; }
+    public override List<Skill> UnlockedSkills { get; set; }
+    public override ClassesInformation.ClassesId Id { get; set; }
+    public override double Range { get; set; }
     public MageClass()
     {
-   
+        Range = 5;
         IsMelee = false;
         Spells = new Dictionary<int, Spell>();
         DisplayName = "Mage";

@@ -9,12 +9,13 @@ public class RangerClass : PlayerClass
     private string displayName;
     private string description;
     private int level;
+    private double range;
 
     private double strengh;
     private double agility;
     private double intelligence;
 
-   
+    public override double Range { get => range; set => range = value; }
     public override bool IsMelee { get => isMelee; set => isMelee = value; }
     public override Dictionary<int, Spell> Spells { get => spells; set => spells = value; }
     public override string DisplayName { get => displayName; set => displayName = value; }
@@ -23,6 +24,9 @@ public class RangerClass : PlayerClass
     public override double Strengh { get => strengh; set => strengh = value; }
     public override double Agility { get => agility; set => agility = value; }
     public override double Intelligence { get => intelligence; set => intelligence = value; }
+    public override List<Skill> UnlockedSkills { get; set; }
+    public override ClassesInformation.ClassesId Id { get; set; }
+
     public RangerClass()
     {
        
