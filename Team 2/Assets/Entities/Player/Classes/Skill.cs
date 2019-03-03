@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public abstract class Skill
+public class Skill
 {
-
+    SkillTree parent;
     public string name;
     public string description;
     public bool isActive;
@@ -28,9 +28,11 @@ public abstract class Skill
 
     public List<Skill> upStreamSkills;
     public List<Skill> downStreamSkills;
+    public SkillTree Parent { get => parent; set => parent = value; }
 
-    protected Skill(float dexMod=0, float healtMod=0, float strenghtMod=0, float intelMod=0, float spellDmgMod=0, float rangeMod=0, float defMod=0, float speedMod=0, float cdRed=0)
+    public Skill(SkillTree parent, float dexMod=0, float healtMod=0, float strenghtMod=0, float intelMod=0, float spellDmgMod=0, float rangeMod=0, float defMod=0, float speedMod=0, float cdRed=0)
     {
+        Parent = parent;
         dexterityModifyer = dexMod;
         healtModifyer = healtMod;
         strenghtModifyer = strenghtMod;
@@ -57,27 +59,35 @@ public abstract class Skill
     public void Activate()
     {
         if(Activatable())
-        isActive = true;
+        {
+            isActive = true;
+            Parent.Activated++;
+        }
     }
 
     //return if the skill can be activated or not
     private bool Activatable()
     {
-        if(downStreamSkills.Count>0)
+        bool activatable = false;
+        if (parent.Parent.Level > parent.Activated)
         {
-            foreach(Skill s in downStreamSkills)
+
+            if (downStreamSkills.Count > 0)
             {
-                if(s.isActive)
+                foreach (Skill s in downStreamSkills)
                 {
-                    return true;
+                    if (s.isActive)
+                    {
+                        activatable= true;
+                    }
                 }
             }
-            return false;
+            else
+            {
+                activatable = true;
+            }
         }
-        else
-        {
-            return true;
-        }
+        return activatable;
     }
 
 }
