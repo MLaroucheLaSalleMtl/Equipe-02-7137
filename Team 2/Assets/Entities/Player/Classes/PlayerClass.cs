@@ -17,5 +17,10 @@ public abstract class PlayerClass
     public abstract string Description { get; set; }
     public abstract List<Skill> UnlockedSkills { get; set; }
     public abstract ClassesInformation.ClassesId Id { get; set; }
+    public abstract int Level { get; set; }
+    public abstract double Strengh { get; set; }
+    public abstract double Intelligence { get; set; }
+    public abstract double Agility { get; set; }
+    public abstract void Levelup();
 
 }

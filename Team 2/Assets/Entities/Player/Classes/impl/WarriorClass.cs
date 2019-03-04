@@ -11,6 +11,10 @@ public class WarriorClass : PlayerClass
 {
     
     private GameManager manager;
+    private double strengh;
+    private double agility;
+    private double intelligence;
+    private int level;
 
     public override double Range { get; set; }
     public override bool IsMelee { get; set; }
@@ -19,6 +23,22 @@ public class WarriorClass : PlayerClass
     public override string Description { get; set; }
     public override List<Skill> UnlockedSkills { get; set; }
     public override ClassesInformation.ClassesId Id { get; set; }
+    public override double Strengh { get => strengh; set => strengh = value; }
+    public override double Agility { get => agility; set => agility = value; }
+    public override double Intelligence { get => intelligence; set => intelligence = value; }
+    public override int Level { get => level; set => level = value; }
+
+    public override void Levelup()
+    {
+        //XPY = 0;
+        //XPX += 500;
+        //SkillTreeUnlock += 1;
+        level++;
+        Intelligence++;
+        Agility++;
+        Strengh++;
+        Strengh++;
+    }
 
     public WarriorClass ()
     {
@@ -30,6 +50,10 @@ public class WarriorClass : PlayerClass
         Description = "A close combat class which is tankier than others.";
         UnlockedSkills = new List<Skill>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Level = 1;
+        Agility = 1;
+        Strengh = 3;
+        Intelligence = 1;
     }
 
     /// <summary>
