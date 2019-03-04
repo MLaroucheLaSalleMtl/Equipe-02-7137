@@ -37,19 +37,8 @@ public class ProjectileTarget : MonoBehaviour
             Debug.Log("Collide");
             //monster loses hp
             int spawnId = int.Parse(other.gameObject.name.Split(',')[1]);
-            if (manager.npcHandler.SpawnedNPCs.ContainsKey(spawnId))
-            {
-                NPC monster = manager.npcHandler.SpawnedNPCs[spawnId];
-                if ((monster.CurrentHp - 1) <= 0)
-                {
-                    manager.npcHandler.HandleDeath(monster);
-                }
-                else
-                {
-                    monster.RemoveHp(1);
-                }
-                
-            }
+            NPC monster = manager.npcHandler.SpawnedNPCs[spawnId];
+            manager.npcHandler.RemoveHp(monster, 1);
         }
         Destroy(gameObject);
     }

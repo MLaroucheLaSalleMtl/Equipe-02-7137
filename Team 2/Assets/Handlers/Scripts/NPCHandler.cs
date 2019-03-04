@@ -92,6 +92,20 @@ public class NPCHandler : MonoBehaviour
         Destroy(toDestroy);
     }
 
+    /// <summary>
+    /// Removes a certain amount of hp from a npc and handles the death if it's the case
+    /// </summary>
+    /// <param name="npcToRemoveHp"></param>
+    /// <param name="amount"></param>
+    public void RemoveHp(NPC npcToRemoveHp, int amount)
+    {
+        int value = Mathf.Abs(amount);
+        npcToRemoveHp.RemoveHp(value);
+        if (npcToRemoveHp.CurrentHp <= 0)
+        {
+            HandleDeath(npcToRemoveHp);
+        }
+    }
 
     private void Awake()
     {
