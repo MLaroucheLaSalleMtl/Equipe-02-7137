@@ -43,17 +43,14 @@ public class CombatHandler : MonoBehaviour
     /// Player attacks a npc
     /// </summary>
     /// <param name="npcToAttack"></param>
-    public void Attack (NPC npcToAttack)
+    public void Attack (NPC npcToAttack = null)
     {
-        if (CanAttack(npcToAttack))
+        switch (Manager.player.Class.Id)
         {
-            switch (Manager.player.Class.Id)
-            {
-                case ClassesInformation.ClassesId.WARRIOR:
-                    WarriorClass playerClass = Manager.player.Class as WarriorClass;
-                    playerClass.BasicAttack(npcToAttack);
-                    break;
-            }
+            case ClassesInformation.ClassesId.WARRIOR:
+                WarriorClass playerClass = Manager.player.Class as WarriorClass;
+                playerClass.BasicAttack(npcToAttack);
+                break;
         }
     }
 

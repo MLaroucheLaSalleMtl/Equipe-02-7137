@@ -27,13 +27,13 @@ public class GameManager : MonoBehaviour
         itemHandler = GetComponent<ItemHandler>();
         combatHandler = GetComponent<CombatHandler>();
 
-        player.WorldModel = GameObject.Find("WarriorPrefab");
+        player.WorldModel = GameObject.Find("Player");
         player.Class = new WarriorClass();
         
         //Spawn monsters for testing purposes
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.GOBLIN, new Position(-2, 0, 0), "Goblin", 5, 4, 4);
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(2, 0, 0), "Impling", 5, 4, 4);
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.SHELLCRAB, new Position(6, 0, 0), "Shell Crab", 5, 4, 4);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.GOBLIN, new Position(-2, 31, 0), "Goblin", 5, 4, 4);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(2, 31, 0), "Impling", 5, 4, 4);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.SHELLCRAB, new Position(6, 31, 0), "Shell Crab", 5, 4, 4);
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            combatHandler.Attack(npcHandler.SpawnedNPCs[0]);
+            combatHandler.Attack();
         }
     }
 }
