@@ -70,7 +70,10 @@ public class WarriorClass : PlayerClass
     /// </summary>
     public void BasicAttack(NPC npcToAttack)
     {
-        manager.npcHandler.RemoveHp(npcToAttack, GetBasicAttackDamage(1));
-        //manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("Attack");
+        if (npcToAttack != null)
+        {
+            manager.npcHandler.RemoveHp(npcToAttack, GetBasicAttackDamage(1));
+        }
+        manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("BasicAttack");
     }
 }
