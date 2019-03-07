@@ -20,6 +20,7 @@ public class PlayerHandler : MonoBehaviour
         HP,
         MONEY,
         LEVEL,
+        PERCENTAGE_LEVEL,
     }
 
     //bi directional link to the game manager
@@ -52,6 +53,9 @@ public class PlayerHandler : MonoBehaviour
                     break;
                 case (int)PlayerBarTextId.LEVEL:
                     PlayerBarTexts[index].text = $"Level: {Manager.player.Level}";
+                    break;
+                case (int)PlayerBarTextId.PERCENTAGE_LEVEL:
+                    PlayerBarTexts[index].text = $"Till level up: {(Manager.player.Experience * 100) / Manager.player.GetXpToLevelUp(Manager.player.Level)}%";
                     break;
             }
         }

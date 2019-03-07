@@ -37,6 +37,23 @@ public class Player : Entity
         }
     }
 
+    private int experience;
+    /// <summary>
+    /// The current experience of the player
+    /// </summary>
+    public int Experience
+    {
+        get
+        {
+            return experience;
+        }
+        set
+        {
+            experience = value;
+            CheckForLevelUp();
+        }
+    }
+
     /// <summary>
     /// The name of the NPC
     /// </summary>
@@ -197,6 +214,17 @@ public class Player : Entity
     }
 
     /// <summary>
+    /// Checks if the player needs to level up, if yes, level up
+    /// </summary>
+    public void CheckForLevelUp()
+    {
+        if (Experience >= GetXpToLevelUp(Level))
+        {
+            LevelUp();
+        }
+    }
+
+    /// <summary>
     /// Moves the NPC
     /// </summary>
     /// <param name="newPosition">The position to move the npc to</param>
@@ -256,9 +284,20 @@ public class Player : Entity
         maxHp = maxhp;
         GiveHp(MaxHP);
         SetLevel(level);
+        Experience = GetXpToLevelUp(level - 1);
     }
 
     #endregion
 
+    /// <summary>
+    /// Get the amount of xp necessary to level up
+    /// </summary>
+    /// <returns></returns>
+    public int GetXpToLevelUp(int level)
+    {
+        if (level == 0)
+            return 0;
+        return ((int)(Mathf.Ceil(level * 5 / 3)) + 83) + GetXpToLevelUp(level - 1);
+    }
 
 }
