@@ -37,6 +37,23 @@ public class Player : Entity
         }
     }
 
+    private int experience;
+    /// <summary>
+    /// The current experience of the player
+    /// </summary>
+    public int Experience
+    {
+        get
+        {
+            return experience;
+        }
+        set
+        {
+            experience = value;
+            CheckForLevelUp();
+        }
+    }
+
     /// <summary>
     /// The name of the NPC
     /// </summary>
@@ -55,7 +72,7 @@ public class Player : Entity
     {
         get
         {
-            float mod = 0;
+            float mod = 1;
             foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.HealtModifyer;
@@ -152,6 +169,11 @@ public class Player : Entity
     /// </summary>
     public override GameObject WorldModel { get; set; }
 
+    /// <summary>
+    /// The cash of the player
+    /// </summary>
+    public int Money { get; set; }
+
 
     public Player()
     {
@@ -198,6 +220,17 @@ public class Player : Entity
     }
 
     /// <summary>
+    /// Checks if the player needs to level up, if yes, level up
+    /// </summary>
+    public void CheckForLevelUp()
+    {
+        if (Experience >= GetXpToLevelUp(Level))
+        {
+            LevelUp();
+        }
+    }
+
+    /// <summary>
     /// Moves the NPC
     /// </summary>
     /// <param name="newPosition">The position to move the npc to</param>
@@ -233,21 +266,44 @@ public class Player : Entity
         this.level = level;
     }
 
-    #endregion
-
-    #region Display / UI
-
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Creates a new player
+    /// </summary>
+    /// <param name="displayName"></param>
+    /// <param name="strength"></param>
+    /// <param name="inteligence"></param>
+    /// <param name="dexterity"></param>
+    /// <param name="defence"></param>
+    /// <param name="money"></param>
+    /// <param name="playerclass"></param>
+    /// <param name="worldModel"></param>
+    public Player(string displayName = "Default Name", int level = 1, int maxhp = 10, int strength = 1, int inteligence = 0, int dexterity = 0, int defence = 0, int money = 100, PlayerClass playerclass = null, GameObject worldModel = null)
     {
-        
+        this.strength = strength;
+        this.inteligence = inteligence;
+        this.dexterity = dexterity;
+        Defence = defence;
+        Class = playerclass;
+        WorldModel = worldModel;
+        Money = money;
+        this.displayName = displayName;
+        maxHp = maxhp;
+        GiveHp(MaxHP);
+        SetLevel(level);
+        Experience = GetXpToLevelUp(level - 1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     #endregion
+
+    /// <summary>
+    /// Get the amount of xp necessary to level up
+    /// </summary>
+    /// <returns></returns>
+    public int GetXpToLevelUp(int level)
+    {
+        if (level == 0)
+            return 0;
+        return ((int)(Mathf.Ceil(level * 5 / 3)) + 83) + GetXpToLevelUp(level - 1);
+    }
 
 }

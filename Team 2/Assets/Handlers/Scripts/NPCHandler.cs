@@ -79,6 +79,9 @@ public class NPCHandler : MonoBehaviour
     {
         npc.Death();
         StartCoroutine(DestroyNPC(npc.WorldModel, 5f));
+        Manager.player.Money += Random.Range(1, 5);
+        Manager.player.Experience += Random.Range(4, 7);
+        Manager.playerHandler.UpdatePlayerBarUI();
     }
 
     /// <summary>
