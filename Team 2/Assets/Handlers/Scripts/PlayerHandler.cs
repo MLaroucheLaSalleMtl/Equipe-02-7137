@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// @author Samuel Paquette
@@ -9,12 +10,60 @@ using UnityEngine;
 /// </summary>
 public class PlayerHandler : MonoBehaviour
 {
+
+    /// <summary>
+    /// The ids of the texts in the array
+    /// </summary>
+    public enum PlayerBarTextId
+    {
+        USERNAME,
+        HP,
+        MONEY,
+        LEVEL,
+    }
+
     //bi directional link to the game manager
     GameManager Manager { get; set; }
+    //The texts in the ui
+    [SerializeField] Text[] PlayerBarTexts;
 
     private void Awake()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    /// <summary>
+    /// Update the player bar
+    /// </summary>
+    public void UpdatePlayerBarUI ()
+    {
+        for (int index = 0; index < PlayerBarTexts.Length; index++)
+        {
+            switch (index)
+            {
+                case (int)PlayerBarTextId.USERNAME:
+                    PlayerBarTexts[index].text = $"{Manager.player.DisplayName}";
+                    break;
+                case (int)PlayerBarTextId.HP:
+                    PlayerBarTexts[index].text = $"HP: {Manager.player.CurrentHp}";
+                    break;
+                case (int)PlayerBarTextId.MONEY:
+                    PlayerBarTexts[index].text = $"Money: {Manager.player.Money}$";
+                    break;
+                case (int)PlayerBarTextId.LEVEL:
+                    PlayerBarTexts[index].text = $"Level: {Manager.player.Level}";
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Create a new player and update the player UI
+    /// </summary>
+    public void CreatePlayer (string name, int level, int maxhp, int strength, int intelligence, int dexterity, int defence, int money, PlayerClass playerclass, GameObject playerModel)
+    {
+        Manager.player = new Player(name, level, maxhp, strength, intelligence, dexterity, defence, money, playerclass, playerModel);
+        UpdatePlayerBarUI();
     }
 
     /// <summary>

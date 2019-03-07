@@ -21,15 +21,13 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        player = new Player();
         npcHandler = GetComponent<NPCHandler>();
         playerHandler = GetComponent<PlayerHandler>();
         itemHandler = GetComponent<ItemHandler>();
         combatHandler = GetComponent<CombatHandler>();
 
-        player.WorldModel = GameObject.Find("Player");
-        player.Class = new WarriorClass();
-        
+        playerHandler.CreatePlayer("Satucre", 1, 10, 1, 0, 0, 0, 150, new WarriorClass(), GameObject.Find("Player"));
+
         //Spawn monsters for testing purposes
         npcHandler.SpawnNPC(NPCInformation.NPCNames.GOBLIN, new Position(-2, 31, 0), "Goblin", 5, 4, 4);
         npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(2, 31, 0), "Impling", 5, 4, 4);

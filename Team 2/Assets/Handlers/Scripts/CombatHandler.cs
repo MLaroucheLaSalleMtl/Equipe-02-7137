@@ -63,15 +63,15 @@ public class CombatHandler : MonoBehaviour
                         playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
                         break;
                     case (int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK:
-                        CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                        CurrentHitbox = GameObject.Find("SwingAttackHitbox");
                         playerClass.SwingAttack(NpcsCurrentlyInHitbox.ToArray());
                         break;
                     case (int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK:
-                        CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                        CurrentHitbox = GameObject.Find("JumpAttackHitbox");
                         playerClass.JumpAttack(NpcsCurrentlyInHitbox.ToArray());
                         break;
                     case (int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK:
-                        CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                        CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
                         playerClass.DoubleSwingAttack(NpcsCurrentlyInHitbox.ToArray());
                         break;
                 }
