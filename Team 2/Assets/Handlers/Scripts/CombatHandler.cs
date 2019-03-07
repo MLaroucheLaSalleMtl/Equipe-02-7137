@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// @author Samuel Paquette
@@ -14,6 +15,15 @@ public class CombatHandler : MonoBehaviour
     GameObject CurrentHitbox { get; set; }
     public List<NPC> NpcsCurrentlyInHitbox { get; set; }
 
+    //the cooldown of the attacks of the player
+    public float[] AttacksCooldown { get; set; }
+
+    //the cooldown left on each attack of the player
+    public float[] TimeLeftOnCooldown { get; set; }
+
+    //the text field of the cooldown in the ui
+    [SerializeField] private Text[] CooldownTexts;
+    
     //hitboxes for the classes
     public Animator[] attacksAnimator;
 
@@ -59,26 +69,50 @@ public class CombatHandler : MonoBehaviour
                 switch (keyIndex)
                 {
                     case (int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK:
-                        CurrentHitbox = GameObject.Find("BasicAttackHitbox");
-                        playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
+                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK))
+                        {
+                            CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                            playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
+                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK];
+                        }
                         break;
                     case (int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK:
-                        CurrentHitbox = GameObject.Find("SwingAttackHitbox");
-                        playerClass.SwingAttack(NpcsCurrentlyInHitbox.ToArray());
+                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK))
+                        {
+                            CurrentHitbox = GameObject.Find("SwingAttackHitbox");
+                            playerClass.SwingAttack(NpcsCurrentlyInHitbox.ToArray());
+                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK];
+                        }
                         break;
                     case (int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK:
-                        CurrentHitbox = GameObject.Find("JumpAttackHitbox");
-                        playerClass.JumpAttack(NpcsCurrentlyInHitbox.ToArray());
+                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK))
+                        {
+                            CurrentHitbox = GameObject.Find("JumpAttackHitbox");
+                            playerClass.JumpAttack(NpcsCurrentlyInHitbox.ToArray());
+                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK];
+                        }
                         break;
                     case (int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK:
-                        CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
-                        playerClass.DoubleSwingAttack(NpcsCurrentlyInHitbox.ToArray());
+                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK))
+                        {
+                            CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
+                            playerClass.DoubleSwingAttack(NpcsCurrentlyInHitbox.ToArray());
+                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK];
+                        }
                         break;
                 }
                 break;
         }
     }
 
+    /// <summary>
+    /// Checks if the player can use X attack
+    /// </summary>
+    /// <returns></returns>
+    public bool CanUseAttack(int attackIndex)
+    {
+        return TimeLeftOnCooldown[attackIndex] <= 0f;
+    }
 
     /// <summary>
     /// Called at the start of the game
@@ -86,6 +120,8 @@ public class CombatHandler : MonoBehaviour
     void Start()
     {
         NpcsCurrentlyInHitbox = new List<NPC>();
+        AttacksCooldown = new float[ClassesInformation.AmountOfAttacks];
+        TimeLeftOnCooldown = new float[ClassesInformation.AmountOfAttacks];
     }
 
     /// <summary>
@@ -93,6 +129,22 @@ public class CombatHandler : MonoBehaviour
     /// </summary>
     void Update()
     {
-        
+
+        //Reduce cooldown
+        for (int index = 0; index < ClassesInformation.AmountOfAttacks; index++)
+        {
+            if (TimeLeftOnCooldown[index] <= 0f)
+            {
+                TimeLeftOnCooldown[index] = 0f;
+            }
+            else
+            {
+                TimeLeftOnCooldown[index] -= Time.deltaTime;
+            }
+            if (TimeLeftOnCooldown[index] <= 0f)
+                CooldownTexts[index].text = "Ready";
+            else
+                CooldownTexts[index].text = $"{Mathf.Ceil(TimeLeftOnCooldown[index])} sec{(TimeLeftOnCooldown[index] >= 1f ? "s" : "")}";
+        }
     }
 }

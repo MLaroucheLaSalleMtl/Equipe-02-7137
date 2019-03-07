@@ -91,5 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e246489e3593cd34ba409be04da1bae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CooldownTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   attacksAnimator:
   - {fileID: 0}

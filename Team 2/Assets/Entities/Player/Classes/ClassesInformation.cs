@@ -10,6 +10,8 @@ using UnityEngine;
 public static class ClassesInformation
 {
 
+    public const int AmountOfAttacks = 4;
+
     /// <summary>
     /// Ids of the classes
     /// </summary>
