@@ -37,13 +37,33 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// When the users clicks with his mouse on the first ability
+    /// </summary>
+    public void FirstAbilityButtonClick ()
+    {
+        combatHandler.Attack(0);
+    }
+
+    /// <summary>
+    /// When the users clicks with his mouse on the second ability
+    /// </summary>
+    public void SecondAbilityButtonClick()
+    {
+        combatHandler.Attack(1);
+    }
+
+    /// <summary>
     /// Called each game tick
     /// </summary>
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            combatHandler.Attack();
+            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK);
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK);
         }
     }
 }

@@ -108,6 +108,11 @@ public class NPC : Entity
     public Text Overlay { get; set; }
 
     /// <summary>
+    /// The hp text in the overlay
+    /// </summary>
+    public Text OverlayHP { get; set; }
+
+    /// <summary>
     /// The drop table of loots of the npc, if empty, npc drops nothing
     /// </summary>
     public List<ItemDrop> DropTable { get; set; } = new List<ItemDrop>();
@@ -133,6 +138,7 @@ public class NPC : Entity
     {
         int amountToGive = Mathf.Abs(amount);
         currentHp += amountToGive;
+        UpdateOverlay();
     }
 
     /// <summary>
@@ -169,6 +175,7 @@ public class NPC : Entity
     public override void RemoveHp(int amount)
     {
         currentHp -= Mathf.Abs(amount);
+        UpdateOverlay();
     }
 
     /// <summary>
@@ -186,8 +193,9 @@ public class NPC : Entity
     /// </summary>
     public virtual void Spawn(Position pos)
     {
-        Overlay = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlay").GetComponent<Text>();
-        Overlay.text = $"{DisplayName} - Level {Level}";
+        Overlay = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterOverlay").GetComponent<Text>();
+        OverlayHP = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterHP").GetComponent<Text>();
+        UpdateOverlay();
         isDead = false;
         isSpawned = true;
     }
@@ -217,6 +225,7 @@ public class NPC : Entity
     void UpdateOverlay()
     {
         Overlay.text = $"{DisplayName} - Level {Level}";
+        OverlayHP.text = $"HP: {(CurrentHp >= 0 ? CurrentHp : 0)}";
     }
 
     #endregion

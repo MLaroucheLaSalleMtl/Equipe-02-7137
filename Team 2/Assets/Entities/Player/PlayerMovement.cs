@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
                 NPC npcToAttack = manager.npcHandler.SpawnedNPCs[npcInstanceId];
                 if (manager.combatHandler.CanAttack(npcToAttack))
                 {
-                    manager.combatHandler.Attack(npcToAttack);
+                   // manager.combatHandler.Attack(npcToAttack);
                 }
                 else
                 {

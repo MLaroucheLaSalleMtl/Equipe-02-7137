@@ -68,12 +68,32 @@ public class WarriorClass : PlayerClass
     /// <summary>
     /// Does a basic attack
     /// </summary>
-    public void BasicAttack(NPC npcToAttack)
+    public void BasicAttack(NPC[] npcsToAttack)
     {
-        if (npcToAttack != null)
+        if (npcsToAttack.Length > 0)
         {
-            manager.npcHandler.RemoveHp(npcToAttack, GetBasicAttackDamage(1));
+            for (int index = 0; index < npcsToAttack.Length; index++)
+            {
+                manager.npcHandler.RemoveHp(npcsToAttack[index], GetBasicAttackDamage(1));
+            }
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("BasicAttack");
     }
+
+    /// <summary>
+    /// E swing with axe
+    /// </summary>
+    /// <param name="npcsToAttack"></param>
+    public void SwingAttack(NPC[] npcsToAttack)
+    {
+        if (npcsToAttack.Length > 0)
+        {
+            for (int index = 0; index < npcsToAttack.Length; index++)
+            {
+                manager.npcHandler.RemoveHp(npcsToAttack[index], GetBasicAttackDamage(1));
+            }
+        }
+        manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("SwingAttack");
+    }
+
 }
