@@ -45,14 +45,28 @@ public class CombatHandler : MonoBehaviour
     /// Player attacks a npc
     /// </summary>
     /// <param name="npcToAttack"></param>
-    public void Attack (NPC npcToAttack = null)
+    public void Attack (int keyIndex = -1)
     {
+        //-1 = not attacking
+        if (keyIndex == -1)
+        {
+            return;
+        }
         switch (Manager.player.Class.Id)
         {
             case ClassesInformation.ClassesId.WARRIOR:
                 WarriorClass playerClass = Manager.player.Class as WarriorClass;
-                CurrentHitbox = GameObject.Find("BasicAttackHitbox");
-                playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
+                switch (keyIndex)
+                {
+                    case (int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK:
+                        CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                        playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
+                        break;
+                    case (int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK:
+                        CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                        playerClass.SwingAttack(NpcsCurrentlyInHitbox.ToArray());
+                        break;
+                }
                 break;
         }
     }
