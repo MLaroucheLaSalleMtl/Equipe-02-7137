@@ -28,6 +28,8 @@ public static class ClassesInformation
         NONE = -1,
         BASIC_ATTACK,
         SWING_ATTACK,
+        JUMP_ATTACK,
+        DOUBLE_SWING_ATTACK,
     }
 
 }

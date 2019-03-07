@@ -53,6 +53,22 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// When the users clicks with his mouse on the third ability
+    /// </summary>
+    public void ThirdAbilityButtonClick()
+    {
+        combatHandler.Attack(2);
+    }
+
+    /// <summary>
+    /// When the users clicks with his mouse on the fourth ability
+    /// </summary>
+    public void FourthAbilityButtonClick()
+    {
+        combatHandler.Attack(3);
+    }
+
+    /// <summary>
     /// Called each game tick
     /// </summary>
     void Update()
@@ -64,6 +80,14 @@ public class GameManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E))
         {
             combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK);
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK);
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK);
         }
     }
 }
