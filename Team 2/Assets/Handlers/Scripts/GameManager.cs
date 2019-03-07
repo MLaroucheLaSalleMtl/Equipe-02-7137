@@ -37,11 +37,19 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// When the users clicks with his mouse on the first ability
+    /// </summary>
+    public void FirstAbilityButtonClick ()
+    {
+        combatHandler.Attack();
+    }
+
+    /// <summary>
     /// Called each game tick
     /// </summary>
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             combatHandler.Attack();
         }
