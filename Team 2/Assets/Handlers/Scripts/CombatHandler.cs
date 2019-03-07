@@ -11,6 +11,8 @@ public class CombatHandler : MonoBehaviour
 {
     //bi directional link to the game manager
     GameManager Manager { get; set; }
+    GameObject CurrentHitbox { get; set; }
+    public List<NPC> NpcsCurrentlyInHitbox { get; set; }
 
     //hitboxes for the classes
     public Animator[] attacksAnimator;
@@ -49,17 +51,19 @@ public class CombatHandler : MonoBehaviour
         {
             case ClassesInformation.ClassesId.WARRIOR:
                 WarriorClass playerClass = Manager.player.Class as WarriorClass;
-                playerClass.BasicAttack(npcToAttack);
+                CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
                 break;
         }
     }
+
 
     /// <summary>
     /// Called at the start of the game
     /// </summary>
     void Start()
     {
-
+        NpcsCurrentlyInHitbox = new List<NPC>();
     }
 
     /// <summary>
