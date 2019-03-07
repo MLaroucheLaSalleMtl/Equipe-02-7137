@@ -13,6 +13,7 @@ public class SkillTreeButton : MonoBehaviour
     {
         playerScript = player.GetComponent<PlayerAdapter>().p;
         skillTree = new SkillTree(playerScript);
+        Debug.Log("start");
     }
 
     // Update is called once per frame

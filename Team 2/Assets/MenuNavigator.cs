@@ -67,7 +67,7 @@ public class MenuNavigator : MonoBehaviour
 
     public void ReturnToPrevPanel()
     {
-        if (activePanels.Count > 0)
+        if (activePanels.Count > 1)
         {
             activePanels.Pop().SetActive(false);
             activePanels.Peek().SetActive(true);
@@ -77,6 +77,34 @@ public class MenuNavigator : MonoBehaviour
             activePanels.Pop().SetActive(false);
         }
     }
+
+    public void D(string s)
+    {
+        int c = 0;
+        for(int i=0;i<s.Length;i++)
+        {
+            int j = 1;
+            while(checkPal(s.Substring(i,j)))
+            {
+                c++;
+                j++;
+            }
+        }
+
+    }
+    private bool checkPal(string s)
+    {
+        string tempC = s.Substring(0, 1);
+        for(int i=0;i<s.Length/2;i++)
+        {
+            if(!(s.Substring(i,1)==s.Substring(s.Length-1-i,1)))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 }

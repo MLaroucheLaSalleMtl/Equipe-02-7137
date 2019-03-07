@@ -152,6 +152,11 @@ public class Player : Entity
     /// </summary>
     public override GameObject WorldModel { get; set; }
 
+
+    public Player()
+    {
+        level = 10;
+    }
    
     #endregion
 

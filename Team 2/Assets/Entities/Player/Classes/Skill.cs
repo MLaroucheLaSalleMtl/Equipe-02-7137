@@ -32,6 +32,8 @@ public class Skill
 
     public Skill(SkillTree parent, float dexMod=0, float healtMod=0, float strenghtMod=0, float intelMod=0, float spellDmgMod=0, float rangeMod=0, float defMod=0, float speedMod=0, float cdRed=0)
     {
+        upStreamSkills = new List<Skill>();
+        downStreamSkills = new List<Skill>();
         Parent = parent;
         dexterityModifyer = dexMod;
         healtModifyer = healtMod;
@@ -58,7 +60,6 @@ public class Skill
     //activate the skill
     public void Activate()
     {
-        Debug.Log("trying activate");
         if(Activatable())
         {
             isActive = true;
@@ -88,6 +89,7 @@ public class Skill
                 activatable = true;
             }
         }
+        Debug.Log(activatable);
         return activatable;
     }
 
