@@ -58,6 +58,7 @@ public class Skill
     //activate the skill
     public void Activate()
     {
+        Debug.Log("trying activate");
         if(Activatable())
         {
             isActive = true;

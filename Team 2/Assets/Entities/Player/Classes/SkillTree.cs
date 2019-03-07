@@ -15,6 +15,7 @@ public class SkillTree
 
     public int Activated { get => activated; set => activated = value; }
     public Player Parent { get => parent; set => parent = value; }
+    public Dictionary<string, Skill> Skills { get => skills; set => skills = value; }
 
     public SkillTree(Player parent)
     {
@@ -101,6 +102,11 @@ public class SkillTree
             s.Value.isActive = false;
         }
         Activated = 0;
+    }
+
+    public void ActivateSkill(string name)
+    {
+        skills[name].Activate();
     }
 
 

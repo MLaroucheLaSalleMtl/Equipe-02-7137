@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6051027204708860168}
   - component: {fileID: 1503914398123381698}
   m_Layer: 5
-  m_Name: +10%hp
+  m_Name: SkillButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
