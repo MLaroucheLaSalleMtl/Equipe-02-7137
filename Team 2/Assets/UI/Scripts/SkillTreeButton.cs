@@ -7,11 +7,13 @@ public class SkillTreeButton : MonoBehaviour
     [SerializeField] GameObject player;
     Player playerScript;
     SkillTree skillTree;
+    GameManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerScript = player.GetComponent<PlayerAdapter>().p;
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerScript = manager.player;
         skillTree = new SkillTree(playerScript);
         Debug.Log("start");
     }
