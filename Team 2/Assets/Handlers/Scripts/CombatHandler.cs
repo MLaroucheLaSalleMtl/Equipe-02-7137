@@ -73,6 +73,8 @@ public class CombatHandler : MonoBehaviour
                         {
                             CurrentHitbox = GameObject.Find("BasicAttackHitbox");
                             playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
+                            Manager.player.RemoveHp(1);
+                            Manager.playerHandler.UpdatePlayerBarUI();
                             TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK];
                         }
                         break;
