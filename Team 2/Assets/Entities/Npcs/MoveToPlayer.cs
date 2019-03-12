@@ -39,7 +39,18 @@ public class MoveToPlayer : MonoBehaviour
         {
             if (!manager.npcHandler.SpawnedNPCs[int.Parse(gameObject.name.Split(',')[1])].isDead)
             {
-                npc.destination = playerTransform.position;
+                if (Mathf.Abs(Vector3.Distance(transform.position, playerTransform.position)) >= 2.5f)
+                {
+                    npc.destination = playerTransform.position;
+                }
+                else
+                {
+                    npc.destination = transform.position;
+                }
+            }
+            else
+            {
+                npc.destination = transform.position;
             }
         }
         else
