@@ -29,6 +29,9 @@ public class NPCHandler : MonoBehaviour
         NPCFactories.Add(new RedboarFactory());
         NPCFactories.Add(new ImplingFactory());
         NPCFactories.Add(new ShellCrabFactory());
+        NPCFactories.Add(new BlueboarFactory());
+        NPCFactories.Add(new GreenboarFactory());
+        NPCFactories.Add(new GoldboarFactory());
     }
 
     /// <summary>
@@ -67,6 +70,21 @@ public class NPCHandler : MonoBehaviour
                 ShellCrab newShellCrab = (ShellCrab)NPCFactories.Find(x => x.GetType() == typeof(ShellCrabFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedNPCs.Add(newShellCrab.InstanceId, newShellCrab);
                 newShellCrab.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.BLUE_BOAR:
+                BlueBoar newBlueBoar = (BlueBoar)NPCFactories.Find(x => x.GetType() == typeof(BlueboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newBlueBoar.InstanceId, newBlueBoar);
+                newBlueBoar.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.GREEN_BOAR:
+                GreenBoar newGreenBoar = (GreenBoar)NPCFactories.Find(x => x.GetType() == typeof(GreenboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newGreenBoar.InstanceId, newGreenBoar);
+                newGreenBoar.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.GOLD_BOAR:
+                GoldBoar newGoldBoar = (GoldBoar)NPCFactories.Find(x => x.GetType() == typeof(GoldboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newGoldBoar.InstanceId, newGoldBoar);
+                newGoldBoar.Spawn(position);
                 break;
         }
     }

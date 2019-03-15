@@ -5,9 +5,9 @@ using UnityEngine;
 /// <summary>
 /// @author Samuel Paquette
 /// @date 15 Mars 2019
-/// @description A simple Red boar NPC
+/// @description A simple gold boar NPC
 /// </summary>
-public class RedBoar : NPC
+public class GoldBoar : NPC
 {
 
     /// <summary>
@@ -15,28 +15,28 @@ public class RedBoar : NPC
     /// </summary>
     public Animator Animator { get; set; }
 
-    private GameObject redboarPrefab;
+    private GameObject goldBoarPrefab;
 
     #region Constructors
 
-    public RedBoar(int spawnId)
+    public GoldBoar(int spawnId)
     {
         InstanceId = spawnId;
         level = 1;
-        displayName = "Red Boar";
+        displayName = "Gold Boar";
         maxHp = level * NPCInformation.HPRate;
         currentHp = maxHp;
-        redboarPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.RED_BOAR];
+        goldBoarPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.GOLD_BOAR];
     }
 
-    public RedBoar(int spawnId, string name, int level, int maxHp, int currentHp)
+    public GoldBoar(int spawnId, string name, int level, int maxHp, int currentHp)
     {
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        redboarPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.RED_BOAR];
+        goldBoarPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.GOLD_BOAR];
     }
 
     #endregion
@@ -51,7 +51,7 @@ public class RedBoar : NPC
         if (!isSpawned)
         {
             WorldPosition = pos;
-            WorldModel = Object.Instantiate(redboarPrefab);
+            WorldModel = Object.Instantiate(goldBoarPrefab);
             WorldModel.name = $"Monster,{InstanceId}";
             Animator = WorldModel.GetComponent<Animator>();
             WorldModel.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
@@ -75,7 +75,7 @@ public class RedBoar : NPC
         if (!isDead)
         {
             Animator.SetTrigger("Death");
-            Debug.Log("Red boar is dead.");
+            Debug.Log("Gold boar is dead.");
             base.Death();
         }
     }

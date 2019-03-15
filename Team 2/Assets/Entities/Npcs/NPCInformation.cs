@@ -14,6 +14,9 @@ public static class NPCInformation
         RED_BOAR,
         IMPLING,
         SHELLCRAB,
+        BLUE_BOAR,
+        GREEN_BOAR,
+        GOLD_BOAR,
     }
 
     public enum NPCPrefabId
@@ -21,6 +24,9 @@ public static class NPCInformation
         RED_BOAR,
         IMPLING,
         SHELLCRAB,
+        BLUE_BOAR,
+        GREEN_BOAR,
+        GOLD_BOAR,
     }
 
     public const int HPRate = 10;
