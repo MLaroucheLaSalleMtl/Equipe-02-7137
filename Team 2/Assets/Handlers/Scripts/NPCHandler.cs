@@ -32,6 +32,10 @@ public class NPCHandler : MonoBehaviour
         NPCFactories.Add(new BlueboarFactory());
         NPCFactories.Add(new GreenboarFactory());
         NPCFactories.Add(new GoldboarFactory());
+        NPCFactories.Add(new BluedragonFactory());
+        NPCFactories.Add(new GreendragonFactory());
+        NPCFactories.Add(new PurpledragonFactory());
+        NPCFactories.Add(new ReddragonFactory());
     }
 
     /// <summary>
@@ -85,6 +89,26 @@ public class NPCHandler : MonoBehaviour
                 GoldBoar newGoldBoar = (GoldBoar)NPCFactories.Find(x => x.GetType() == typeof(GoldboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedNPCs.Add(newGoldBoar.InstanceId, newGoldBoar);
                 newGoldBoar.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.BLUE_DRAGON:
+                BlueDragon newBlueDrag = (BlueDragon)NPCFactories.Find(x => x.GetType() == typeof(BluedragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newBlueDrag.InstanceId, newBlueDrag);
+                newBlueDrag.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.GREEN_DRAGON:
+                GreenDragon newGreenDrag = (GreenDragon)NPCFactories.Find(x => x.GetType() == typeof(GreendragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newGreenDrag.InstanceId, newGreenDrag);
+                newGreenDrag.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.PURPLE_DRAGON:
+                PurpleDragon newPurpleDrag = (PurpleDragon)NPCFactories.Find(x => x.GetType() == typeof(PurpledragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newPurpleDrag.InstanceId, newPurpleDrag);
+                newPurpleDrag.Spawn(position);
+                break;
+            case NPCInformation.NPCNames.RED_DRAGON:
+                RedDragon newRedDrag = (RedDragon)NPCFactories.Find(x => x.GetType() == typeof(ReddragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newRedDrag.InstanceId, newRedDrag);
+                newRedDrag.Spawn(position);
                 break;
         }
     }

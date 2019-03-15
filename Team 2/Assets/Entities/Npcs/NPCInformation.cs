@@ -17,6 +17,10 @@ public static class NPCInformation
         BLUE_BOAR,
         GREEN_BOAR,
         GOLD_BOAR,
+        BLUE_DRAGON,
+        GREEN_DRAGON,
+        PURPLE_DRAGON,
+        RED_DRAGON,
     }
 
     public enum NPCPrefabId
@@ -27,6 +31,10 @@ public static class NPCInformation
         BLUE_BOAR,
         GREEN_BOAR,
         GOLD_BOAR,
+        BLUE_DRAGON,
+        GREEN_DRAGON,
+        PURPLE_DRAGON,
+        RED_DRAGON,
     }
 
     public const int HPRate = 10;
