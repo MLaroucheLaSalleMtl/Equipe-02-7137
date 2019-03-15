@@ -44,7 +44,7 @@ public class Impling : NPC
     #region Interactions
 
     /// <summary>
-    /// Spawn a goblin
+    /// Spawn
     /// </summary>
     public override void Spawn(Position pos)
     {
@@ -64,11 +64,12 @@ public class Impling : NPC
     /// </summary>
     public override void Block ()
     {
+        isBlocking = true;
         Animator.SetTrigger("Block");
     }
 
     /// <summary>
-    /// Goblin death
+    /// Death
     /// </summary>
     public override void Death()
     {

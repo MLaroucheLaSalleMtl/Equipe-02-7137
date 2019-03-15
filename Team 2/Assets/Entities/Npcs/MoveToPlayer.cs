@@ -17,6 +17,7 @@ public class MoveToPlayer : MonoBehaviour
     Vector3 sourcePosition;
     NavMeshHit closestHit;
     GameManager manager;
+    NPC movingNpc;
 
 // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class MoveToPlayer : MonoBehaviour
             gameObject.AddComponent<NavMeshAgent>();
         }
         npc = GetComponent<NavMeshAgent>();
+        movingNpc = manager.npcHandler.SpawnedNPCs[int.Parse(gameObject.name.Split(',')[1])];
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class MoveToPlayer : MonoBehaviour
     {
         if (cooldown <= 0f)
         {
-            if (!manager.npcHandler.SpawnedNPCs[int.Parse(gameObject.name.Split(',')[1])].isDead)
+            if (!movingNpc.isDead && !movingNpc.isBlocking)
             {
                 if (Mathf.Abs(Vector3.Distance(transform.position, playerTransform.position)) >= 2.80f)
                 {

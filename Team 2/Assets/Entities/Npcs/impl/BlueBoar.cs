@@ -44,7 +44,7 @@ public class BlueBoar : NPC
     #region Interactions
 
     /// <summary>
-    /// Spawn a red boar
+    /// Spawn
     /// </summary>
     public override void Spawn(Position pos)
     {
@@ -60,15 +60,16 @@ public class BlueBoar : NPC
     }
 
     /// <summary>
-    /// Block for red boar
+    /// Block
     /// </summary>
     public override void Block ()
     {
+        isBlocking = true;
         Animator.SetTrigger("Block");
     }
 
     /// <summary>
-    /// Goblin death
+    /// Death
     /// </summary>
     public override void Death()
     {

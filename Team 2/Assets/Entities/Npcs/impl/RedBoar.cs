@@ -64,11 +64,12 @@ public class RedBoar : NPC
     /// </summary>
     public override void Block ()
     {
+        isBlocking = true;
         Animator.SetTrigger("Block");
     }
 
     /// <summary>
-    /// Goblin death
+    /// Death
     /// </summary>
     public override void Death()
     {

@@ -138,6 +138,17 @@ public class NPCHandler : MonoBehaviour
     }
 
     /// <summary>
+    /// NPC blocking for X amount of seconds
+    /// </summary>
+    /// <param name="npcAnimator"></param>
+    /// <param name="delay"></param>
+    IEnumerator NPCBlock(NPC npcBlocking, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        npcBlocking.isBlocking = false;
+    }
+
+    /// <summary>
     /// Execute the hits on the npcs
     /// </summary>
     /// <param name="hitAmount"></param>
@@ -147,6 +158,7 @@ public class NPCHandler : MonoBehaviour
         {
             npc.Block();
             RemoveHp(npc, hitAmount);
+            StartCoroutine(NPCBlock(npc, 1.5f));
         }
     }
 

@@ -24,6 +24,11 @@ public abstract class NPC : Entity
     public bool isDead { get; set; }
 
     /// <summary>
+    /// If the npc is currently blocking (getting hit)
+    /// </summary>
+    public bool isBlocking { get; set; }
+
+    /// <summary>
     /// If the npc has been spawned
     /// </summary>
     public bool isSpawned = false;
