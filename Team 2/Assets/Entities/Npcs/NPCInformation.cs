@@ -11,14 +11,14 @@ public static class NPCInformation
 {
     public enum NPCNames
     {
-        GOBLIN,
+        RED_BOAR,
         IMPLING,
         SHELLCRAB,
     }
 
     public enum NPCPrefabId
     {
-        GOBLIN,
+        RED_BOAR,
         IMPLING,
         SHELLCRAB,
     }

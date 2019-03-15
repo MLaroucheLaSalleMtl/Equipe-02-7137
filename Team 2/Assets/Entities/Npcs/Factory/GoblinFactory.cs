@@ -5,9 +5,9 @@ using UnityEngine;
 /// <summary>
 /// @author Samuel Paquette
 /// @date 15 FEB 19
-/// @description The creator of goblins
+/// @description The creator of red boars
 /// </summary>
-public class GoblinFactory : MonsterFactory
+public class RedboarFactory : MonsterFactory
 {
 
     /// <summary>
@@ -16,10 +16,10 @@ public class GoblinFactory : MonsterFactory
     /// <returns></returns>
     public override NPC CreateNewNpc(int instanceId, string displayName, int level, int maxHp, int currentHp)
     {
-        Goblin newGoblin = new Goblin(instanceId, displayName, level, maxHp, currentHp);
-        newGoblin.DropTable.Add(new ItemDrop(new Item(0, 0, "Sword", "Nice sword", 5, null, null, ItemInformation.ItemRarity.LEGENDARY)
+        RedBoar newBoar = new RedBoar(instanceId, displayName, level, maxHp, currentHp);
+        newBoar.DropTable.Add(new ItemDrop(new Item(0, 0, "Sword", "Nice sword", 5, null, null, ItemInformation.ItemRarity.LEGENDARY)
                                     , ItemInformation.RarityChances.LEGENDARY, 1, 1));
-        return newGoblin;
+        return newBoar;
     }
     
 }

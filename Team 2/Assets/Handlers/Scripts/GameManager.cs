@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         playerHandler.CreatePlayer("Satucre", 1, 10, 1, 0, 0, 0, 150, new WarriorClass(), GameObject.Find("Player"));
 
         //Spawn monsters for testing purposes
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(-11, 31, -5), "Goblin", 1, 2, 2);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.RED_BOAR, new Position(-11, 31, -5), "Red Boar", 2, 10, 10);
     }
 
     /// <summary>

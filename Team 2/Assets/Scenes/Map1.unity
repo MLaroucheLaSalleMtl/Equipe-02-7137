@@ -8699,11 +8699,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5439887086803611260, guid: dc826dc3a9a8f144997472abe4784cf8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 265047276161106017, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8779,16 +8774,6 @@ PrefabInstance:
       propertyPath: attacksAnimator.Array.data[0]
       value: 
       objectReference: {fileID: 7299533629709501280}
-    - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
-        type: 3}
-      propertyPath: PlayerBarTexts.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
-        type: 3}
-      propertyPath: PlayerBarMasks.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
       propertyPath: PlayerBarTexts.Array.data[0]

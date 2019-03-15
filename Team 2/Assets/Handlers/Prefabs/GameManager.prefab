@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcPrefabs:
-  - {fileID: 100702, guid: a8fe9acb1e0f9f74c81a0ac4738f9efe, type: 3}
+  - {fileID: 177538, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
   - {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 3}
   - {fileID: 119272, guid: 8c66e2fd21d94be41ab66f591a280f29, type: 3}
 --- !u!114 &5439887086803611263
@@ -77,6 +77,10 @@ MonoBehaviour:
   PlayerBarTexts:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PlayerBarMasks:
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &624672885

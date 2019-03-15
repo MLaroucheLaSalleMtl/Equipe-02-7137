@@ -26,7 +26,7 @@ public class NPCHandler : MonoBehaviour
     private void InitializeFactories ()
     {
         NPCFactories = new List<MonsterFactory>();
-        NPCFactories.Add(new GoblinFactory());
+        NPCFactories.Add(new RedboarFactory());
         NPCFactories.Add(new ImplingFactory());
         NPCFactories.Add(new ShellCrabFactory());
     }
@@ -53,10 +53,10 @@ public class NPCHandler : MonoBehaviour
     {
         switch (name)
         {
-            case NPCInformation.NPCNames.GOBLIN:
-                Goblin newGoblin = (Goblin) NPCFactories.Find(x => x.GetType() == typeof(GoblinFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
-                SpawnedNPCs.Add(newGoblin.InstanceId, newGoblin);
-                newGoblin.Spawn(position);
+            case NPCInformation.NPCNames.RED_BOAR:
+                RedBoar newRedBoar = (RedBoar) NPCFactories.Find(x => x.GetType() == typeof(RedboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newRedBoar.InstanceId, newRedBoar);
+                newRedBoar.Spawn(position);
                 break;
             case NPCInformation.NPCNames.IMPLING:
                 Impling newImpling = (Impling)NPCFactories.Find(x => x.GetType() == typeof(ImplingFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
@@ -103,8 +103,8 @@ public class NPCHandler : MonoBehaviour
     {
         foreach (NPC npc in npcsGettingHit)
         {
-            RemoveHp(npc, hitAmount);
             npc.Block();
+            RemoveHp(npc, hitAmount);
         }
     }
 
