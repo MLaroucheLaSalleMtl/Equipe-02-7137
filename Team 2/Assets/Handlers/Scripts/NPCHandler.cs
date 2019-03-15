@@ -96,6 +96,19 @@ public class NPCHandler : MonoBehaviour
     }
 
     /// <summary>
+    /// Execute the hits on the npcs
+    /// </summary>
+    /// <param name="hitAmount"></param>
+    public void ExecuteHits(int hitAmount, NPC[] npcsGettingHit)
+    {
+        foreach (NPC npc in npcsGettingHit)
+        {
+            RemoveHp(npc, hitAmount);
+            npc.Block();
+        }
+    }
+
+    /// <summary>
     /// Removes a certain amount of hp from a npc and handles the death if it's the case
     /// </summary>
     /// <param name="npcToRemoveHp"></param>

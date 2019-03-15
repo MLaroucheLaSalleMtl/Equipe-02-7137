@@ -68,14 +68,11 @@ public class WarriorClass : PlayerClass
     /// <summary>
     /// Does a basic attack
     /// </summary>
-    public void BasicAttack(NPC[] npcsToAttack)
+    public void BasicAttack(NPC[] npcsGettingHit)
     {
-        if (npcsToAttack.Length > 0)
+        if (npcsGettingHit.Length > 0)
         {
-            for (int index = 0; index < npcsToAttack.Length; index++)
-            {
-                manager.npcHandler.RemoveHp(npcsToAttack[index], GetBasicAttackDamage(1));
-            }
+            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("BasicAttack");
     }
@@ -84,14 +81,11 @@ public class WarriorClass : PlayerClass
     /// E swing with axe
     /// </summary>
     /// <param name="npcsToAttack"></param>
-    public void SwingAttack(NPC[] npcsToAttack)
+    public void SwingAttack(NPC[] npcsGettingHit)
     {
-        if (npcsToAttack.Length > 0)
+        if (npcsGettingHit.Length > 0)
         {
-            for (int index = 0; index < npcsToAttack.Length; index++)
-            {
-                manager.npcHandler.RemoveHp(npcsToAttack[index], GetBasicAttackDamage(1));
-            }
+            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("SwingAttack");
     }
@@ -100,14 +94,11 @@ public class WarriorClass : PlayerClass
     /// Jump attack
     /// </summary>
     /// <param name="npcsToAttack"></param>
-    public void JumpAttack(NPC[] npcsToAttack)
+    public void JumpAttack(NPC[] npcsGettingHit)
     {
-        if (npcsToAttack.Length > 0)
+        if (npcsGettingHit.Length > 0)
         {
-            for (int index = 0; index < npcsToAttack.Length; index++)
-            {
-                manager.npcHandler.RemoveHp(npcsToAttack[index], GetBasicAttackDamage(1));
-            }
+            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("JumpAttack");
     }
@@ -116,14 +107,11 @@ public class WarriorClass : PlayerClass
     /// Double swing attack
     /// </summary>
     /// <param name="npcsToAttack"></param>
-    public void DoubleSwingAttack(NPC[] npcsToAttack)
+    public void DoubleSwingAttack(NPC[] npcsGettingHit)
     {
-        if (npcsToAttack.Length > 0)
+        if (npcsGettingHit.Length > 0)
         {
-            for (int index = 0; index < npcsToAttack.Length; index++)
-            {
-                manager.npcHandler.RemoveHp(npcsToAttack[index], GetBasicAttackDamage(2));
-            }
+            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("DoubleSwingAttack");
     }

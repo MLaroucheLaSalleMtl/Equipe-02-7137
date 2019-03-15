@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// @date 1 February 2019
 /// @description The abstract design of a non playable character.
 /// </summary>
-public class NPC : Entity
+public abstract class NPC : Entity
 {
 
     #region Fields
@@ -198,6 +198,14 @@ public class NPC : Entity
         UpdateOverlay();
         isDead = false;
         isSpawned = true;
+    }
+
+    /// <summary>
+    /// Execute the block animation of the npc
+    /// </summary>
+    public virtual void Block ()
+    {
+        throw new System.Exception("Abstract NPC cannot block, please implement the block method in your monster class.");
     }
 
     /// <summary>

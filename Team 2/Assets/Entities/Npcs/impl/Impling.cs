@@ -60,12 +60,21 @@ public class Impling : NPC
     }
 
     /// <summary>
+    /// Block animation of an impling
+    /// </summary>
+    public override void Block ()
+    {
+        Animator.SetTrigger("Block");
+    }
+
+    /// <summary>
     /// Goblin death
     /// </summary>
     public override void Death()
     {
         if (!isDead)
         {
+            Animator.SetTrigger("Death");
             Debug.Log("Impling is dead.");
             base.Death();
         }

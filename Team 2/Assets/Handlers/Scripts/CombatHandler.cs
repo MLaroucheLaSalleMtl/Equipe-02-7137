@@ -65,43 +65,51 @@ public class CombatHandler : MonoBehaviour
         switch (Manager.player.Class.Id)
         {
             case ClassesInformation.ClassesId.WARRIOR:
-                WarriorClass playerClass = Manager.player.Class as WarriorClass;
-                switch (keyIndex)
+                WarriorAttack(keyIndex);
+                break;
+        }
+
+    }
+
+    /// <summary>
+    /// Attack for the warrior class
+    /// </summary>
+    public void WarriorAttack (int keyIndex)
+    {
+        WarriorClass playerClass = Manager.player.Class as WarriorClass;
+        switch (keyIndex)
+        {
+            case (int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK:
+
+                if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK))
                 {
-                    case (int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK:
-                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK))
-                        {
-                            CurrentHitbox = GameObject.Find("BasicAttackHitbox");
-                            playerClass.BasicAttack(NpcsCurrentlyInHitbox.ToArray());
-                            Manager.player.RemoveHp(1);
-                            Manager.playerHandler.UpdatePlayerBarUI();
-                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK];
-                        }
-                        break;
-                    case (int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK:
-                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK))
-                        {
-                            CurrentHitbox = GameObject.Find("SwingAttackHitbox");
-                            playerClass.SwingAttack(NpcsCurrentlyInHitbox.ToArray());
-                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK];
-                        }
-                        break;
-                    case (int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK:
-                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK))
-                        {
-                            CurrentHitbox = GameObject.Find("JumpAttackHitbox");
-                            playerClass.JumpAttack(NpcsCurrentlyInHitbox.ToArray());
-                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK];
-                        }
-                        break;
-                    case (int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK:
-                        if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK))
-                        {
-                            CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
-                            playerClass.DoubleSwingAttack(NpcsCurrentlyInHitbox.ToArray());
-                            TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK];
-                        }
-                        break;
+                    CurrentHitbox = GameObject.Find("BasicAttackHitbox");
+                    playerClass.BasicAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
+                    TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK];
+                }
+                break;
+            case (int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK:
+                if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK))
+                {
+                    CurrentHitbox = GameObject.Find("SwingAttackHitbox");
+                    playerClass.SwingAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
+                    TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK];
+                }
+                break;
+            case (int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK:
+                if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK))
+                {
+                    CurrentHitbox = GameObject.Find("JumpAttackHitbox");
+                    playerClass.JumpAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
+                    TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK];
+                }
+                break;
+            case (int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK:
+                if (CanUseAttack((int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK))
+                {
+                    CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
+                    playerClass.DoubleSwingAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
+                    TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK];
                 }
                 break;
         }
