@@ -149,6 +149,27 @@ public class NPCHandler : MonoBehaviour
     }
 
     /// <summary>
+    /// NPC attacking for X seconds
+    /// </summary>
+    /// <param name="npcAnimator"></param>
+    /// <param name="delay"></param>
+    IEnumerator NPCAttack(NPC npcAttacking, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        npcAttacking.isAttacking = false;
+    }
+
+    /// <summary>
+    /// Handle the attack of a NPC
+    /// </summary>
+    public void HandleAttack (NPC npcAttacking)
+    {
+        npcAttacking.Attack(Manager.player);
+        StartCoroutine(NPCAttack(npcAttacking, 1.5f));
+        Manager.playerHandler.UpdatePlayerBarUI();
+    }
+
+    /// <summary>
     /// Execute the hits on the npcs
     /// </summary>
     /// <param name="hitAmount"></param>

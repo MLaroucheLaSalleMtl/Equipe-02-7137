@@ -29,6 +29,21 @@ public abstract class NPC : Entity
     public bool isBlocking { get; set; }
 
     /// <summary>
+    /// Attack another entity
+    /// </summary>
+    public bool isAttacking { get; set; }
+
+    /// <summary>
+    /// Cool down between attacks
+    /// </summary>
+    public float AttackCooldown { get; set; } = 3f;
+
+    /// <summary>
+    /// Cooldown left to attack
+    /// </summary>
+    public float CooldownLeft { get; set; } = 3f;
+
+    /// <summary>
     /// If the npc has been spawned
     /// </summary>
     public bool isSpawned = false;
@@ -201,8 +216,11 @@ public abstract class NPC : Entity
         Overlay = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterOverlay").GetComponent<Text>();
         OverlayHP = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterHP").GetComponent<Text>();
         UpdateOverlay();
+        Strength = Level;
         isDead = false;
         isSpawned = true;
+        isAttacking = false;
+        isBlocking = false;
     }
 
     /// <summary>

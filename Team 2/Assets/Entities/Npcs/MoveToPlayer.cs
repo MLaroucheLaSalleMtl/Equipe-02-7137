@@ -39,7 +39,7 @@ public class MoveToPlayer : MonoBehaviour
     {
         if (cooldown <= 0f)
         {
-            if (!movingNpc.isDead && !movingNpc.isBlocking)
+            if (!movingNpc.isDead && !movingNpc.isBlocking && !movingNpc.isAttacking)
             {
                 if (Mathf.Abs(Vector3.Distance(transform.position, playerTransform.position)) >= 2.80f)
                 {
@@ -47,6 +47,11 @@ public class MoveToPlayer : MonoBehaviour
                 }
                 else
                 {
+                    if (movingNpc.CooldownLeft <= 0f)
+                    {
+                        manager.npcHandler.HandleAttack(movingNpc);
+                        movingNpc.CooldownLeft = movingNpc.AttackCooldown;
+                    }
                     npc.destination = transform.position;
                 }
             }
@@ -58,6 +63,13 @@ public class MoveToPlayer : MonoBehaviour
         else
         {
             cooldown -= Time.deltaTime;
+        }
+
+        //Decreasing cooldown of npc attack
+        movingNpc.CooldownLeft -= Time.deltaTime;
+        if (movingNpc.CooldownLeft <= 0f)
+        {
+            movingNpc.CooldownLeft = 0f;
         }
     }
 }

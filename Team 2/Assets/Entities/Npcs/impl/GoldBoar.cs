@@ -64,8 +64,11 @@ public class GoldBoar : NPC
     /// </summary>
     public override void Block ()
     {
-        isBlocking = true;
-        Animator.SetTrigger("Block");
+        if (!isDead)
+        {
+            isBlocking = true;
+            Animator.SetTrigger("Block");
+        }
     }
 
     /// <summary>
@@ -79,6 +82,17 @@ public class GoldBoar : NPC
             Debug.Log("Gold boar is dead.");
             base.Death();
         }
+    }
+
+    /// <summary>
+    /// Attack another entity
+    /// </summary>
+    /// <param name="toAttack"></param>
+    public override void Attack(Entity toAttack)
+    {
+        isAttacking = true;
+        Animator.SetTrigger("Attack");
+        base.Attack(toAttack);
     }
 
     #endregion
