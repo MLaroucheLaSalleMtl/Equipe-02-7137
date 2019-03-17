@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public PlayerHandler playerHandler { get; set; }
     public ItemHandler itemHandler { get; set; }
     public CombatHandler combatHandler { get; set; }
+    public Interactable interactableFocus { get; set; }
+    public LayerMask interactableMask;
 
     /// <summary>
     /// Called when the game is launched
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
         playerHandler.CreatePlayer("Satucre", 1, 10, 1, 0, 0, 0, 150, new WarriorClass(), GameObject.Find("Player"));
 
         //Spawn monsters for testing purposes
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.RED_DRAGON, new Position(-11, 31, -5), "Red Dragon", 3, 15, 15);
+        //npcHandler.SpawnNPC(NPCInformation.NPCNames.RED_DRAGON, new Position(-11, 31, -5), "Red Dragon", 3, 15, 15);
     }
 
     /// <summary>
@@ -65,25 +67,84 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Interact with something
+    /// </summary>
+    public void Interact ()
+    {
+        //does a raycast to where the mouse is pointing at
+        Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //the hit of the raycast
+        RaycastHit hit;
+
+        //checks if the raycast hit something
+        if (Physics.Raycast(raycast, out hit, 100, interactableMask))
+        {
+            //get the interactable component of what we hit with the raycast
+            Interactable interactableHit = hit.collider.GetComponent<Interactable>();
+
+            //if its null, its because what we hit isnt an interactable
+            if (interactableHit != null)
+            {
+                Debug.Log("Interactable hit");
+                interactableFocus = interactableHit;
+                interactableFocus.OnInteract(player);
+                StartCoroutine(ExecuteFacing(1f));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Execute the facing coroutine
+    /// </summary>
+    /// <param name="delay"></param>
+    /// <returns></returns>
+    IEnumerator ExecuteFacing(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        interactableFocus = null;
+    }
+
+    /// <summary>
+    /// Faces the interactable object that we clicked on
+    /// </summary>
+    private void FaceInteractable ()
+    {
+        //vector substraction to get the direction the player should look towards
+        Vector3 direction = (interactableFocus.transform.position - player.WorldModel.transform.position).normalized;
+        //creates the quaternion with our rotation vector
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+        //change the actual rotation of our player with a slerp (so its not instantly but smooth)
+        player.WorldModel.transform.rotation = Quaternion.Slerp(player.WorldModel.transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    /// <summary>
     /// Called each game tick
     /// </summary>
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Ability 1"))
         {
-            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK);
+            FirstAbilityButtonClick();
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetButtonDown("Ability 2"))
         {
-            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK);
+            SecondAbilityButtonClick();
         }
-        else if (Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetButtonDown("Ability 3"))
         {
-            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK);
+            ThirdAbilityButtonClick();
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetButtonDown("Ability 4"))
         {
-            combatHandler.Attack((int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK);
+            FourthAbilityButtonClick();
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            Interact();
+        }
+        if (interactableFocus != null)
+        {
+            FaceInteractable();
         }
     }
 }
