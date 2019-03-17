@@ -59,12 +59,8 @@ public class Skeleton : NPC
     /// </summary>
     public override void Block()
     {
-        if (!isBlocking && !isDead && !isAttacking)
-        {
-            isBlocking = true;
-            NPCAnimator.SetTrigger("Action");
-        }
-        NPCAnimator.SetFloat("State", (float)NPCInformation.NPCStateInfo.BLOCK);
+        ExecuteActionState(NPCInformation.NPCStateInfo.BLOCK);
+        isBlocking = true;
     }
 
     /// <summary>
@@ -72,11 +68,7 @@ public class Skeleton : NPC
     /// </summary>
     public override void Death()
     {
-        if (!isBlocking && !isDead && !isAttacking)
-        {
-            NPCAnimator.SetTrigger("Action");
-        }
-        NPCAnimator.SetFloat("State", (float)NPCInformation.NPCStateInfo.DEATH);
+        ExecuteActionState(NPCInformation.NPCStateInfo.DEATH);
         base.Death();
     }
 
@@ -86,12 +78,8 @@ public class Skeleton : NPC
     /// <param name="toAttack"></param>
     public override void Attack(Entity toAttack)
     {
-        if (!isBlocking && !isDead && !isAttacking)
-        {
-            isAttacking = true;
-            NPCAnimator.SetTrigger("Action");
-        }
-        NPCAnimator.SetFloat("State", (float)NPCInformation.NPCStateInfo.ATTACK);
+        ExecuteActionState(NPCInformation.NPCStateInfo.ATTACK);
+        isAttacking = true;
         base.Attack(toAttack);
     }
 

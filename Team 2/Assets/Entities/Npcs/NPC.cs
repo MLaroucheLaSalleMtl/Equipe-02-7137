@@ -251,6 +251,33 @@ public abstract class NPC : Entity
         isDead = true;
     }
 
+    /// <summary>
+    /// Reset the action state
+    /// </summary>
+    public void ResetState ()
+    {
+        NPCAnimator.SetFloat("State", 0f);
+    }
+
+    public void ActionDone()
+    {
+        NPCAnimator.SetTrigger("ActionDone");
+    }
+
+    /// <summary>
+    /// Execute an action state
+    /// </summary>
+    /// <param name=""></param>
+    public void ExecuteActionState(NPCInformation.NPCStateInfo state)
+    {
+        if (!isBlocking && !isDead && !isAttacking)
+        {
+            NPCAnimator.SetTrigger("Action");
+        }
+        ResetState();
+        NPCAnimator.SetFloat("State", (float)state);
+    }
+
     #endregion
    
     #region NPC display / UI

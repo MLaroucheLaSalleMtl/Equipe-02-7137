@@ -146,7 +146,7 @@ public class NPCHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         npcBlocking.isBlocking = false;
-        npcBlocking.NPCAnimator.SetTrigger("ActionDone");
+        npcBlocking.ActionDone();
     }
 
     /// <summary>
@@ -158,7 +158,7 @@ public class NPCHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         npcAttacking.isAttacking = false;
-        npcAttacking.NPCAnimator.SetTrigger("ActionDone");
+        npcAttacking.ActionDone();
     }
 
     /// <summary>
@@ -181,7 +181,8 @@ public class NPCHandler : MonoBehaviour
         {
             npc.Block();
             RemoveHp(npc, hitAmount);
-            StartCoroutine(NPCBlock(npc, 1.5f));
+            if (!npc.isDead)
+                StartCoroutine(NPCBlock(npc, 1.5f));
         }
     }
 
