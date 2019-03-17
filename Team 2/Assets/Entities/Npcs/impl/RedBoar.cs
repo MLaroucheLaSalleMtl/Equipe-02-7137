@@ -10,11 +10,6 @@ using UnityEngine;
 public class RedBoar : NPC
 {
 
-    /// <summary>
-    /// The animator of the npc
-    /// </summary>
-    public Animator Animator { get; set; }
-
     private GameObject redboarPrefab;
 
     #region Constructors
@@ -53,7 +48,7 @@ public class RedBoar : NPC
             WorldPosition = pos;
             WorldModel = Object.Instantiate(redboarPrefab);
             WorldModel.name = $"Monster,{InstanceId}";
-            Animator = WorldModel.GetComponent<Animator>();
+            NPCAnimator = WorldModel.GetComponent<Animator>();
             WorldModel.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
         }
         base.Spawn(pos);
@@ -67,7 +62,7 @@ public class RedBoar : NPC
         if (!isDead)
         {
             isBlocking = true;
-            Animator.SetTrigger("Block");
+            NPCAnimator.SetTrigger("Block");
         }
     }
 
@@ -78,7 +73,7 @@ public class RedBoar : NPC
     {
         if (!isDead)
         {
-            Animator.SetTrigger("Death");
+            NPCAnimator.SetTrigger("Death");
             Debug.Log("Red boar is dead.");
             base.Death();
         }
@@ -91,7 +86,7 @@ public class RedBoar : NPC
     public override void Attack(Entity toAttack)
     {
         isAttacking = true;
-        Animator.SetTrigger("Attack");
+        NPCAnimator.SetTrigger("Attack");
         base.Attack(toAttack);
     }
 

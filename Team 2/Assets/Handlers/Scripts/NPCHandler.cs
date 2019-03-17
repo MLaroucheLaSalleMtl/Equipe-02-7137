@@ -28,7 +28,7 @@ public class NPCHandler : MonoBehaviour
         NPCFactories = new List<MonsterFactory>();
         NPCFactories.Add(new RedboarFactory());
         NPCFactories.Add(new ImplingFactory());
-        NPCFactories.Add(new ShellCrabFactory());
+        NPCFactories.Add(new SkeletonFactory());
         NPCFactories.Add(new BlueboarFactory());
         NPCFactories.Add(new GreenboarFactory());
         NPCFactories.Add(new GoldboarFactory());
@@ -70,10 +70,10 @@ public class NPCHandler : MonoBehaviour
                 SpawnedNPCs.Add(newImpling.InstanceId, newImpling);
                 newImpling.Spawn(position);
                 break;
-            case NPCInformation.NPCNames.SHELLCRAB:
-                ShellCrab newShellCrab = (ShellCrab)NPCFactories.Find(x => x.GetType() == typeof(ShellCrabFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
-                SpawnedNPCs.Add(newShellCrab.InstanceId, newShellCrab);
-                newShellCrab.Spawn(position);
+            case NPCInformation.NPCNames.SKELETON:
+                Skeleton newSkeleton = (Skeleton)NPCFactories.Find(x => x.GetType() == typeof(SkeletonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
+                SpawnedNPCs.Add(newSkeleton.InstanceId, newSkeleton);
+                newSkeleton.Spawn(position);
                 break;
             case NPCInformation.NPCNames.BLUE_BOAR:
                 BlueBoar newBlueBoar = (BlueBoar)NPCFactories.Find(x => x.GetType() == typeof(BlueboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
@@ -146,6 +146,7 @@ public class NPCHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         npcBlocking.isBlocking = false;
+        npcBlocking.NPCAnimator.SetTrigger("ActionDone");
     }
 
     /// <summary>
@@ -157,6 +158,7 @@ public class NPCHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         npcAttacking.isAttacking = false;
+        npcAttacking.NPCAnimator.SetTrigger("ActionDone");
     }
 
     /// <summary>

@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         playerHandler.CreatePlayer("Satucre", 1, 10, 1, 0, 0, 0, 150, new WarriorClass(), GameObject.Find("Player"));
 
         //Spawn monsters for testing purposes
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.IMPLING, new Position(-11, 31, -5), "Red Dragon", 1, 5, 55);
+        npcHandler.SpawnNPC(NPCInformation.NPCNames.SKELETON, new Position(-11, 31, -5), "Skeleton", 1, 5, 5);
     }
 
     /// <summary>

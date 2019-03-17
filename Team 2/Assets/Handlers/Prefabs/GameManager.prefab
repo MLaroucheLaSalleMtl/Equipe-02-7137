@@ -64,7 +64,7 @@ MonoBehaviour:
   npcPrefabs:
   - {fileID: 177538, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
   - {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 3}
-  - {fileID: 119272, guid: 8c66e2fd21d94be41ab66f591a280f29, type: 3}
+  - {fileID: 503772515, guid: d7b870c909425e841a6cdce0b7c77a47, type: 3}
   - {fileID: 113038, guid: 907325ec940ecbf409d1505976f5fcd5, type: 3}
   - {fileID: 107872, guid: 7add1d5b90ab7234d92b5feb2d77c953, type: 3}
   - {fileID: 166316, guid: 36dd14b7ef773c54e96eb7d110c8b5ce, type: 3}

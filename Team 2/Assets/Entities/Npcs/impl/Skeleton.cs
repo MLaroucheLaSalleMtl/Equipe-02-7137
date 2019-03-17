@@ -4,34 +4,34 @@ using UnityEngine;
 
 /// <summary>
 /// @author Samuel Paquette
-/// @date 15 Mars 2019
-/// @description A blue dragon npc
+/// @date 21 February 2019
+/// @description A simple Skeleton NPC
 /// </summary>
-public class BlueDragon : NPC
+public class Skeleton : NPC
 {
 
-    private GameObject npcPrefab;
+    private GameObject prefab;
 
     #region Constructors
 
-    public BlueDragon(int spawnId)
+    public Skeleton (int spawnId)
     {
         InstanceId = spawnId;
         level = 1;
-        displayName = "Blue Dragon";
+        displayName = "Skeleton";
         maxHp = level * NPCInformation.HPRate;
         currentHp = maxHp;
-        npcPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.BLUE_DRAGON];
+        prefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.SKELETON];
     }
 
-    public BlueDragon(int spawnId, string name, int level, int maxHp, int currentHp)
+    public Skeleton(int spawnId, string name, int level, int maxHp, int currentHp)
     {
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        npcPrefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.BLUE_DRAGON];
+        prefab = GameObject.Find("GameManager").GetComponent<NPCHandler>().npcPrefabs[(int)NPCInformation.NPCPrefabId.SKELETON];
     }
 
     #endregion
@@ -39,14 +39,14 @@ public class BlueDragon : NPC
     #region Interactions
 
     /// <summary>
-    /// Spawn
+    /// Spawn a this npc
     /// </summary>
     public override void Spawn(Position pos)
     {
         if (!isSpawned)
         {
             WorldPosition = pos;
-            WorldModel = Object.Instantiate(npcPrefab);
+            WorldModel = Object.Instantiate(prefab);
             WorldModel.name = $"Monster,{InstanceId}";
             NPCAnimator = WorldModel.GetComponent<Animator>();
             WorldModel.transform.position = new Vector3(WorldPosition.X, WorldPosition.Y, WorldPosition.Z);
@@ -55,15 +55,16 @@ public class BlueDragon : NPC
     }
 
     /// <summary>
-    /// Block
+    /// Block animation
     /// </summary>
-    public override void Block ()
+    public override void Block()
     {
-        if (!isDead)
+        if (!isBlocking && !isDead && !isAttacking)
         {
             isBlocking = true;
-            NPCAnimator.SetTrigger("Block");
+            NPCAnimator.SetTrigger("Action");
         }
+        NPCAnimator.SetFloat("State", (float)NPCInformation.NPCStateInfo.BLOCK);
     }
 
     /// <summary>
@@ -71,12 +72,12 @@ public class BlueDragon : NPC
     /// </summary>
     public override void Death()
     {
-        if (!isDead)
+        if (!isBlocking && !isDead && !isAttacking)
         {
-            NPCAnimator.SetTrigger("Death");
-            Debug.Log("Blue Dragon is dead.");
-            base.Death();
+            NPCAnimator.SetTrigger("Action");
         }
+        NPCAnimator.SetFloat("State", (float)NPCInformation.NPCStateInfo.DEATH);
+        base.Death();
     }
 
     /// <summary>
@@ -85,8 +86,12 @@ public class BlueDragon : NPC
     /// <param name="toAttack"></param>
     public override void Attack(Entity toAttack)
     {
-        isAttacking = true;
-        NPCAnimator.SetTrigger("Attack");
+        if (!isBlocking && !isDead && !isAttacking)
+        {
+            isAttacking = true;
+            NPCAnimator.SetTrigger("Action");
+        }
+        NPCAnimator.SetFloat("State", (float)NPCInformation.NPCStateInfo.ATTACK);
         base.Attack(toAttack);
     }
 

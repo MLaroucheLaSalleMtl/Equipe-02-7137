@@ -13,7 +13,7 @@ public static class NPCInformation
     {
         RED_BOAR,
         IMPLING,
-        SHELLCRAB,
+        SKELETON,
         BLUE_BOAR,
         GREEN_BOAR,
         GOLD_BOAR,
@@ -27,7 +27,7 @@ public static class NPCInformation
     {
         RED_BOAR,
         IMPLING,
-        SHELLCRAB,
+        SKELETON,
         BLUE_BOAR,
         GREEN_BOAR,
         GOLD_BOAR,
@@ -35,6 +35,13 @@ public static class NPCInformation
         GREEN_DRAGON,
         PURPLE_DRAGON,
         RED_DRAGON,
+    }
+
+    //Animator state info
+    public enum NPCStateInfo {
+        ATTACK,
+        BLOCK,
+        DEATH,
     }
 
     public const int HPRate = 10;

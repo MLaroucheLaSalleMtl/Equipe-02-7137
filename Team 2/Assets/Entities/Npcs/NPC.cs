@@ -14,6 +14,11 @@ public abstract class NPC : Entity
     #region Fields
 
     /// <summary>
+    /// the animator of the npc
+    /// </summary>
+    public Animator NPCAnimator { get; set; }
+
+    /// <summary>
     /// The spawn Id of the npc (currently spawned)
     /// </summary>
     public int InstanceId { get; set; }
