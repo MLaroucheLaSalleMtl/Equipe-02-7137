@@ -177,8 +177,18 @@ public class Player : Entity
     /// <summary>
     /// If the player is currently attacking or not
     /// </summary>
-    public bool isAttacking { get; set; }
+    public bool IsAttacking { get; set; }
    
+    /// <summary>
+    /// animator of the player
+    /// </summary>
+    public Animator PlayerController { get; set; }
+
+    /// <summary>
+    /// is the player dead or not
+    /// </summary>
+    public bool IsDead { get; set; }
+
     #endregion
 
     #region Player interaction
@@ -243,7 +253,8 @@ public class Player : Entity
     /// </summary>
     public virtual void Death()
     {
-        Debug.Log("I am dead");
+        PlayerController.SetTrigger("Death");
+        IsDead = true;
     }
 
     /// <summary>
@@ -253,7 +264,15 @@ public class Player : Entity
     public override void RemoveHp(int amount)
     {
         int amountToRemove = Mathf.Abs(amount);
-        currentHp -= amountToRemove;
+        if (currentHp <= amountToRemove)
+        {
+            currentHp = 0;
+            Death();
+        }
+        else
+        {
+            currentHp -= amountToRemove;
+        }
     }
 
     /// <summary>
@@ -290,7 +309,9 @@ public class Player : Entity
         GiveHp(MaxHP);
         SetLevel(level);
         Experience = GetXpToLevelUp(level - 1);
-        isAttacking = false;
+        IsAttacking = false;
+        PlayerController = WorldModel.GetComponent<Animator>();
+        IsDead = false;
     }
 
     #endregion

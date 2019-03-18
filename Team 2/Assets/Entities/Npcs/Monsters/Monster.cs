@@ -270,9 +270,12 @@ public abstract class Monster : Entity
     /// <param name=""></param>
     public void ExecuteActionState(MonsterInformation.MonstersStateInfo state)
     {
-        if (!isBlocking && !isDead && !isAttacking)
+        if (!isBlocking && !isAttacking && !isDead)
         {
             NPCAnimator.SetTrigger("Action");
+        }
+        if (NPCAnimator != null)
+        {
             ResetState();
             NPCAnimator.SetFloat("State", (float)state);
         }

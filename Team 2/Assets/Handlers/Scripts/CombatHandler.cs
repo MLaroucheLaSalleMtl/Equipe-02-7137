@@ -63,7 +63,7 @@ public class CombatHandler : MonoBehaviour
     public void Attack (int keyIndex = -1)
     {
         //-1 = not attacking
-        if (keyIndex == -1 || Manager.player.isAttacking)
+        if (keyIndex == -1 || Manager.player.IsAttacking)
         {
             return;
         }
@@ -164,9 +164,9 @@ public class CombatHandler : MonoBehaviour
     /// <returns></returns>
     IEnumerator AttackChainingInterval(float delay)
     {
-        Manager.player.isAttacking = true;
+        Manager.player.IsAttacking = true;
         yield return new WaitForSeconds(delay);
-        Manager.player.isAttacking = false;
+        Manager.player.IsAttacking = false;
     }
 
 }

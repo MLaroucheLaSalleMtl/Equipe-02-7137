@@ -123,29 +123,32 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (Input.GetButtonDown("Ability 1"))
+        if (!player.IsDead)
         {
-            FirstAbilityButtonClick();
-        }
-        else if (Input.GetButtonDown("Ability 2"))
-        {
-            SecondAbilityButtonClick();
-        }
-        else if (Input.GetButtonDown("Ability 3"))
-        {
-            ThirdAbilityButtonClick();
-        }
-        else if (Input.GetButtonDown("Ability 4"))
-        {
-            FourthAbilityButtonClick();
-        }
-        else if (Input.GetMouseButtonDown(0))
-        {
-            Interact();
-        }
-        if (interactableFocus != null)
-        {
-            FaceInteractable();
+            if (Input.GetButtonDown("Ability 1"))
+            {
+                FirstAbilityButtonClick();
+            }
+            else if (Input.GetButtonDown("Ability 2"))
+            {
+                SecondAbilityButtonClick();
+            }
+            else if (Input.GetButtonDown("Ability 3"))
+            {
+                ThirdAbilityButtonClick();
+            }
+            else if (Input.GetButtonDown("Ability 4"))
+            {
+                FourthAbilityButtonClick();
+            }
+            else if (Input.GetMouseButtonDown(0))
+            {
+                Interact();
+            }
+            if (interactableFocus != null)
+            {
+                FaceInteractable();
+            }
         }
     }
 }
