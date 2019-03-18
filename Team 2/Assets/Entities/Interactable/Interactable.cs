@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
     /// Execute the action of the interactable
     /// </summary>
     /// <param name="player"></param>
-    protected virtual void ExecuteAction(Player player)
+    public virtual void ExecuteAction(Player player)
     {
         Debug.LogWarning("Abstract interactable action called. Supposed to be overwritten.");
     }

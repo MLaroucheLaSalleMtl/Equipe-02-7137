@@ -87,7 +87,6 @@ public class GameManager : MonoBehaviour
             //if its null, its because what we hit isnt an interactable
             if (interactableHit != null)
             {
-                Debug.Log("Interactable hit");
                 interactableFocus = interactableHit;
                 interactableFocus.OnInteract(player);
                 StartCoroutine(ExecuteFacing(1f));

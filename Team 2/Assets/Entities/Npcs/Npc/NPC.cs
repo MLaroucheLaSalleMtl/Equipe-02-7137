@@ -9,6 +9,14 @@ using UnityEngine;
 /// </summary>
 public class NPC : Interactable
 {
-    
+
+    /// <summary>
+    /// Interact with a npc
+    /// </summary>
+    /// <param name="player"></param>
+    public override void ExecuteAction(Player player)
+    {
+        Debug.Log("Talk to npc");
+    }
 
 }
