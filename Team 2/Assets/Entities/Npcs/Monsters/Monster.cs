@@ -273,9 +273,9 @@ public abstract class Monster : Entity
         if (!isBlocking && !isDead && !isAttacking)
         {
             NPCAnimator.SetTrigger("Action");
+            ResetState();
+            NPCAnimator.SetFloat("State", (float)state);
         }
-        ResetState();
-        NPCAnimator.SetFloat("State", (float)state);
     }
 
     #endregion

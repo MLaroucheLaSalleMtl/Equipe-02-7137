@@ -63,7 +63,7 @@ public class CombatHandler : MonoBehaviour
     public void Attack (int keyIndex = -1)
     {
         //-1 = not attacking
-        if (keyIndex == -1)
+        if (keyIndex == -1 || Manager.player.isAttacking)
         {
             return;
         }
@@ -73,7 +73,6 @@ public class CombatHandler : MonoBehaviour
                 WarriorAttack(keyIndex);
                 break;
         }
-
     }
 
     /// <summary>
@@ -91,6 +90,7 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("BasicAttackHitbox");
                     playerClass.BasicAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK];
+                    StartCoroutine(AttackChainingInterval(1.25f));
                 }
                 break;
             case (int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK:
@@ -99,6 +99,7 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("SwingAttackHitbox");
                     playerClass.SwingAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK];
+                    StartCoroutine(AttackChainingInterval(1.75f));
                 }
                 break;
             case (int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK:
@@ -107,6 +108,7 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("JumpAttackHitbox");
                     playerClass.JumpAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK];
+                    StartCoroutine(AttackChainingInterval(2f));
                 }
                 break;
             case (int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK:
@@ -115,9 +117,11 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
                     playerClass.DoubleSwingAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK];
+                    StartCoroutine(AttackChainingInterval(3.5f));
                 }
                 break;
         }
+        
     }
 
     /// <summary>
@@ -152,4 +156,17 @@ public class CombatHandler : MonoBehaviour
                 CooldownTexts[index].text = $"{Mathf.Ceil(TimeLeftOnCooldown[index])} sec{(TimeLeftOnCooldown[index] >= 1f ? "s" : "")}";
         }
     }
+
+    /// <summary>
+    /// Time before the player can use another ability (so he cant spam the 4 abilities at once)
+    /// </summary>
+    /// <param name="delay"></param>
+    /// <returns></returns>
+    IEnumerator AttackChainingInterval(float delay)
+    {
+        Manager.player.isAttacking = true;
+        yield return new WaitForSeconds(delay);
+        Manager.player.isAttacking = false;
+    }
+
 }

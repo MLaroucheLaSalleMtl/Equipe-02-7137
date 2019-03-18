@@ -10,6 +10,13 @@ using UnityEngine;
 public class NPC : Interactable
 {
 
+    Animator animator;
+
+    void Start ()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     /// <summary>
     /// Interact with a npc
     /// </summary>
@@ -17,6 +24,7 @@ public class NPC : Interactable
     public override void ExecuteAction(Player player)
     {
         Debug.Log("Talk to npc");
+        animator.SetTrigger("Dance");   
     }
 
 }

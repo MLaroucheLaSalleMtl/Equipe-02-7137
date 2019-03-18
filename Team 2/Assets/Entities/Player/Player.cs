@@ -174,11 +174,10 @@ public class Player : Entity
     /// </summary>
     public int Money { get; set; }
 
-
-    public Player()
-    {
-        level = 10;
-    }
+    /// <summary>
+    /// If the player is currently attacking or not
+    /// </summary>
+    public bool isAttacking { get; set; }
    
     #endregion
 
@@ -291,6 +290,7 @@ public class Player : Entity
         GiveHp(MaxHP);
         SetLevel(level);
         Experience = GetXpToLevelUp(level - 1);
+        isAttacking = false;
     }
 
     #endregion
