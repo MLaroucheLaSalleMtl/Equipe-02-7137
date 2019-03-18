@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
         {
             case ClassesInformation.ClassesId.WARRIOR:
                 int npcInstanceId = int.Parse(monster.gameObject.name.Split(',')[1]);
-                NPC npcToAttack = manager.npcHandler.SpawnedNPCs[npcInstanceId];
+                Monster npcToAttack = manager.monsterHandler.SpawnedMonsters[npcInstanceId];
                 if (manager.combatHandler.CanAttack(npcToAttack))
                 {
                    // manager.combatHandler.Attack(npcToAttack);

@@ -68,11 +68,11 @@ public class WarriorClass : PlayerClass
     /// <summary>
     /// Does a basic attack
     /// </summary>
-    public void BasicAttack(NPC[] npcsGettingHit)
+    public void BasicAttack(Monster[] npcsGettingHit)
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("BasicAttack");
     }
@@ -81,11 +81,11 @@ public class WarriorClass : PlayerClass
     /// E swing with axe
     /// </summary>
     /// <param name="npcsToAttack"></param>
-    public void SwingAttack(NPC[] npcsGettingHit)
+    public void SwingAttack(Monster[] npcsGettingHit)
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("SwingAttack");
     }
@@ -94,11 +94,11 @@ public class WarriorClass : PlayerClass
     /// Jump attack
     /// </summary>
     /// <param name="npcsToAttack"></param>
-    public void JumpAttack(NPC[] npcsGettingHit)
+    public void JumpAttack(Monster[] npcsGettingHit)
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("JumpAttack");
     }
@@ -107,11 +107,11 @@ public class WarriorClass : PlayerClass
     /// Double swing attack
     /// </summary>
     /// <param name="npcsToAttack"></param>
-    public void DoubleSwingAttack(NPC[] npcsGettingHit)
+    public void DoubleSwingAttack(Monster[] npcsGettingHit)
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.npcHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("DoubleSwingAttack");
     }

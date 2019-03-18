@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
 {
 
     public Player player { get; set; }
-    public NPCHandler npcHandler { get; set; }
+    public MonsterHandler monsterHandler { get; set; }
     public PlayerHandler playerHandler { get; set; }
     public ItemHandler itemHandler { get; set; }
     public CombatHandler combatHandler { get; set; }
+    public NPCHandler npcHandler { get; set; }
     public Interactable interactableFocus { get; set; }
     public LayerMask interactableMask;
 
@@ -23,15 +24,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        npcHandler = GetComponent<NPCHandler>();
+        monsterHandler = GetComponent<MonsterHandler>();
         playerHandler = GetComponent<PlayerHandler>();
         itemHandler = GetComponent<ItemHandler>();
         combatHandler = GetComponent<CombatHandler>();
+        npcHandler = GetComponent <NPCHandler>();
 
         playerHandler.CreatePlayer("Satucre", 1, 10, 1, 0, 0, 0, 150, new WarriorClass(), GameObject.Find("Player"));
 
         //Spawn monsters for testing purposes
-        npcHandler.SpawnNPC(NPCInformation.NPCNames.SKELETON, new Position(-11, 31, -5), "Skeleton", 1, 5, 5);
+        monsterHandler.SpawnMonster(MonsterInformation.MonsterNames.SKELETON, new Position(-11, 31, -5), "Skeleton", 1, 5, 5);
     }
 
     /// <summary>

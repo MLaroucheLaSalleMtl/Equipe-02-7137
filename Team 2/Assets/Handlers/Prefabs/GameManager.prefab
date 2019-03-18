@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7571137f1625d4cb5fae22d3890a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefabs:
+  monsterPrefabs:
   - {fileID: 177538, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
   - {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 3}
   - {fileID: 503772515, guid: d7b870c909425e841a6cdce0b7c77a47, type: 3}

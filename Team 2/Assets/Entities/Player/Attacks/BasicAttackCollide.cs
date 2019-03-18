@@ -16,7 +16,7 @@ public class BasicAttackCollide : MonoBehaviour
     {
         if (collider.gameObject.tag == "Monster")
         {
-            NPC npc = manager.npcHandler.SpawnedNPCs[int.Parse(collider.gameObject.name.Split(',')[1])];
+            Monster npc = manager.monsterHandler.SpawnedMonsters[int.Parse(collider.gameObject.name.Split(',')[1])];
             if (!manager.combatHandler.NpcsCurrentlyInHitbox.Contains(npc))
             {
                 manager.combatHandler.NpcsCurrentlyInHitbox.Add(npc);
@@ -28,7 +28,7 @@ public class BasicAttackCollide : MonoBehaviour
     {
         if (collider.gameObject.tag == "Monster")
         {
-            NPC npc = manager.npcHandler.SpawnedNPCs[int.Parse(collider.gameObject.name.Split(',')[1])];
+            Monster npc = manager.monsterHandler.SpawnedMonsters[int.Parse(collider.gameObject.name.Split(',')[1])];
             if (manager.combatHandler.NpcsCurrentlyInHitbox.Contains(npc))
             {
                 manager.combatHandler.NpcsCurrentlyInHitbox.Remove(npc);

@@ -13,7 +13,7 @@ public class CombatHandler : MonoBehaviour
     //bi directional link to the game manager
     GameManager Manager { get; set; }
     GameObject CurrentHitbox { get; set; }
-    public List<NPC> NpcsCurrentlyInHitbox { get; set; }
+    public List<Monster> NpcsCurrentlyInHitbox { get; set; }
 
     //the cooldown of the attacks of the player
     public float[] AttacksCooldown { get; set; }
@@ -30,6 +30,11 @@ public class CombatHandler : MonoBehaviour
     private void Awake()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        NpcsCurrentlyInHitbox = new List<Monster>();
+
+
+        AttacksCooldown = new float[ClassesInformation.AmountOfAttacks];
+        TimeLeftOnCooldown = new float[ClassesInformation.AmountOfAttacks];
     }
 
     /// <summary>
@@ -37,7 +42,7 @@ public class CombatHandler : MonoBehaviour
     /// </summary>
     /// <param name="npcToAttack"></param>
     /// <returns></returns>
-    public bool CanAttack (NPC npcToAttack)
+    public bool CanAttack (Monster npcToAttack)
     {
         switch (Manager.player.Class.Id)
         {
@@ -122,16 +127,6 @@ public class CombatHandler : MonoBehaviour
     public bool CanUseAttack(int attackIndex)
     {
         return TimeLeftOnCooldown[attackIndex] <= 0f;
-    }
-
-    /// <summary>
-    /// Called at the start of the game
-    /// </summary>
-    void Start()
-    {
-        NpcsCurrentlyInHitbox = new List<NPC>();
-        AttacksCooldown = new float[ClassesInformation.AmountOfAttacks];
-        TimeLeftOnCooldown = new float[ClassesInformation.AmountOfAttacks];
     }
 
     /// <summary>
