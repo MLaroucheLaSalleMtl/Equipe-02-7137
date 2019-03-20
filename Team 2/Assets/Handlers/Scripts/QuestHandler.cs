@@ -17,6 +17,8 @@ public class QuestHandler : MonoBehaviour
     public Sprite[] showSprites;
     public Transform questPanel;
     public float[] questPanelPosX;
+    public Quest currentQuest;
+    public GameManager manager;
 
     //if the quest tab is opened or not
     public bool isOpened;
@@ -24,6 +26,7 @@ public class QuestHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        manager = GetComponent<GameManager>();
         isOpened = false;
     }
 
@@ -31,6 +34,22 @@ public class QuestHandler : MonoBehaviour
     void Update()
     {
         
+    }
+
+    /// <summary>
+    /// Display the current quest state in the UI
+    /// </summary>
+    public void DisplayCurrentQuest ()
+    {
+
+    }
+
+    /// <summary>
+    /// Start the tutorial quest
+    /// </summary>
+    public void StartTutorialQuest ()
+    {
+        currentQuest = new TutorialQuest(manager.player);
     }
 
     /// <summary>

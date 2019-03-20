@@ -121,6 +121,20 @@ public class MonsterHandler : MonoBehaviour
     {
         monster.Death();
         StartCoroutine(DestroyMonster(monster.WorldModel, 5f));
+        Quest currentQuest = Manager.questHandler.currentQuest;
+        QuestState currentState = currentQuest.GetCurrentState();
+        if (currentQuest.id == QuestsInformation.QuestIds.TUTORIAL_QUEST &&
+            currentState.npcToKill == MonsterInformation.MonsterNames.SKELETON)
+        {
+            currentState.currentAmount++;
+            Debug.Log($"Killed: {currentQuest.GetCurrentState().currentAmount}");
+            Debug.Log(currentQuest.states.Count);
+            if (currentState.IsCompleted())
+            {
+                currentQuest.NextState();
+                Manager.playerHandler.UpdatePlayerBarUI();
+            }
+        }
         Manager.player.Money += Random.Range(1, 5);
         Manager.player.Experience += Random.Range(4, 7);
         Manager.playerHandler.UpdatePlayerBarUI();

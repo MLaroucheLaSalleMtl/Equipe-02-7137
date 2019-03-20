@@ -10,5 +10,18 @@ using UnityEngine;
 public static class QuestsInformation
 {
 
+    /// <summary>
+    /// Ids of the quests
+    /// </summary>
+    public enum QuestIds
+    {
+        TUTORIAL_QUEST,
+    }
+
+    public enum StateTypes
+    {
+        KILL_STATE,
+        GATHERING_STATE,
+    }
 
 }
