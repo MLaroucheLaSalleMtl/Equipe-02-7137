@@ -13,7 +13,7 @@ public class MinimapPlayerFollow : MonoBehaviour
     public GameObject player;
     
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         transform.position = new Vector3(player.transform.localPosition.x, transform.position.y, player.transform.localPosition.z);    
     }
