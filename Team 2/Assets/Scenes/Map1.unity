@@ -4190,6 +4190,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283763920}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &304134108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8429867877531531343, guid: c6c0068b7a05b844a8e958afa39d1dea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1717978451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &307616428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5894,6 +5900,7 @@ GameObject:
   - component: {fileID: 466552930}
   - component: {fileID: 466552929}
   - component: {fileID: 466552928}
+  - component: {fileID: 466552931}
   m_Layer: 0
   m_Name: MiniMapCam
   m_TagString: Untagged
@@ -5965,6 +5972,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &466552931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466552927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cc44ef45273f642aa43fbf5e23017d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 304134108}
 --- !u!1 &470773338
 GameObject:
   m_ObjectHideFlags: 0
