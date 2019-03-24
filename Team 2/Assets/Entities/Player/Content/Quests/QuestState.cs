@@ -64,4 +64,22 @@ public class QuestState
     {
         isCompleted = true;
     }
+
+    /// <summary>
+    /// Return a string containing what the player has to do in this state
+    /// </summary>
+    /// <returns></returns>
+    public string GoalDescription()
+    {
+        switch (type)
+        {
+            case QuestsInformation.StateTypes.KILL_STATE:
+                return $"{description} {currentAmount}/{amountRequiered}";
+            case QuestsInformation.StateTypes.GATHERING_STATE:
+                return "";
+            default:
+                return "";
+        }
+    }
+
 }

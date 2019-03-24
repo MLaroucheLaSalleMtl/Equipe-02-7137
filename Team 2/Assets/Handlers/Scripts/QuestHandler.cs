@@ -16,9 +16,20 @@ public class QuestHandler : MonoBehaviour
     public Button showButton;
     public Image showImage;
     public Sprite[] showSprites;
+
+    //the quest panel
     public Transform questPanel;
+
+    //the 2 positions the quest panel has to go when opened or closed
     public float[] questPanelPosX;
+    //the game manager
     public GameManager manager;
+
+    //all the informations to edit in the quest panel for the current quests
+    public Text questNameTxt;
+    public Text questDescriptionTxt;
+    public Text questGoalTxt;
+    public Text questIndexTxt;
 
     //array of bools to know if the player has already completed the quests or not
     public bool[] isQuestCompleted;
@@ -26,6 +37,8 @@ public class QuestHandler : MonoBehaviour
     public List<Quest> currentQuests;
     //if the quest tab is opened or not
     public bool isOpened;
+    //the index of which quest the player is looking at in the quest panel
+    public int questPanelIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +47,7 @@ public class QuestHandler : MonoBehaviour
         currentQuests = new List<Quest>();
         isOpened = false;
         isQuestCompleted = new bool[Enum.GetNames(typeof(QuestsInformation.QuestIds)).Length];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DisplayCurrentQuest();
     }
 
     /// <summary>
@@ -47,7 +55,20 @@ public class QuestHandler : MonoBehaviour
     /// </summary>
     public void DisplayCurrentQuest ()
     {
-
+        if (currentQuests.Count > 0)
+        {
+            questNameTxt.text = currentQuests[questPanelIndex].name;
+            questDescriptionTxt.text = currentQuests[questPanelIndex].description;
+            questGoalTxt.text = currentQuests[questPanelIndex].GetCurrentState().GoalDescription();
+            questIndexTxt.text = $"{questPanelIndex + 1}/{currentQuests.Count}";
+        }
+        else
+        {
+            questNameTxt.text = "No active quest";
+            questGoalTxt.text = "";
+            questDescriptionTxt.text = "";
+            questIndexTxt.text = "1/1";
+        }
     }
 
     /// <summary>
@@ -65,6 +86,7 @@ public class QuestHandler : MonoBehaviour
                 currentQuests.Add(new TutorialQuest(manager.player));
                 break;
         }
+        DisplayCurrentQuest();
         return true;
     }
 
@@ -121,6 +143,7 @@ public class QuestHandler : MonoBehaviour
                 }
             }
         }
+        DisplayCurrentQuest();
     }
 
     /// <summary>
