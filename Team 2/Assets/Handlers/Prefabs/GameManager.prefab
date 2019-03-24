@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5439887086803611262}
   - component: {fileID: 5439887086803611263}
   - component: {fileID: 624672885}
+  - component: {fileID: 1951270442}
+  - component: {fileID: 1951270443}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -112,3 +114,47 @@ MonoBehaviour:
   - {fileID: 0}
   attacksAnimator:
   - {fileID: 0}
+--- !u!114 &1951270442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439887086803611260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8a08a5b7818245ae2d3e086b0778d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showButton: {fileID: 0}
+  showImage: {fileID: 0}
+  showSprites:
+  - {fileID: 21300000, guid: 479eafb2543431043a8ee390637ac0f7, type: 3}
+  - {fileID: 21300000, guid: ea4a9c4889157964ea64778839d97680, type: 3}
+  questPanel: {fileID: 0}
+  questPanelPosX:
+  - 0
+  - -147
+  questNameTxt: {fileID: 0}
+  questDescriptionTxt: {fileID: 0}
+  questGoalTxt: {fileID: 0}
+  questIndexTxt: {fileID: 0}
+  questRewardsTxt: {fileID: 0}
+  questClaimButton: {fileID: 0}
+  isOpened: 0
+  questPanelIndex: 0
+--- !u!114 &1951270443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439887086803611260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b408f6e5f4715ab46b41bb308fdeb7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanelAnimator: {fileID: 0}
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}

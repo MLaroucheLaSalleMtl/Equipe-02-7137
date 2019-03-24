@@ -61,6 +61,9 @@ public class TutorialQuest : Quest
         states = new List<QuestState>();
         QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.KILL_STATE, 3, MonsterInformation.Monsters.SKELETON, null, 
             "Kill 3 skeletons.");
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "Hello adventurer. Let me show quickly how to play the game."));
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "First, you have your ability bar at the middle bottom."));
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "Use your abilities to kill 3 skeletons. Good luck! "));
         states.Add(stateOne);
     }
 

@@ -25,8 +25,11 @@ public class NPC : Interactable
     {
         Debug.Log("Talk to npc");
         animator.SetTrigger("Dance");
-        GameObject.Find("GameManager").GetComponent<GameManager>().questHandler.StartQuest((int)QuestsInformation.QuestIds.TUTORIAL_QUEST);
+        GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.TUTORIAL_QUEST);
+        manager.dialogueHandler.StartDialogue(manager.questHandler.currentQuests[0]);
         Debug.Log("Quest assigned: Tutorial");
+
     }
 
 }

@@ -22,6 +22,7 @@ public static class QuestsInformation
     {
         KILL_STATE,
         GATHERING_STATE,
+        TALKING_STATE,
     }
 
 }

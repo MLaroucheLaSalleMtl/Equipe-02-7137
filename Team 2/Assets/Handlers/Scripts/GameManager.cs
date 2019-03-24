@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public CombatHandler combatHandler { get; set; }
     public NPCHandler npcHandler { get; set; }
     public QuestHandler questHandler { get; set; }
+    public DialogueHandler dialogueHandler { get; set; }
 
     public Interactable interactableFocus { get; set; }
     public LayerMask interactableMask;
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
         combatHandler = GetComponent<CombatHandler>();
         npcHandler = GetComponent <NPCHandler>();
         questHandler = GetComponent<QuestHandler>();
+        dialogueHandler = GetComponent<DialogueHandler>();
+
         playerHandler.CreatePlayer("Satucre", 1, 10, 1, 0, 0, 0, 150, new WarriorClass(), GameObject.Find("Player"));
 
         //Spawn monsters for testing purposes

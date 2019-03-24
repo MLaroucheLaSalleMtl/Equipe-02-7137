@@ -9,6 +9,12 @@ using UnityEngine;
 /// </summary>
 public class QuestState 
 {
+    //list of the dialogues in this state
+    List<Dialogue> Dialogues { get; set; }
+
+    //pointer to know which dialogue index were at
+    int dialogueIndex = 0;
+
     //id of the state
     public int id;
 
@@ -42,6 +48,8 @@ public class QuestState
         this.npcToKill = toKill;
         this.itemToGather = toGather;
         this.description = description;
+        Dialogues = new List<Dialogue>();
+        dialogueIndex = 0;
     }
 
     /// <summary>
@@ -77,9 +85,57 @@ public class QuestState
                 return $"{description} {currentAmount}/{amountRequiered}";
             case QuestsInformation.StateTypes.GATHERING_STATE:
                 return "";
+            case QuestsInformation.StateTypes.TALKING_STATE:
+                return $"Talk to {Dialogues[0].Name}.";
             default:
                 return "";
         }
     }
+
+    /// <summary>
+    /// Load the dialogues into the list
+    /// </summary>
+    public void LoadDialogue (Dialogue dialogue)
+    {
+        Dialogues.Add(dialogue);
+    }
+
+    /// <summary>
+    /// Next dialogue
+    /// </summary>
+    /// <returns></returns>
+    public Dialogue NextDialogue ()
+    {
+        if (dialogueIndex + 1 > Dialogues.Count)
+        {
+            if (type == QuestsInformation.StateTypes.TALKING_STATE)
+            {
+                CompleteState();
+            }
+            return null;
+        }
+        else
+        {
+            return Dialogues[dialogueIndex++];
+        }
+    }
+
+    /// <summary>
+    /// Next dialogue
+    /// </summary>
+    /// <returns></returns>
+    public Dialogue PreviousDialogue()
+    {
+        return dialogueIndex <= 0 ? Dialogues[dialogueIndex] : Dialogues[--dialogueIndex];
+    }
+
+    /// <summary>
+    /// Quit the dialogue
+    /// </summary>
+    public void QuitDialogue ()
+    {
+        dialogueIndex = 0;
+    }
+
 
 }

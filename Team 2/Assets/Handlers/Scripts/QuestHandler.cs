@@ -23,7 +23,7 @@ public class QuestHandler : MonoBehaviour
     //the 2 positions the quest panel has to go when opened or closed
     public float[] questPanelPosX;
     //the game manager
-    public GameManager manager;
+    GameManager manager;
 
     //all the informations to edit in the quest panel for the current quests
     public Text questNameTxt;
@@ -34,9 +34,9 @@ public class QuestHandler : MonoBehaviour
     public Button questClaimButton;
 
     //array of bools to know if the player has already completed the quests or not
-    public bool[] isQuestCompleted;
+    bool[] isQuestCompleted;
     //is the reward claimed from each quest
-    public bool[] isRewardClaimed;
+    bool[] isRewardClaimed;
     //current quests
     public List<Quest> currentQuests;
     //if the quest tab is opened or not
