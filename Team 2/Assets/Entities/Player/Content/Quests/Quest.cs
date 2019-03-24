@@ -55,4 +55,7 @@ public abstract class Quest
 
     //creates the states and add them to the property
     public abstract void CreateStates();
+
+    //get the formatted string reward
+    public abstract string GetRewards();
 }

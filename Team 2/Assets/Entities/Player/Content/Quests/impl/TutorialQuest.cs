@@ -23,7 +23,7 @@ public class TutorialQuest : Quest
 
     public override void FinishQuest()
     {
-        GiveReward();
+        //something dialogue or etc.
     }
 
     public override QuestState GetCurrentState()
@@ -40,7 +40,15 @@ public class TutorialQuest : Quest
 
     public override bool NextState()
     {
-        return ++currentStateId >= states.Count;
+        if (currentStateId + 1 >= states.Count)
+        {
+            return true;
+        }
+        else
+        {
+            currentStateId++;
+            return false;
+        }
     }
 
     public override void StartQuest()
@@ -54,5 +62,10 @@ public class TutorialQuest : Quest
         QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.KILL_STATE, 3, MonsterInformation.Monsters.SKELETON, null, 
             "Kill 3 skeletons.");
         states.Add(stateOne);
+    }
+
+    public override string GetRewards()
+    {
+        return $"-{experienceReward} XP \n-{moneyReward}$";
     }
 }

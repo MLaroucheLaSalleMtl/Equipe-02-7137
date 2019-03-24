@@ -30,9 +30,13 @@ public class QuestHandler : MonoBehaviour
     public Text questDescriptionTxt;
     public Text questGoalTxt;
     public Text questIndexTxt;
+    public Text questRewardsTxt;
+    public Button questClaimButton;
 
     //array of bools to know if the player has already completed the quests or not
     public bool[] isQuestCompleted;
+    //is the reward claimed from each quest
+    public bool[] isRewardClaimed;
     //current quests
     public List<Quest> currentQuests;
     //if the quest tab is opened or not
@@ -46,7 +50,9 @@ public class QuestHandler : MonoBehaviour
         manager = GetComponent<GameManager>();
         currentQuests = new List<Quest>();
         isOpened = false;
-        isQuestCompleted = new bool[Enum.GetNames(typeof(QuestsInformation.QuestIds)).Length];
+        int amountOfQuests = Enum.GetNames(typeof(QuestsInformation.QuestIds)).Length;
+        isQuestCompleted = new bool[amountOfQuests];
+        isRewardClaimed = new bool[amountOfQuests];
         DisplayCurrentQuest();
     }
 
@@ -60,14 +66,26 @@ public class QuestHandler : MonoBehaviour
             questNameTxt.text = currentQuests[questPanelIndex].name;
             questDescriptionTxt.text = currentQuests[questPanelIndex].description;
             questGoalTxt.text = currentQuests[questPanelIndex].GetCurrentState().GoalDescription();
+            questRewardsTxt.text = currentQuests[questPanelIndex].GetRewards();
             questIndexTxt.text = $"{questPanelIndex + 1}/{currentQuests.Count}";
+            int id = (int)currentQuests[questPanelIndex].id;
+            if (IsCompleted(id) && !HasReceivedReward(id))
+            {
+                questClaimButton.interactable = true;
+            }
+            else
+            {
+                questClaimButton.interactable = false;
+            }
         }
         else
         {
             questNameTxt.text = "No active quest";
             questGoalTxt.text = "";
             questDescriptionTxt.text = "";
+            questRewardsTxt.text = "";
             questIndexTxt.text = "1/1";
+            questClaimButton.interactable = false;
         }
     }
 
@@ -95,11 +113,28 @@ public class QuestHandler : MonoBehaviour
     /// </summary>
     public void FinishQuest (Quest quest, int id)
     {
-        if (!isQuestCompleted[id])
+        if (!IsCompleted(id))
         {
             quest.FinishQuest();
-            currentQuests.Remove(quest);
             isQuestCompleted[id] = true;
+            DisplayCurrentQuest();
+        }
+    }
+
+    /// <summary>
+    /// Give rewards from a quest
+    /// </summary>
+    public void GiveReward (int index)
+    {
+        Quest quest = currentQuests[index];
+        int id = (int)quest.id;
+        if (!HasReceivedReward(id))
+        {
+            quest.GiveReward();
+            isRewardClaimed[id] = true;
+            currentQuests.Remove(quest);
+            DisplayCurrentQuest();
+            manager.playerHandler.UpdatePlayerBarUI();
         }
     }
 
@@ -144,6 +179,62 @@ public class QuestHandler : MonoBehaviour
             }
         }
         DisplayCurrentQuest();
+    }
+
+    /// <summary>
+    /// Is the quest started ?
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public bool IsStarted(int index)
+    {
+        return currentQuests.Find(x => (int)x.id == index) != null;
+    }
+
+    /// <summary>
+    /// Is the quest completed?
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public bool IsCompleted(int questId)
+    {
+        return isQuestCompleted[questId];
+    }
+
+    /// <summary>
+    /// Has the player received the reward already?
+    /// </summary>
+    /// <param name="questId"></param>
+    /// <returns></returns>
+    public bool HasReceivedReward (int questId)
+    {
+        return isRewardClaimed[questId];
+    }
+
+    /// <summary>
+    /// Show the next quest in the quest panel
+    /// </summary>
+    public void NextQuestClick ()
+    {
+        questPanelIndex = ++questPanelIndex >= currentQuests.Count ? 0 : questPanelIndex;
+        DisplayCurrentQuest();
+    }
+
+    /// <summary>
+    /// Show the previosu quest in the quest panel
+    /// </summary>
+    public void PreviousQuestClick()
+    {
+        questPanelIndex = --questPanelIndex < 0 ? currentQuests.Count - 1 : questPanelIndex;
+        DisplayCurrentQuest();
+    }
+
+    /// <summary>
+    /// Give rewards to the player for a certain quest
+    /// </summary>
+    public void ClaimRewardClick()
+    {
+        GiveReward(questPanelIndex);
     }
 
     /// <summary>
