@@ -59,7 +59,7 @@ public class QuestHandler : MonoBehaviour
     {
         int index = isOpened ? 1 : 0;
         showImage.sprite = showSprites[index];
-        questPanel.position = new Vector3(questPanelPosX[index], questPanel.position.y, questPanel.position.z);
+        questPanel.localPosition = new Vector3(questPanelPosX[index], 0f, 0f);
         isOpened = !isOpened;
     }
 
