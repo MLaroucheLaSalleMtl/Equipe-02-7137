@@ -47,8 +47,8 @@ public abstract class Quest
     //start the quest
     public abstract void StartQuest();
 
-    //load the next state of the quest
-    public abstract void NextState();
+    //load the next state of the quest, if its the end of the quest, return true, if not, return false
+    public abstract bool NextState();
 
     //get the current state of the quest
     public abstract QuestState GetCurrentState();

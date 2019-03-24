@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public static class MonsterInformation
 {
-    public enum MonsterNames
+    public enum Monsters
     {
         RED_BOAR,
         IMPLING,
@@ -23,7 +23,7 @@ public static class MonsterInformation
         RED_DRAGON,
     }
 
-    public enum MonstersPrefabId
+    public enum MonsterPrefabIds
     {
         RED_BOAR,
         IMPLING,

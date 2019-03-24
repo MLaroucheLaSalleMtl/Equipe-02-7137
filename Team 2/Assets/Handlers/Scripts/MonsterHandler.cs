@@ -56,56 +56,56 @@ public class MonsterHandler : MonoBehaviour
     /// Spawns a monster
     /// </summary>
     /// <param name="name"></param>
-    public void SpawnMonster(MonsterInformation.MonsterNames name, Position position, string displayName, int level, int maxHp, int currentHp)
+    public void SpawnMonster(MonsterInformation.Monsters name, Position position, string displayName, int level, int maxHp, int currentHp)
     {
         switch (name)
         {
-            case MonsterInformation.MonsterNames.RED_BOAR:
+            case MonsterInformation.Monsters.RED_BOAR:
                 RedBoar newRedBoar = (RedBoar) MonsterFactories.Find(x => x.GetType() == typeof(RedboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newRedBoar.InstanceId, newRedBoar);
                 newRedBoar.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.IMPLING:
+            case MonsterInformation.Monsters.IMPLING:
                 Impling newImpling = (Impling)MonsterFactories.Find(x => x.GetType() == typeof(ImplingFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newImpling.InstanceId, newImpling);
                 newImpling.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.SKELETON:
+            case MonsterInformation.Monsters.SKELETON:
                 Skeleton newSkeleton = (Skeleton)MonsterFactories.Find(x => x.GetType() == typeof(SkeletonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newSkeleton.InstanceId, newSkeleton);
                 newSkeleton.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.BLUE_BOAR:
+            case MonsterInformation.Monsters.BLUE_BOAR:
                 BlueBoar newBlueBoar = (BlueBoar)MonsterFactories.Find(x => x.GetType() == typeof(BlueboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newBlueBoar.InstanceId, newBlueBoar);
                 newBlueBoar.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.GREEN_BOAR:
+            case MonsterInformation.Monsters.GREEN_BOAR:
                 GreenBoar newGreenBoar = (GreenBoar)MonsterFactories.Find(x => x.GetType() == typeof(GreenboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newGreenBoar.InstanceId, newGreenBoar);
                 newGreenBoar.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.GOLD_BOAR:
+            case MonsterInformation.Monsters.GOLD_BOAR:
                 GoldBoar newGoldBoar = (GoldBoar)MonsterFactories.Find(x => x.GetType() == typeof(GoldboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newGoldBoar.InstanceId, newGoldBoar);
                 newGoldBoar.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.BLUE_DRAGON:
+            case MonsterInformation.Monsters.BLUE_DRAGON:
                 BlueDragon newBlueDrag = (BlueDragon)MonsterFactories.Find(x => x.GetType() == typeof(BluedragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newBlueDrag.InstanceId, newBlueDrag);
                 newBlueDrag.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.GREEN_DRAGON:
+            case MonsterInformation.Monsters.GREEN_DRAGON:
                 GreenDragon newGreenDrag = (GreenDragon)MonsterFactories.Find(x => x.GetType() == typeof(GreendragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newGreenDrag.InstanceId, newGreenDrag);
                 newGreenDrag.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.PURPLE_DRAGON:
+            case MonsterInformation.Monsters.PURPLE_DRAGON:
                 PurpleDragon newPurpleDrag = (PurpleDragon)MonsterFactories.Find(x => x.GetType() == typeof(PurpledragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newPurpleDrag.InstanceId, newPurpleDrag);
                 newPurpleDrag.Spawn(position);
                 break;
-            case MonsterInformation.MonsterNames.RED_DRAGON:
+            case MonsterInformation.Monsters.RED_DRAGON:
                 RedDragon newRedDrag = (RedDragon)MonsterFactories.Find(x => x.GetType() == typeof(ReddragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newRedDrag.InstanceId, newRedDrag);
                 newRedDrag.Spawn(position);
@@ -119,22 +119,30 @@ public class MonsterHandler : MonoBehaviour
     /// <param name="monster"></param>
     public void HandleDeath(Monster monster)
     {
+        //Monster dies
         monster.Death();
         StartCoroutine(DestroyMonster(monster.WorldModel, 5f));
+
+        //Check for quests progression
         Quest currentQuest = Manager.questHandler.currentQuest;
-        QuestState currentState = currentQuest.GetCurrentState();
-        if (currentQuest.id == QuestsInformation.QuestIds.TUTORIAL_QUEST &&
-            currentState.npcToKill == MonsterInformation.MonsterNames.SKELETON)
+        QuestState currentState = currentQuest?.GetCurrentState();
+
+        if (currentQuest != null && currentQuest.id == QuestsInformation.QuestIds.TUTORIAL_QUEST &&
+            currentState.npcToKill == monster.Id)
         {
             currentState.currentAmount++;
-            Debug.Log($"Killed: {currentQuest.GetCurrentState().currentAmount}");
-            Debug.Log(currentQuest.states.Count);
             if (currentState.IsCompleted())
             {
-                currentQuest.NextState();
+                bool finishedQuest = currentQuest.NextState();
+                if (finishedQuest)
+                {
+                    Manager.questHandler.currentQuest = null;
+                }
                 Manager.playerHandler.UpdatePlayerBarUI();
             }
         }
+
+        //Give xp and money, update UI
         Manager.player.Money += Random.Range(1, 5);
         Manager.player.Experience += Random.Range(4, 7);
         Manager.playerHandler.UpdatePlayerBarUI();
@@ -193,10 +201,12 @@ public class MonsterHandler : MonoBehaviour
     {
         foreach (Monster monster in monstersGettingHit)
         {
-            monster.Block();
-            RemoveHp(monster, hitAmount);
             if (!monster.isDead)
+            {
+                monster.Block();
+                RemoveHp(monster, hitAmount);
                 StartCoroutine(MonsterBlock(monster, 1.5f));
+            }
         }
     }
 

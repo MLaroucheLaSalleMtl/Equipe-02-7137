@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
         playerHandler.CreatePlayer("Satucre", 1, 10, 1, 0, 0, 0, 150, new WarriorClass(), GameObject.Find("Player"));
 
         //Spawn monsters for testing purposes
-        monsterHandler.SpawnMonster(MonsterInformation.MonsterNames.SKELETON, new Position(-11, 31, -5), "Skeleton", 1, 5, 5);
-        monsterHandler.SpawnMonster(MonsterInformation.MonsterNames.SKELETON, new Position(-5, 31, -5), "Skeleton", 1, 5, 5);
-        monsterHandler.SpawnMonster(MonsterInformation.MonsterNames.SKELETON, new Position(0, 31, -5), "Skeleton", 1, 5, 5);
+        monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(-11, 31, -5), "Skeleton", 1, 5, 5);
+        monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(-5, 31, -5), "Skeleton", 1, 5, 5);
+        monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(0, 31, -5), "Skeleton", 1, 5, 5);
     }
 
     /// <summary>

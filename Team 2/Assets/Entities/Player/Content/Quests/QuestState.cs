@@ -22,7 +22,7 @@ public class QuestState
     public int currentAmount;
 
     //npc or item to gather to complete the state
-    public MonsterInformation.MonsterNames npcToKill;
+    public MonsterInformation.Monsters npcToKill;
     public Item itemToGather;
 
     //description of what to do in the state
@@ -34,7 +34,7 @@ public class QuestState
     /// <summary>
     /// Instantiates a new state
     /// </summary>
-    public QuestState (int id, QuestsInformation.StateTypes type, int amountRequiered, MonsterInformation.MonsterNames toKill, Item toGather, string description)
+    public QuestState (int id, QuestsInformation.StateTypes type, int amountRequiered, MonsterInformation.Monsters toKill, Item toGather, string description)
     {
         this.id = id;
         this.type = type;

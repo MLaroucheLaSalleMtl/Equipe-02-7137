@@ -16,22 +16,24 @@ public class BlueDragon : Monster
 
     public BlueDragon(int spawnId)
     {
+        Id = MonsterInformation.Monsters.BLUE_DRAGON;
         InstanceId = spawnId;
         level = 1;
         displayName = "Blue Dragon";
         maxHp = level * MonsterInformation.HPRate;
         currentHp = maxHp;
-        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.BLUE_DRAGON];
+        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.BLUE_DRAGON];
     }
 
     public BlueDragon(int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        Id = MonsterInformation.Monsters.BLUE_DRAGON;
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.BLUE_DRAGON];
+        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.BLUE_DRAGON];
     }
 
     #endregion

@@ -16,22 +16,24 @@ public class GoldBoar : Monster
 
     public GoldBoar(int spawnId)
     {
+        Id = MonsterInformation.Monsters.GOLD_BOAR;
         InstanceId = spawnId;
         level = 1;
         displayName = "Gold Boar";
         maxHp = level * MonsterInformation.HPRate;
         currentHp = maxHp;
-        goldBoarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.GOLD_BOAR];
+        goldBoarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.GOLD_BOAR];
     }
 
     public GoldBoar(int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        Id = MonsterInformation.Monsters.GOLD_BOAR;
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        goldBoarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.GOLD_BOAR];
+        goldBoarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.GOLD_BOAR];
     }
 
     #endregion

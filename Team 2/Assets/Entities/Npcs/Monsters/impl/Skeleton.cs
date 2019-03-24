@@ -16,22 +16,24 @@ public class Skeleton : Monster
 
     public Skeleton (int spawnId)
     {
+        Id = MonsterInformation.Monsters.SKELETON;
         InstanceId = spawnId;
         level = 1;
         displayName = "Skeleton";
         maxHp = level * MonsterInformation.HPRate;
         currentHp = maxHp;
-        prefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.SKELETON];
+        prefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.SKELETON];
     }
 
     public Skeleton(int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        Id = MonsterInformation.Monsters.SKELETON;
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        prefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.SKELETON];
+        prefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.SKELETON];
     }
 
     #endregion

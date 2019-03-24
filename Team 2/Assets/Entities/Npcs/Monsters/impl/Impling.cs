@@ -16,22 +16,24 @@ public class Impling : Monster
 
     public Impling (int spawnId)
     {
+        Id = MonsterInformation.Monsters.IMPLING;
         InstanceId = spawnId;
         level = 1;
         displayName = "Impling";
         maxHp = level * MonsterInformation.HPRate;
         currentHp = maxHp;
-        implingPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.IMPLING];
+        implingPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.IMPLING];
     }
 
     public Impling (int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        Id = MonsterInformation.Monsters.IMPLING;
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        implingPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.IMPLING];
+        implingPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.IMPLING];
     }
 
     #endregion

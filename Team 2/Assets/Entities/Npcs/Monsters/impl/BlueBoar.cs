@@ -16,22 +16,24 @@ public class BlueBoar : Monster
 
     public BlueBoar (int spawnId)
     {
+        Id = MonsterInformation.Monsters.BLUE_BOAR;
         InstanceId = spawnId;
         level = 1;
         displayName = "Blue Boar";
         maxHp = level * MonsterInformation.HPRate;
         currentHp = maxHp;
-        blueboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.BLUE_BOAR];
+        blueboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.BLUE_BOAR];
     }
 
     public BlueBoar (int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        Id = MonsterInformation.Monsters.BLUE_BOAR;
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        blueboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.BLUE_BOAR];
+        blueboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.BLUE_BOAR];
     }
 
     #endregion

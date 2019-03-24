@@ -14,6 +14,11 @@ public abstract class Monster : Entity
     #region Fields
 
     /// <summary>
+    /// Id of the monster
+    /// </summary>
+    public MonsterInformation.Monsters Id { get; set; }
+   
+    /// <summary>
     /// the animator of the npc
     /// </summary>
     public Animator NPCAnimator { get; set; }

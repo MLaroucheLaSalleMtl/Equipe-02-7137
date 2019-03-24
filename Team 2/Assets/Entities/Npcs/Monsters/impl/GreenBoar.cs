@@ -16,22 +16,24 @@ public class GreenBoar : Monster
 
     public GreenBoar(int spawnId)
     {
+        Id = MonsterInformation.Monsters.GREEN_BOAR;
         InstanceId = spawnId;
         level = 1;
         displayName = "Green Boar";
         maxHp = level * MonsterInformation.HPRate;
         currentHp = maxHp;
-        greenboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.GREEN_BOAR];
+        greenboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.GREEN_BOAR];
     }
 
     public GreenBoar(int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        Id = MonsterInformation.Monsters.GREEN_BOAR;
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        greenboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.GREEN_BOAR];
+        greenboarPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.GREEN_BOAR];
     }
 
     #endregion

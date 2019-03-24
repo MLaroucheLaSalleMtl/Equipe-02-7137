@@ -16,22 +16,24 @@ public class RedDragon : Monster
 
     public RedDragon(int spawnId)
     {
+        Id = MonsterInformation.Monsters.RED_DRAGON;
         InstanceId = spawnId;
         level = 1;
         displayName = "Blue Dragon";
         maxHp = level * MonsterInformation.HPRate;
         currentHp = maxHp;
-        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.RED_DRAGON];
+        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.RED_DRAGON];
     }
 
     public RedDragon(int spawnId, string name, int level, int maxHp, int currentHp)
     {
+        Id = MonsterInformation.Monsters.RED_DRAGON;
         InstanceId = spawnId;
         this.level = level;
         displayName = name;
         this.maxHp = maxHp;
         this.currentHp = currentHp;
-        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonstersPrefabId.RED_DRAGON];
+        npcPrefab = GameObject.Find("GameManager").GetComponent<MonsterHandler>().monsterPrefabs[(int)MonsterInformation.MonsterPrefabIds.RED_DRAGON];
     }
 
     #endregion

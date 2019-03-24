@@ -38,13 +38,15 @@ public class TutorialQuest : Quest
         //to do add items to inventory
     }
 
-    public override void NextState()
+    public override bool NextState()
     {
         if (currentStateId + 1 >= states.Count)
         {
             FinishQuest();
+            return true;
         }
         currentStateId++;
+        return false;
     }
 
     public override void StartQuest()
@@ -55,7 +57,7 @@ public class TutorialQuest : Quest
     public override void CreateStates()
     {
         states = new List<QuestState>();
-        QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.KILL_STATE, 3, MonsterInformation.MonsterNames.SKELETON, null, 
+        QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.KILL_STATE, 3, MonsterInformation.Monsters.SKELETON, null, 
             "Kill 3 skeletons.");
         states.Add(stateOne);
     }
