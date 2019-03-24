@@ -124,23 +124,7 @@ public class MonsterHandler : MonoBehaviour
         StartCoroutine(DestroyMonster(monster.WorldModel, 5f));
 
         //Check for quests progression
-        Quest currentQuest = Manager.questHandler.currentQuest;
-        QuestState currentState = currentQuest?.GetCurrentState();
-
-        if (currentQuest != null && currentQuest.id == QuestsInformation.QuestIds.TUTORIAL_QUEST &&
-            currentState.npcToKill == monster.Id)
-        {
-            currentState.currentAmount++;
-            if (currentState.IsCompleted())
-            {
-                bool finishedQuest = currentQuest.NextState();
-                if (finishedQuest)
-                {
-                    Manager.questHandler.currentQuest = null;
-                }
-                Manager.playerHandler.UpdatePlayerBarUI();
-            }
-        }
+        Manager.questHandler.CheckQuestsProgression(monster);
 
         //Give xp and money, update UI
         Manager.player.Money += Random.Range(1, 5);

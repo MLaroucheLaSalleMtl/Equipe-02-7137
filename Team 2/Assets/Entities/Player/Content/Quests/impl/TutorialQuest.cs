@@ -40,13 +40,7 @@ public class TutorialQuest : Quest
 
     public override bool NextState()
     {
-        if (currentStateId + 1 >= states.Count)
-        {
-            FinishQuest();
-            return true;
-        }
-        currentStateId++;
-        return false;
+        return ++currentStateId >= states.Count;
     }
 
     public override void StartQuest()
