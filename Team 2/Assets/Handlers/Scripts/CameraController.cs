@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
     private void Update ()
     {
         //zoom with scroll wheel
-        currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        currentZoom -= Input.GetAxis("Zoom") * zoomSpeed;
         //we dont want to go above max and below min zoom so we clamp the value
         currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
         //get the input to rotate the camera
