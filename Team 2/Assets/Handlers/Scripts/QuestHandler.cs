@@ -224,6 +224,15 @@ public class QuestHandler : MonoBehaviour
     }
 
     /// <summary>
+    /// Can the player start the quest
+    /// </summary>
+    /// <returns></returns>
+    public bool CanStart (int questId)
+    {
+        return !IsStarted(questId) && !IsCompleted(questId);
+    }
+
+    /// <summary>
     /// Has the player received the reward already?
     /// </summary>
     /// <param name="questId"></param>
@@ -269,5 +278,5 @@ public class QuestHandler : MonoBehaviour
         questPanel.localPosition = new Vector3(questPanelPosX[index], 0f, 0f);
         isOpened = !isOpened;
     }
-
+    
 }

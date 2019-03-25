@@ -10,7 +10,8 @@ using UnityEngine;
 public class NPC : Interactable
 {
 
-    Animator animator;
+    public NPCInformation.NPCIds Id { get; set; }
+    protected Animator animator;
 
     void Start ()
     {
@@ -24,10 +25,7 @@ public class NPC : Interactable
     public override void ExecuteAction(Player player)
     {
         Debug.Log("Talk to npc");
-        GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.TUTORIAL_QUEST);
-        manager.dialogueHandler.StartDialogue(manager.questHandler.currentQuests[0]);
-        Debug.Log("Quest assigned: Tutorial");
+        Debug.LogError("Cannot execute action on the abstract design NPC. Must inherit.");
 
     }
 

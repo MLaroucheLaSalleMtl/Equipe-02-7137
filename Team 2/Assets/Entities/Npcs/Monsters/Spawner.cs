@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
         //    player = GameObject.Find("Player").GetComponent<Transform>();
         //}
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Spawn();
+        //Spawn();
     }
 
 
