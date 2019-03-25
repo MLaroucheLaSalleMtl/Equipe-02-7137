@@ -127,5 +127,8 @@ public class QuestState
         dialogueIndex = 0;
     }
 
-
+    public int GetDialogueIndex ()
+    {
+        return dialogueIndex;
+    }
 }

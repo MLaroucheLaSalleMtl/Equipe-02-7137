@@ -32,7 +32,9 @@ public class DialogueHandler : MonoBehaviour
             return;
         }
         currentQuest.GetCurrentState().QuitDialogue();
+        
         currentQuest = null;
+        Destroy(manager.questHandler.currentArrow);
         dialoguePanelAnimator.SetBool("IsOpen", false);
     }
 
@@ -54,6 +56,17 @@ public class DialogueHandler : MonoBehaviour
             return;
         }
         QuestState state = currentQuest.GetCurrentState();
+
+        //arrows for tutorial quest
+        if (currentQuest.id == QuestsInformation.QuestIds.TUTORIAL_QUEST)
+        {
+            int index = state.GetDialogueIndex();
+            if (index > 0 && index < 5)
+            {
+                manager.questHandler.ShowArrow(TutorialQuest.arrowPositions[index - 1], Quaternion.Euler(TutorialQuest.arrowRotations[index - 1]));
+            }
+        }
+
         toDisplay = state.NextDialogue();
         if (toDisplay == null)
         {

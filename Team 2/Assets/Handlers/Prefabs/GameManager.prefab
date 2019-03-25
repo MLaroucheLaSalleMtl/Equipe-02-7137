@@ -51,6 +51,7 @@ MonoBehaviour:
   interactableMask:
     serializedVersion: 2
     m_Bits: 512
+  talkingTo: {fileID: 0}
 --- !u!114 &5439887086803611262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d8a08a5b7818245ae2d3e086b0778d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glowingArrowPrefab: {fileID: 6942970926755873901, guid: 964d0d59301b06746bbc3a36b2ff7edf,
+    type: 3}
   showButton: {fileID: 0}
   showImage: {fileID: 0}
   showSprites:

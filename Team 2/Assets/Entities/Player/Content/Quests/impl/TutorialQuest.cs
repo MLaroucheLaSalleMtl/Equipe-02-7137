@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TutorialQuest : Quest
 {
+    public static Vector3[] arrowPositions;
+    public static Vector3[] arrowRotations;
 
     /// <summary>
     /// Instantiates a tutorial quest for a player
@@ -19,6 +21,8 @@ public class TutorialQuest : Quest
         currentStateId = 0;
         this.player = player;
         StartQuest();
+        arrowPositions = new Vector3[4] { new Vector3(0, -125, 0), new Vector3(-175, -150, 0), new Vector3(180, -55, 0) , new Vector3(-335, 48, 0) };
+        arrowRotations = new Vector3[4] { new Vector3(0, 0, 270), new Vector3(0, 0, 215), new Vector3(0, 0, 315), new Vector3(0, 0, 180)};
     }
 
     public override void FinishQuest()

@@ -11,6 +11,9 @@ using UnityEngine.UI;
 /// </summary>
 public class QuestHandler : MonoBehaviour
 {
+    //prefab of the glowing arrow particle effect
+    public GameObject glowingArrowPrefab;
+    public GameObject currentArrow;
 
     //the show more/less button
     public Button showButton;
@@ -87,6 +90,24 @@ public class QuestHandler : MonoBehaviour
             questIndexTxt.text = "1/1";
             questClaimButton.interactable = false;
         }
+    }
+
+    /// <summary>
+    /// Show a glowing arrow on canvas with a certain position and rotation
+    /// </summary>
+    /// <param name="position"></param>
+    /// <param name="rotation"></param>
+    public void ShowArrow(Vector3 position, Quaternion rotation)
+    {
+        GameObject arrow = Instantiate(glowingArrowPrefab);
+        arrow.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform);
+        arrow.transform.localPosition = position;
+        arrow.transform.localRotation = rotation;
+        if (currentArrow != null)
+        {
+            Destroy(currentArrow);
+        }
+        currentArrow = arrow;
     }
 
     /// <summary>
