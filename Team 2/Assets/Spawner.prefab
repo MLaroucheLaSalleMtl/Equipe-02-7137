@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mHandler: {fileID: 0}
   spawnRange: 10
-  playerRange: 50
+  playerRange: 50000
   minSpawnTime: 5
   maxSpawnTime: 15
   player: {fileID: 0}

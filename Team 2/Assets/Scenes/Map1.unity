@@ -2847,6 +2847,16 @@ PrefabInstance:
       propertyPath: type.Array.data[1]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 304134113}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: mHandler
+      value: 
+      objectReference: {fileID: 1951270445}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
 --- !u!4 &163021847 stripped
@@ -5410,8 +5420,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
-  m_Children:
-  - {fileID: 1190071112}
+  m_Children: []
   m_Father: {fileID: 1801041906}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10215,6 +10224,16 @@ PrefabInstance:
       propertyPath: type.Array.data[1]
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 304134113}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: mHandler
+      value: 
+      objectReference: {fileID: 1951270445}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
 --- !u!4 &598244431 stripped
@@ -12383,6 +12402,16 @@ PrefabInstance:
       propertyPath: type.Array.data[1]
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 304134113}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: mHandler
+      value: 
+      objectReference: {fileID: 1951270445}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
 --- !u!4 &694462787 stripped
@@ -13789,8 +13818,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1613188673}
+  m_Children: []
   m_Father: {fileID: 1801041906}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16554,7 +16582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1951270442}
+      - m_Target: {fileID: 0}
         m_MethodName: ClaimRewardClick
         m_Mode: 1
         m_Arguments:
@@ -18415,7 +18443,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1951270442}
+      - m_Target: {fileID: 0}
         m_MethodName: NextQuestClick
         m_Mode: 1
         m_Arguments:
@@ -19289,7 +19317,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1951270442}
+      - m_Target: {fileID: 0}
         m_MethodName: ShowButtonClick
         m_Mode: 1
         m_Arguments:
@@ -28820,6 +28848,16 @@ PrefabInstance:
       propertyPath: type.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 304134113}
+    - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: mHandler
+      value: 
+      objectReference: {fileID: 1951270445}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
 --- !u!4 &1714562987 stripped
@@ -30330,7 +30368,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1951270442}
+      - m_Target: {fileID: 0}
         m_MethodName: PreviousQuestClick
         m_Mode: 1
         m_Arguments:
@@ -33291,18 +33329,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949400493}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1951270441 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5439887086803611260, guid: dc826dc3a9a8f144997472abe4784cf8,
-    type: 3}
-  m_PrefabInstance: {fileID: 921320989635014033}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d8a08a5b7818245ae2d3e086b0778d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1951270443 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1951270443, guid: dc826dc3a9a8f144997472abe4784cf8,
@@ -33315,33 +33341,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b408f6e5f4715ab46b41bb308fdeb7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showButton: {fileID: 1114136455}
-  showImage: {fileID: 1114136456}
-  showSprites:
-  - {fileID: 21300000, guid: 479eafb2543431043a8ee390637ac0f7, type: 3}
-  - {fileID: 21300000, guid: ea4a9c4889157964ea64778839d97680, type: 3}
-  questPanel: {fileID: 1150274208}
-  questPanelPosX:
-  - 0
-  - -147
-  manager: {fileID: 0}
-  questNameTxt: {fileID: 493679848}
-  questDescriptionTxt: {fileID: 2094794636}
-  questGoalTxt: {fileID: 771794555}
-  questIndexTxt: {fileID: 645328184}
-  questRewardsTxt: {fileID: 1220092707}
-  questClaimButton: {fileID: 948460817}
-  isQuestCompleted: 
-  isRewardClaimed: 
-  isOpened: 0
-  questPanelIndex: 0
 --- !u!114 &1951270445 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5439887086803611262, guid: dc826dc3a9a8f144997472abe4784cf8,
     type: 3}
   m_PrefabInstance: {fileID: 921320989635014033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951270441}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d7571137f1625d4cb5fae22d3890a09, type: 3}
@@ -36663,6 +36669,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1951270443, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
+      propertyPath: dialoguePanelAnimator
+      value: 
+      objectReference: {fileID: 1801041909}
+    - target: {fileID: 1951270443, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1545723475}
+    - target: {fileID: 1951270443, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 798987587}
     - target: {fileID: 1951270442, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
       propertyPath: showButton
       value: 
@@ -36699,18 +36717,6 @@ PrefabInstance:
       propertyPath: questClaimButton
       value: 
       objectReference: {fileID: 948460817}
-    - target: {fileID: 1951270443, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
-      propertyPath: dialoguePanelAnimator
-      value: 
-      objectReference: {fileID: 1801041909}
-    - target: {fileID: 1951270443, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 1545723475}
-    - target: {fileID: 1951270443, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 798987587}
     - target: {fileID: 265047276161106017, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
       propertyPath: m_LocalPosition.x
