@@ -24,7 +24,6 @@ public class NPC : Interactable
     public override void ExecuteAction(Player player)
     {
         Debug.Log("Talk to npc");
-        animator.SetTrigger("Dance");
         GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.TUTORIAL_QUEST);
         manager.dialogueHandler.StartDialogue(manager.questHandler.currentQuests[0]);

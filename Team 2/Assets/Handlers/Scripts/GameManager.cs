@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public Interactable interactableFocus { get; set; }
     public LayerMask interactableMask;
+    public NPC talkingTo;
+
     /// <summary>
     /// Called when the game is launched
     /// </summary>
@@ -96,6 +98,11 @@ public class GameManager : MonoBehaviour
                 interactableFocus = interactableHit;
                 interactableFocus.OnInteract(player);
                 StartCoroutine(ExecuteFacing(1f));
+                NPC npc = hit.collider.GetComponent<NPC>();
+                if (npc != null)
+                {
+                    talkingTo = npc;
+                }
             }
         }
     }
@@ -122,6 +129,15 @@ public class GameManager : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
         //change the actual rotation of our player with a slerp (so its not instantly but smooth)
         player.WorldModel.transform.rotation = Quaternion.Slerp(player.WorldModel.transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    /// <summary>
+    /// get the distance between the interactable and the player
+    /// </summary>
+    /// <returns></returns>
+    public float DistanceToPlayer(Interactable interactable)
+    {
+        return Vector3.Distance(player.WorldModel.transform.position, interactable.transform.position);
     }
 
     /// <summary>
@@ -154,6 +170,13 @@ public class GameManager : MonoBehaviour
             if (interactableFocus != null)
             {
                 FaceInteractable();
+            }
+            if (talkingTo != null)
+            {
+                if (DistanceToPlayer(talkingTo) > talkingTo.actionRadius)
+                {
+                    dialogueHandler.QuitDialogue();
+                }
             }
         }
     }

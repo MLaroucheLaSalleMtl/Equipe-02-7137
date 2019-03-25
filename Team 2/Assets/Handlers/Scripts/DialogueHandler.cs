@@ -25,13 +25,13 @@ public class DialogueHandler : MonoBehaviour
 
     }
 
-    public void QuitDialogue(Quest quest)
+    public void QuitDialogue()
     {
         if (currentQuest == null)
         {
             return;
         }
-        quest.GetCurrentState().QuitDialogue();
+        currentQuest.GetCurrentState().QuitDialogue();
         currentQuest = null;
         dialoguePanelAnimator.SetBool("IsOpen", false);
     }
@@ -61,7 +61,7 @@ public class DialogueHandler : MonoBehaviour
             {
                 manager.questHandler.NextState((int)currentQuest.id);
             }
-            QuitDialogue(currentQuest);
+            QuitDialogue();
         }
         else
         {
