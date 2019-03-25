@@ -171,7 +171,7 @@ public class QuestHandler : MonoBehaviour
             Debug.LogError("Trying to go the next state of a non started/completed quest.");
             return;
         }
-        bool isFinished = quest.NextState();
+        bool isFinished = !quest.NextState();
         if (isFinished)
         {
             FinishQuest(quest, id);
