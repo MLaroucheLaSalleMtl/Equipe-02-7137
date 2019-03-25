@@ -59,12 +59,22 @@ public class TutorialQuest : Quest
     public override void CreateStates()
     {
         states = new List<QuestState>();
-        QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.KILL_STATE, 3, MonsterInformation.Monsters.SKELETON, null, 
-            "Kill 3 skeletons.");
-        stateOne.LoadDialogue(new Dialogue("Dark Knight", "Hello adventurer. Let me show quickly how to play the game."));
-        stateOne.LoadDialogue(new Dialogue("Dark Knight", "First, you have your ability bar at the middle bottom."));
-        stateOne.LoadDialogue(new Dialogue("Dark Knight", "Use your abilities to kill 3 skeletons. Good luck! "));
+        QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.TALKING_STATE, 0, MonsterInformation.Monsters.SKELETON, null, 
+            "Talk to the Dark Knight. He will explain you how to play the game.");
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "Hello adventurer. Let me show you quickly how to play the game."));
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "First, you have your ability bar at the middle bottom. You can use" +
+            " those abilities to kill monsters."));
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "You can use WASD on your keyboard to move around. Also at the bottom left," +
+            " you have your player statistics. Like your cash, experience, level, etc. "));
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "At the bottom right, you have the minimap, you get an overview of" +
+            " what the world reserves you."));
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "Lastly, in the middle left, you have your quest tab. You can click" +
+            " the plus and minus sign to show or hide the tab. Make sure to complete quests as they give good rewards!"));
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "Now adventurer, please go kill 3 skeletons! That's your first quest! Good luck!"));
         states.Add(stateOne);
+        QuestState stateTwo = new QuestState(1, QuestsInformation.StateTypes.KILL_STATE, 3, MonsterInformation.Monsters.SKELETON, null,
+    "Kill 3 skeletons.");
+        states.Add(stateTwo);
     }
 
     public override string GetRewards()

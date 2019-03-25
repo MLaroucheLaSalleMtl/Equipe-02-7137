@@ -32,10 +32,10 @@ public class QuestState
     public Item itemToGather;
 
     //description of what to do in the state
-    public string description;
+    string description;
 
     //is the state completed
-    public bool isCompleted;
+    bool isCompleted;
 
     /// <summary>
     /// Instantiates a new state
@@ -79,17 +79,7 @@ public class QuestState
     /// <returns></returns>
     public string GoalDescription()
     {
-        switch (type)
-        {
-            case QuestsInformation.StateTypes.KILL_STATE:
-                return $"{description} {currentAmount}/{amountRequiered}";
-            case QuestsInformation.StateTypes.GATHERING_STATE:
-                return "";
-            case QuestsInformation.StateTypes.TALKING_STATE:
-                return $"Talk to {Dialogues[0].Name}.";
-            default:
-                return "";
-        }
+        return description;
     }
 
     /// <summary>

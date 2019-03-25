@@ -155,6 +155,7 @@ public class QuestHandler : MonoBehaviour
         {
             FinishQuest(quest, id);
         }
+        DisplayCurrentQuest();
     }
 
     /// <summary>
