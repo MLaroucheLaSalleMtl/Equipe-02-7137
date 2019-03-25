@@ -56,7 +56,7 @@ public class MonsterHandler : MonoBehaviour
     /// Spawns a monster
     /// </summary>
     /// <param name="name"></param>
-    public void SpawnMonster(MonsterInformation.Monsters name, Position position, string displayName, int level, int maxHp, int currentHp)
+    public Monster SpawnMonster(MonsterInformation.Monsters name, Position position, string displayName, int level, int maxHp, int currentHp)
     {
         switch (name)
         {
@@ -64,53 +64,54 @@ public class MonsterHandler : MonoBehaviour
                 RedBoar newRedBoar = (RedBoar) MonsterFactories.Find(x => x.GetType() == typeof(RedboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newRedBoar.InstanceId, newRedBoar);
                 newRedBoar.Spawn(position);
-                break;
+                return newRedBoar;
             case MonsterInformation.Monsters.IMPLING:
                 Impling newImpling = (Impling)MonsterFactories.Find(x => x.GetType() == typeof(ImplingFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newImpling.InstanceId, newImpling);
                 newImpling.Spawn(position);
-                break;
+                return newImpling;
             case MonsterInformation.Monsters.SKELETON:
                 Skeleton newSkeleton = (Skeleton)MonsterFactories.Find(x => x.GetType() == typeof(SkeletonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newSkeleton.InstanceId, newSkeleton);
                 newSkeleton.Spawn(position);
-                break;
+                return newSkeleton;
             case MonsterInformation.Monsters.BLUE_BOAR:
                 BlueBoar newBlueBoar = (BlueBoar)MonsterFactories.Find(x => x.GetType() == typeof(BlueboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newBlueBoar.InstanceId, newBlueBoar);
                 newBlueBoar.Spawn(position);
-                break;
+                return newBlueBoar;
             case MonsterInformation.Monsters.GREEN_BOAR:
                 GreenBoar newGreenBoar = (GreenBoar)MonsterFactories.Find(x => x.GetType() == typeof(GreenboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newGreenBoar.InstanceId, newGreenBoar);
                 newGreenBoar.Spawn(position);
-                break;
+                return newGreenBoar;
             case MonsterInformation.Monsters.GOLD_BOAR:
                 GoldBoar newGoldBoar = (GoldBoar)MonsterFactories.Find(x => x.GetType() == typeof(GoldboarFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newGoldBoar.InstanceId, newGoldBoar);
                 newGoldBoar.Spawn(position);
-                break;
+                return newGoldBoar;
             case MonsterInformation.Monsters.BLUE_DRAGON:
                 BlueDragon newBlueDrag = (BlueDragon)MonsterFactories.Find(x => x.GetType() == typeof(BluedragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newBlueDrag.InstanceId, newBlueDrag);
                 newBlueDrag.Spawn(position);
-                break;
+                return newBlueDrag;
             case MonsterInformation.Monsters.GREEN_DRAGON:
                 GreenDragon newGreenDrag = (GreenDragon)MonsterFactories.Find(x => x.GetType() == typeof(GreendragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newGreenDrag.InstanceId, newGreenDrag);
                 newGreenDrag.Spawn(position);
-                break;
+                return newGreenDrag;
             case MonsterInformation.Monsters.PURPLE_DRAGON:
                 PurpleDragon newPurpleDrag = (PurpleDragon)MonsterFactories.Find(x => x.GetType() == typeof(PurpledragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newPurpleDrag.InstanceId, newPurpleDrag);
                 newPurpleDrag.Spawn(position);
-                break;
+                return newPurpleDrag;
             case MonsterInformation.Monsters.RED_DRAGON:
                 RedDragon newRedDrag = (RedDragon)MonsterFactories.Find(x => x.GetType() == typeof(ReddragonFactory)).CreateNewNpc(GetFreeSpawnId(), displayName, level, maxHp, currentHp);
                 SpawnedMonsters.Add(newRedDrag.InstanceId, newRedDrag);
                 newRedDrag.Spawn(position);
-                break;
+                return newRedDrag;
         }
+        throw new System.Exception("invalide monsterID");
     }
 
     /// <summary>

@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] float maxSpawnTime = 15;
     [SerializeField] Transform player;
     [SerializeField] MonsterInformation.Monsters[] type;
+    [SerializeField] int maxMonsterCount = 12;
+    List<Monster> myMonsters=new  List<Monster>();
+    [SerializeField] bool respawnMonsters=true;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +31,26 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         float time = Random.Range(minSpawnTime, maxSpawnTime);
-        if(Vector3.Distance(player.transform.position,transform.position)<playerRange)
+        if (respawnMonsters) ResizeTable();
+        if(Vector3.Distance(player.transform.position,transform.position)<playerRange&&myMonsters.Count<maxMonsterCount)
         {
             int monster = Random.Range(0, type.Length );
             int spawnX = Random.Range(-spawnRange, spawnRange);
             int spawnZ = Random.Range(-spawnRange, spawnRange);
-            manager.monsterHandler.SpawnMonster(type[monster], new Position(spawnX+ (int)transform.position.x, (int)transform.position.y, spawnZ+ (int)transform.position.z), type[monster].ToString(), 1, 5, 5);
+            myMonsters.Add(manager.monsterHandler.SpawnMonster(type[monster], new Position(spawnX+ (int)transform.position.x, (int)transform.position.y, spawnZ+ (int)transform.position.z), type[monster].ToString(), 1, 1, 1));
         }
         Invoke("Spawn", time);
+    }
+
+    void ResizeTable()
+    {
+        for(int i=0;i<myMonsters.Count;i++)
+        {
+            if(myMonsters[i].isDead)
+            {
+                myMonsters.Remove(myMonsters[i]);
+            }
+        }
     }
 
 }
