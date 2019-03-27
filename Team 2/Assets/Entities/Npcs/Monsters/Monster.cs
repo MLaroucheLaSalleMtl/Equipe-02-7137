@@ -143,6 +143,11 @@ public abstract class Monster : Entity
     public Text OverlayHP { get; set; }
 
     /// <summary>
+    /// HP bar
+    /// </summary>
+    public Image OverlayHPMask { get; set; }
+
+    /// <summary>
     /// The drop table of loots of the npc, if empty, npc drops nothing
     /// </summary>
     public List<ItemDrop> DropTable { get; set; } = new List<ItemDrop>();
@@ -224,7 +229,8 @@ public abstract class Monster : Entity
     public virtual void Spawn(Position pos)
     {
         Overlay = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterOverlay").GetComponent<Text>();
-        OverlayHP = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterHP").GetComponent<Text>();
+        OverlayHP = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterHP/HPText").GetComponent<Text>();
+        OverlayHPMask = GameObject.Find($"Monster,{InstanceId}").transform.Find("Canvas/MonsterOverlayBG/MonsterHP/HPMask/HPImage").GetComponent<Image>();
         UpdateOverlay();
         Strength = Level;
         isDead = false;
@@ -296,7 +302,8 @@ public abstract class Monster : Entity
     void UpdateOverlay()
     {
         Overlay.text = $"{DisplayName} - Level {Level}";
-        OverlayHP.text = $"HP: {(CurrentHp >= 0 ? CurrentHp : 0)}";
+        OverlayHP.text = $"{(CurrentHp >= 0 ? CurrentHp : 0)}/{MaxHP}";
+        OverlayHPMask.fillAmount = (CurrentHp / (float)MaxHP);
     }
 
     #endregion
