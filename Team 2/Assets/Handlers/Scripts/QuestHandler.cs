@@ -11,9 +11,8 @@ using UnityEngine.UI;
 /// </summary>
 public class QuestHandler : MonoBehaviour
 {
-    //prefab of the glowing arrow particle effect
-    public GameObject glowingArrowPrefab;
-    public GameObject currentArrow;
+    //glowing arrow
+    public GameObject glowingArrow;
 
     //the show more/less button
     public Button showButton;
@@ -99,15 +98,17 @@ public class QuestHandler : MonoBehaviour
     /// <param name="rotation"></param>
     public void ShowArrow(Vector3 position, Quaternion rotation)
     {
-        GameObject arrow = Instantiate(glowingArrowPrefab);
-        arrow.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform);
-        arrow.transform.localPosition = position;
-        arrow.transform.localRotation = rotation;
-        if (currentArrow != null)
-        {
-            Destroy(currentArrow);
-        }
-        currentArrow = arrow;
+        glowingArrow.SetActive(true);
+        glowingArrow.transform.localPosition = position;
+        glowingArrow.transform.localRotation = rotation;
+    }
+
+    /// <summary>
+    /// Hide the glowing arrow
+    /// </summary>
+    public void HideArrow()
+    {
+        glowingArrow.SetActive(false);
     }
 
     /// <summary>

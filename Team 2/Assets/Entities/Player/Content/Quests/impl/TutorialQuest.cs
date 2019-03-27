@@ -80,7 +80,7 @@ public class TutorialQuest : Quest
         QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.TALKING_STATE, 0, MonsterInformation.Monsters.SKELETON, null, 
             "Talk to the Dark Knight. He will explain you how to play the game.");
         stateOne.LoadDialogue(new Dialogue("Dark Knight", "Hello adventurer. Let me show you quickly how to play the game."));
-        stateOne.LoadDialogue(new Dialogue("Dark Knight", "First, you have your ability bar at the middle bottom. You can use" +
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "First, you have your ability bar at the middle bottom under this dialogue box. You can use" +
             " those abilities to kill monsters."));
         stateOne.LoadDialogue(new Dialogue("Dark Knight", "You can use WASD on your keyboard to move around. Also at the bottom left," +
             " you have your player statistics. Like your cash, experience, level, etc. "));
