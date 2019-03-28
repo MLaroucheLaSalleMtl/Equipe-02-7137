@@ -72,12 +72,12 @@ public class Player : Entity
     {
         get
         {
-            float mod = 1;
+            float mod = 100;
             foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.HealtModifyer;
             }
-            return (int)(maxHp * mod);
+            return (int)(maxHp * mod/100);
         }
     }
 
@@ -99,12 +99,12 @@ public class Player : Entity
     public override int Strength {
         get
         {
-            float mod = 0;
+            float mod = 100;
             foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.StrenghtModifyer;
             }
-            return (int)(strength * mod);
+            return (int)(strength * mod / 100);
         }
         set
         {
@@ -120,12 +120,12 @@ public class Player : Entity
     {
         get
         {
-            float mod = 0;
+            float mod = 100;
             foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.InteligenceModifyer;
             }
-            return (int)(inteligence * mod);
+            return (int)(inteligence * mod / 100);
         }
         set
         {
@@ -141,12 +141,12 @@ public class Player : Entity
     {
         get
         {
-            float mod = 0;
+            float mod = 100;
             foreach (Skill s in Class.UnlockedSkills)
             {
                 mod += s.DexterityModifyer;
             }
-            return (int)(dexterity * mod);
+            return (int)(dexterity * mod/100);
         }
         set
         {

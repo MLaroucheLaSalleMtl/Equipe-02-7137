@@ -64,6 +64,7 @@ public class Skill
         {
             isActive = true;
             Parent.Activated++;
+            parent.Parent.Class.UnlockedSkills.Add(this);
         }
     }
 

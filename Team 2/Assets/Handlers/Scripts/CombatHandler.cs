@@ -109,6 +109,7 @@ public class CombatHandler : MonoBehaviour
                     playerClass.JumpAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK];
                     StartCoroutine(AttackChainingInterval(2f));
+                    Debug.Log(Manager.player.Class.UnlockedSkills[0]);
                 }
                 break;
             case (int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK:

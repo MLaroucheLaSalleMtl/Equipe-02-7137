@@ -72,7 +72,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("BasicAttack");
     }
@@ -85,7 +85,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("SwingAttack");
     }
@@ -98,7 +98,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("JumpAttack");
     }
@@ -111,7 +111,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(1, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("DoubleSwingAttack");
     }
