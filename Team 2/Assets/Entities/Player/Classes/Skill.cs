@@ -58,21 +58,24 @@ public class Skill
 
 
     //activate the skill
-    public void Activate()
+    public bool Activate()
     {
-        if(Activatable())
+        bool activatable = Activatable();
+        if (activatable)
         {
             isActive = true;
             Parent.Activated++;
-            parent.Parent.Class.UnlockedSkills.Add(this);
+            parent.Manager.player.Class.UnlockedSkills.Add(this);
+            parent.Manager.playerHandler.HealPlayer((int)(parent.Manager.player.MaxHP * healtModifyer / 100));
         }
+        return activatable;
     }
 
     //return if the skill can be activated or not
     private bool Activatable()
     {
         bool activatable = false;
-        if (parent.Parent.Level > parent.Activated)
+        if (parent.Manager.player.Level > parent.Activated)
         {
 
             if (downStreamSkills.Count > 0)
@@ -90,8 +93,12 @@ public class Skill
                 activatable = true;
             }
         }
-        Debug.Log(activatable);
         return activatable;
+    }
+
+    public void Deactivate()
+    {
+        parent.Manager.playerHandler.DamagePlayer((int)(parent.Manager.player.MaxHP * healtModifyer / 100));
     }
 
 }

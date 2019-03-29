@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 public class SkillTree
 {
-    Player parent;
+    GameManager manager;
     int activated = 0;
     Dictionary<string, Skill> skills;
     const int HIGHT = 5;
     const int WIDTH = 5;
 
     public int Activated { get => activated; set => activated = value; }
-    public Player Parent { get => parent; set => parent = value; }
+    public GameManager Manager { get => manager; set => manager = value; }
     public Dictionary<string, Skill> Skills { get => skills; set => skills = value; }
 
-    public SkillTree(Player parent)
+    public SkillTree(GameManager manager)
     {
-        Parent = parent;
+        Manager = manager;
         skills = new Dictionary<string, Skill>()
         {
             { "hp1" ,new Skill(this,healtMod: 10) },
@@ -105,9 +105,9 @@ public class SkillTree
         Activated = 0;
     }
 
-    public void ActivateSkill(string name)
+    public bool ActivateSkill(string name)
     {
-        skills[name].Activate();
+        return skills[name].Activate();
     }
 
 

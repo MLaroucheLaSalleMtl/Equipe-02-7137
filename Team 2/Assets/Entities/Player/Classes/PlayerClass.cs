@@ -23,4 +23,13 @@ public abstract class PlayerClass
     public abstract double Agility { get; set; }
     public abstract void Levelup();
 
+    public void ResetSkills()
+    {
+        foreach(Skill s in UnlockedSkills)
+        {
+            s.Deactivate();
+        }
+        UnlockedSkills.Clear();
+    }
+
 }

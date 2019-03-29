@@ -14,7 +14,7 @@ public class SkillTreeButton : MonoBehaviour
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerScript = manager.player;
-        skillTree = new SkillTree(playerScript);
+        skillTree = new SkillTree(manager);
         Debug.Log("start");
     }
 
@@ -27,5 +27,11 @@ public class SkillTreeButton : MonoBehaviour
     public void ActivateSkill(string name)
     {
         skillTree.ActivateSkill(name);
+    }
+
+    public void ResetSkillTree()
+    {
+        skillTree.ResetSkillTree();
+        manager.player.Class.ResetSkills();
     }
 }
