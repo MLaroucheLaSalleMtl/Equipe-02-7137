@@ -132,9 +132,16 @@ public class PlayerHandler : MonoBehaviour
     /// Heal the player
     /// </summary>
     /// <param name="amount"></param>
-    public void HealPlayer(int amount)
+    public void HealPlayer(int amount=-1)
     {
-        Manager.player.GiveHp(amount);
+        if(amount<0)
+        {
+            Manager.player.GiveHp(Manager.player.MaxHP-Manager.player.CurrentHp);
+        }
+        else
+        {
+            Manager.player.GiveHp(amount);
+        }
         UpdatePlayerBarUI();
     }
 

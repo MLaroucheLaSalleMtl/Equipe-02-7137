@@ -16,6 +16,12 @@ public class WarriorClass : PlayerClass
     private double intelligence;
     private int level;
 
+    private int basicAttackMod = 3;
+    private int swingAttackMod = 5;
+    private int jumpAttackMod = 11;
+    private int doubleSwingAttackMod = 8;
+
+
     public override double Range { get; set; }
     public override bool IsMelee { get; set; }
     public override Dictionary<int, Spell> Spells { get; set; }
@@ -72,7 +78,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(basicAttackMod* manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("BasicAttack");
     }
@@ -85,7 +91,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(swingAttackMod*manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("SwingAttack");
     }
@@ -98,7 +104,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(jumpAttackMod * manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("JumpAttack");
     }
@@ -111,7 +117,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(manager.player.Strength, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits(doubleSwingAttackMod*manager.player.Strength, npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("DoubleSwingAttack");
     }

@@ -86,6 +86,7 @@ public class SkillTree
         LinkSkills(skills["dmg3"], skills["dmg4"]);
         LinkSkills(skills["CD3"], skills["CD4"]);
         LinkSkills(skills["int3"], skills["intUlt"]);
+
     }
 
 
