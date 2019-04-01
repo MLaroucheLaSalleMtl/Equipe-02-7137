@@ -217,4 +217,18 @@ public class MonsterHandler : MonoBehaviour
         InitializeFactories();
     }
 
+
+    //weak monster should have a difficulty of 1,player around 2,hard monster and boss 3 and above
+    public void GetStatsForLevel(int level,out int maxHp,out int attackDamage,float difficulty)
+    {
+        int baseHp = 100;
+        int baseAttack = 10;
+
+        float coeficient = 1.1f;
+        float exponent = (Mathf.Sqrt(difficulty) * level) - 5;
+
+        maxHp=(int)(baseHp * Mathf.Pow(coeficient, exponent));
+        attackDamage=(int)(baseAttack * Mathf.Pow(coeficient, exponent));
+    }
+
 }
