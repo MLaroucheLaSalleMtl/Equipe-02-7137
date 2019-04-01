@@ -61,9 +61,9 @@ public class TutorialQuest : Quest
             currentStateId++;
             if (currentStateId == (int)TutorialQuestStateIds.SKELETON_KILLING)
             {
-                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.IMPLING, new Position(34, 31, -60), "Skeleton", 1, 5, 5);
-                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.RED_DRAGON, new Position(2, 31, -15), "Skeleton", 1, 5, 5);
-                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.BLUE_BOAR, new Position(-26, 31, -43), "Skeleton", 1, 5, 5);
+                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(34, 31, -60), "Skeleton", 1, 5, 5);
+                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(2, 31, -15), "Skeleton", 1, 5, 5);
+                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(-26, 31, -43), "Skeleton", 1, 5, 5);
             }
             return true;
         }
