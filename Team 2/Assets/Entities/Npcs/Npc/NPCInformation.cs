@@ -7,4 +7,11 @@
 public static class NPCInformation
 {
 
+    /// <summary>
+    /// Ids of all the npcs
+    /// </summary>
+    public enum NPCIds
+    {
+        DARK_KNIGHT,
+    }
 }

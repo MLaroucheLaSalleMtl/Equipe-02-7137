@@ -11,9 +11,8 @@ using UnityEngine.UI;
 /// </summary>
 public class QuestHandler : MonoBehaviour
 {
-    //prefab of the glowing arrow particle effect
-    public GameObject glowingArrowPrefab;
-    public GameObject currentArrow;
+    //glowing arrow
+    public GameObject glowingArrow;
 
     //the show more/less button
     public Button showButton;
@@ -99,15 +98,17 @@ public class QuestHandler : MonoBehaviour
     /// <param name="rotation"></param>
     public void ShowArrow(Vector3 position, Quaternion rotation)
     {
-        GameObject arrow = Instantiate(glowingArrowPrefab);
-        arrow.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform);
-        arrow.transform.localPosition = position;
-        arrow.transform.localRotation = rotation;
-        if (currentArrow != null)
-        {
-            Destroy(currentArrow);
-        }
-        currentArrow = arrow;
+        glowingArrow.SetActive(true);
+        glowingArrow.transform.localPosition = position;
+        glowingArrow.transform.localRotation = rotation;
+    }
+
+    /// <summary>
+    /// Hide the glowing arrow
+    /// </summary>
+    public void HideArrow()
+    {
+        glowingArrow.SetActive(false);
     }
 
     /// <summary>
@@ -171,7 +172,7 @@ public class QuestHandler : MonoBehaviour
             Debug.LogError("Trying to go the next state of a non started/completed quest.");
             return;
         }
-        bool isFinished = quest.NextState();
+        bool isFinished = !quest.NextState();
         if (isFinished)
         {
             FinishQuest(quest, id);
@@ -224,6 +225,15 @@ public class QuestHandler : MonoBehaviour
     }
 
     /// <summary>
+    /// Can the player start the quest
+    /// </summary>
+    /// <returns></returns>
+    public bool CanStart (int questId)
+    {
+        return !IsStarted(questId) && !IsCompleted(questId);
+    }
+
+    /// <summary>
     /// Has the player received the reward already?
     /// </summary>
     /// <param name="questId"></param>
@@ -269,5 +279,5 @@ public class QuestHandler : MonoBehaviour
         questPanel.localPosition = new Vector3(questPanelPosX[index], 0f, 0f);
         isOpened = !isOpened;
     }
-
+    
 }

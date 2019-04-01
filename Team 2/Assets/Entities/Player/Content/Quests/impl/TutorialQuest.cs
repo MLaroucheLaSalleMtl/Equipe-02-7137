@@ -6,6 +6,13 @@ public class TutorialQuest : Quest
 {
     public static Vector3[] arrowPositions;
     public static Vector3[] arrowRotations;
+    private GameManager manager;
+
+    public enum TutorialQuestStateIds
+    {
+        DARK_KNIGHT_TALKING,
+        SKELETON_KILLING,
+    }
 
     /// <summary>
     /// Instantiates a tutorial quest for a player
@@ -19,6 +26,7 @@ public class TutorialQuest : Quest
         experienceReward = 100;
         itemsReward = null;
         currentStateId = 0;
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         this.player = player;
         StartQuest();
         arrowPositions = new Vector3[4] { new Vector3(0, -125, 0), new Vector3(-175, -150, 0), new Vector3(180, -55, 0) , new Vector3(-335, 48, 0) };
@@ -46,12 +54,18 @@ public class TutorialQuest : Quest
     {
         if (currentStateId + 1 >= states.Count)
         {
-            return true;
+            return false;
         }
         else
         {
             currentStateId++;
-            return false;
+            if (currentStateId == (int)TutorialQuestStateIds.SKELETON_KILLING)
+            {
+                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(34, 31, -60), "Skeleton", 1, 5, 5);
+                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(2, 31, -15), "Skeleton", 1, 5, 5);
+                manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(-26, 31, -43), "Skeleton", 1, 5, 5);
+            }
+            return true;
         }
     }
 
@@ -66,7 +80,7 @@ public class TutorialQuest : Quest
         QuestState stateOne = new QuestState(0, QuestsInformation.StateTypes.TALKING_STATE, 0, MonsterInformation.Monsters.SKELETON, null, 
             "Talk to the Dark Knight. He will explain you how to play the game.");
         stateOne.LoadDialogue(new Dialogue("Dark Knight", "Hello adventurer. Let me show you quickly how to play the game."));
-        stateOne.LoadDialogue(new Dialogue("Dark Knight", "First, you have your ability bar at the middle bottom. You can use" +
+        stateOne.LoadDialogue(new Dialogue("Dark Knight", "First, you have your ability bar at the middle bottom under this dialogue box. You can use" +
             " those abilities to kill monsters."));
         stateOne.LoadDialogue(new Dialogue("Dark Knight", "You can use WASD on your keyboard to move around. Also at the bottom left," +
             " you have your player statistics. Like your cash, experience, level, etc. "));
@@ -76,6 +90,7 @@ public class TutorialQuest : Quest
             " the plus and minus sign to show or hide the tab. Make sure to complete quests as they give good rewards!"));
         stateOne.LoadDialogue(new Dialogue("Dark Knight", "Now adventurer, please go kill 3 skeletons! That's your first quest! Good luck!"));
         states.Add(stateOne);
+
         QuestState stateTwo = new QuestState(1, QuestsInformation.StateTypes.KILL_STATE, 3, MonsterInformation.Monsters.SKELETON, null,
     "Kill 3 skeletons.");
         states.Add(stateTwo);

@@ -42,10 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //Spawn monsters for testing purposes
-        //monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(-11, 31, -5), "Skeleton", 1, 5, 5);
-        //monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(-5, 31, -5), "Skeleton", 1, 5, 5);
-        //monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(0, 31, -5), "Skeleton", 1, 5, 5);
+
     }
 
     /// <summary>
