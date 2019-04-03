@@ -152,6 +152,9 @@ public abstract class Monster : Entity
     /// </summary>
     public List<ItemDrop> DropTable { get; set; } = new List<ItemDrop>();
 
+    public float Difficulty { get; set; }
+
+
     #endregion
 
     #region NPC interaction
@@ -292,8 +295,13 @@ public abstract class Monster : Entity
         }
     }
 
+    public void SetStats(int maxHp, int strenght)
+    {
+        this.maxHp = maxHp;
+        this.Strength = strenght;
+    }
     #endregion
-   
+
     #region NPC display / UI
 
     /// <summary>

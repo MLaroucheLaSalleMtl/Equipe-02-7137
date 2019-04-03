@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -46,5 +47,11 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        MenuOff();
+    }
+
+    public void MenuOff()
+    {
+        throw new NotImplementedException();
     }
 }
