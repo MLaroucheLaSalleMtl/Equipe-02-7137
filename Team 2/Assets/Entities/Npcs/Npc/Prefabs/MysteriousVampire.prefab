@@ -2257,6 +2257,8 @@ GameObject:
   - component: {fileID: 8743353445069381010}
   - component: {fileID: 8743353445078709238}
   - component: {fileID: 8743353444671394757}
+  - component: {fileID: 2034240761}
+  - component: {fileID: 2034240760}
   m_Layer: 9
   m_Name: MysteriousVampire
   m_TagString: Untagged
@@ -2315,6 +2317,35 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!54 &2034240761
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743353445069341106}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &2034240760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743353445069341106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bb71f3c60d27a499993274efdc706d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionRadius: 5
 --- !u!1 &8743353445069341108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,33 +2538,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.55789566
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.338608
+      value: 25.2
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.55789566
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
@@ -2547,18 +2573,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 278.74484
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 568.7616
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9044202020167995855, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}

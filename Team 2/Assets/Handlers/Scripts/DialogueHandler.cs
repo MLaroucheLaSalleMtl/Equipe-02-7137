@@ -103,7 +103,7 @@ public class DialogueHandler : MonoBehaviour
     IEnumerator TypeDialogue (string text)
     {
         dialogueText.text = "";
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         foreach (char letter in text.ToCharArray())
         {
             dialogueText.text += letter;

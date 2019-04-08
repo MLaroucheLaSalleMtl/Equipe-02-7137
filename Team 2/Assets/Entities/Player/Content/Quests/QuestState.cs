@@ -19,7 +19,7 @@ public class QuestState
     public int id;
 
     //the type of the state
-    protected QuestsInformation.StateTypes type;
+    public QuestsInformation.StateTypes Type;
 
     //amount requiered to finish the state
     public int amountRequiered;
@@ -43,7 +43,7 @@ public class QuestState
     public QuestState (int id, QuestsInformation.StateTypes type, int amountRequiered, MonsterInformation.Monsters toKill, Item toGather, string description)
     {
         this.id = id;
-        this.type = type;
+        this.Type = type;
         this.amountRequiered = amountRequiered;
         this.npcToKill = toKill;
         this.itemToGather = toGather;
@@ -98,7 +98,7 @@ public class QuestState
     {
         if (dialogueIndex + 1 > Dialogues.Count)
         {
-            if (type == QuestsInformation.StateTypes.TALKING_STATE)
+            if (Type == QuestsInformation.StateTypes.TALKING_STATE)
             {
                 CompleteState();
             }

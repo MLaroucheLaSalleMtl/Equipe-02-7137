@@ -4,10 +4,10 @@ using UnityEngine;
 
 /// <summary>
 /// @author Samuel Paquette
-/// @date 25 MARS 2019
-/// @description The dark knight npc
+/// @date 08 AVR 2019
+/// @description The mysterious vampire npc
 /// </summary>
-public class DarkKnight : NPC
+public class MysteriousVampire : NPC
 {
 
     GameManager manager;
@@ -16,7 +16,7 @@ public class DarkKnight : NPC
     {
         animator = GetComponent<Animator>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Id = NPCInformation.NPCIds.DARK_KNIGHT;
+        Id = NPCInformation.NPCIds.MYSTERIOUS_VAMPIRE;
     }
 
     /// <summary>
@@ -25,12 +25,12 @@ public class DarkKnight : NPC
     /// <param name="player"></param>
     public override void ExecuteAction(Player player)
     {
-        if (manager.questHandler.CanStart((int)QuestsInformation.QuestIds.TUTORIAL_QUEST))
+        if (manager.questHandler.CanStart((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGER_I))
         {
-            manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.TUTORIAL_QUEST);
+            manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGER_I);
             foreach (Quest quest in manager.questHandler.currentQuests)
             {
-                if (quest.id == QuestsInformation.QuestIds.TUTORIAL_QUEST)
+                if (quest.id == QuestsInformation.QuestIds.SAVE_THE_VILLAGER_I)
                 {
                     manager.dialogueHandler.StartDialogue(quest);
                 }
