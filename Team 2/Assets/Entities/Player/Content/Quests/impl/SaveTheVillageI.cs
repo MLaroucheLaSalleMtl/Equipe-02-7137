@@ -15,11 +15,11 @@ public class SaveTheVillageI : Quest
     }
 
     /// <summary>
-    /// Instantiates a tutorial quest for a player
+    /// Instantiates a quest for a player
     /// </summary>
     public SaveTheVillageI(Player player)
     {
-        id = QuestsInformation.QuestIds.SAVE_THE_VILLAGER_I;
+        id = QuestsInformation.QuestIds.SAVE_THE_VILLAGE_I;
         name = "Save the Village (I)";
         description = "You need to save the village from the red boars! Please help the villagers!";
         moneyReward = 250;

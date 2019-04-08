@@ -25,12 +25,12 @@ public class MysteriousVampire : NPC
     /// <param name="player"></param>
     public override void ExecuteAction(Player player)
     {
-        if (manager.questHandler.CanStart((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGER_I))
+        if (manager.questHandler.CanStart((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_I))
         {
-            manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGER_I);
+            manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_I);
             foreach (Quest quest in manager.questHandler.currentQuests)
             {
-                if (quest.id == QuestsInformation.QuestIds.SAVE_THE_VILLAGER_I)
+                if (quest.id == QuestsInformation.QuestIds.SAVE_THE_VILLAGE_I)
                 {
                     manager.dialogueHandler.StartDialogue(quest);
                 }
