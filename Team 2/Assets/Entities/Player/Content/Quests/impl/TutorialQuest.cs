@@ -8,7 +8,7 @@ public class TutorialQuest : Quest
     public static Vector3[] arrowRotations;
     private GameManager manager;
 
-    public enum TutorialQuestStateIds
+    public enum StateIds
     {
         DARK_KNIGHT_TALKING,
         SKELETON_KILLING,
@@ -59,7 +59,7 @@ public class TutorialQuest : Quest
         else
         {
             currentStateId++;
-            if (currentStateId == (int)TutorialQuestStateIds.SKELETON_KILLING)
+            if (currentStateId == (int)StateIds.SKELETON_KILLING)
             {
                 manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(34, 31, -60), "Skeleton", 1, 5, 5);
                 manager.monsterHandler.SpawnMonster(MonsterInformation.Monsters.SKELETON, new Position(2, 31, -15), "Skeleton", 1, 5, 5);

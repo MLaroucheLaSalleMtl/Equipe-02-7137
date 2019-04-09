@@ -28,7 +28,13 @@ public class DarkKnight : NPC
         if (manager.questHandler.CanStart((int)QuestsInformation.QuestIds.TUTORIAL_QUEST))
         {
             manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.TUTORIAL_QUEST);
-            manager.dialogueHandler.StartDialogue(manager.questHandler.currentQuests[0]);
+            foreach (Quest quest in manager.questHandler.currentQuests)
+            {
+                if (quest.id == QuestsInformation.QuestIds.TUTORIAL_QUEST)
+                {
+                    manager.dialogueHandler.StartDialogue(quest);
+                }
+            }
         }
     }
 

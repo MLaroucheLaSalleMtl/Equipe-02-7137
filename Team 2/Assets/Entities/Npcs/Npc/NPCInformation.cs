@@ -13,5 +13,7 @@ public static class NPCInformation
     public enum NPCIds
     {
         DARK_KNIGHT,
+        MYSTERIOUS_VAMPIRE,
+        AKAI,
     }
 }

@@ -16,6 +16,8 @@ public static class QuestsInformation
     public enum QuestIds
     {
         TUTORIAL_QUEST,
+        SAVE_THE_VILLAGE_I,
+        SAVE_THE_VILLAGE_II,
     }
 
     public enum StateTypes

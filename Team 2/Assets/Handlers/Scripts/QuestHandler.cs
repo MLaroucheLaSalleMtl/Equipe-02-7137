@@ -65,12 +65,38 @@ public class QuestHandler : MonoBehaviour
     {
         if (currentQuests.Count > 0)
         {
-            questNameTxt.text = currentQuests[questPanelIndex].name;
-            questDescriptionTxt.text = currentQuests[questPanelIndex].description;
-            questGoalTxt.text = currentQuests[questPanelIndex].GetCurrentState().GoalDescription();
-            questRewardsTxt.text = currentQuests[questPanelIndex].GetRewards();
+            while (questPanelIndex >= currentQuests.Count && questPanelIndex != 0)
+            {
+                questPanelIndex--;
+            }
+            Quest currentQuest = currentQuests[questPanelIndex];
+
+            //name
+            questNameTxt.text = currentQuest.name;
+
+            //description
+            questDescriptionTxt.text = currentQuest.description;
+
+
+            QuestState currentState = currentQuest.GetCurrentState();
+            //goal
+            if (currentState.Type == QuestsInformation.StateTypes.KILL_STATE)
+            {
+                questGoalTxt.text = currentQuest.GetCurrentState().GoalDescription() + $" ({currentState.currentAmount}/{currentState.amountRequiered})";
+            }
+            else
+            {
+                questGoalTxt.text = currentQuest.GetCurrentState().GoalDescription();
+            }
+
+            //rewards
+            questRewardsTxt.text = currentQuest.GetRewards();
+
+            //page index
             questIndexTxt.text = $"{questPanelIndex + 1}/{currentQuests.Count}";
-            int id = (int)currentQuests[questPanelIndex].id;
+
+            //claim button
+            int id = (int)currentQuest.id;
             if (IsCompleted(id) && !HasReceivedReward(id))
             {
                 questClaimButton.interactable = true;
@@ -124,6 +150,12 @@ public class QuestHandler : MonoBehaviour
         {
             case (int)QuestsInformation.QuestIds.TUTORIAL_QUEST:
                 currentQuests.Add(new TutorialQuest(manager.player));
+                break;
+            case (int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_I:
+                currentQuests.Add(new SaveTheVillageI(manager.player));
+                break;
+            case (int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_II:
+                currentQuests.Add(new SaveTheVillageII(manager.player));
                 break;
         }
         DisplayCurrentQuest();

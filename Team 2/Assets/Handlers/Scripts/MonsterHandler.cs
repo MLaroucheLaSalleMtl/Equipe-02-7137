@@ -104,7 +104,7 @@ public class MonsterHandler : MonoBehaviour
                 SpawnedMonsters.Add(m.InstanceId, m);
                 break;
             default:
-                throw new System.Exception("invalide monsterID");
+                throw new System.Exception("Invalid Monster ID");
         }
         m.Spawn(position);
         SetStatsForLevel(level,m);
