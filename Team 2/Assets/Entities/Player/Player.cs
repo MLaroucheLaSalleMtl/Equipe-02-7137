@@ -189,6 +189,11 @@ public class Player : Entity
     /// </summary>
     public bool IsDead { get; set; }
 
+    /// <summary>
+    /// Inventory of the player
+    /// </summary>
+    public Inventory PlayerInventory { get; set; } = new Inventory();
+
     #endregion
 
     #region Player interaction

@@ -18,18 +18,11 @@ public class ItemHandler : MonoBehaviour
     }
 
     /// <summary>
-    /// Called at the start of the game
+    /// Picks up an item and add it to the inventory of the player
     /// </summary>
-    void Start()
+    public void PickUp(ItemData item)
     {
 
     }
 
-    /// <summary>
-    /// Called each game tick
-    /// </summary>
-    void Update()
-    {
-        
-    }
 }

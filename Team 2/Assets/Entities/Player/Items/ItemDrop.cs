@@ -10,7 +10,7 @@ public class ItemDrop
     /// <summary>
     /// The actual item
     /// </summary>
-    public Item Loot { get; set; }
+    public ItemData Loot { get; set; }
 
     /// <summary>
     /// The percentage chances to receive the loot
@@ -28,7 +28,7 @@ public class ItemDrop
     public int MaximumAmount { get; set; }
     
 
-    public ItemDrop (Item loot, RarityChances chances, int minAmount, int maxAmount)
+    public ItemDrop (ItemData loot, RarityChances chances, int minAmount, int maxAmount)
     {
         Loot = loot;
         Chances = chances;
