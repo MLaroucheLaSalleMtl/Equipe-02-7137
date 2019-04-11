@@ -15,5 +15,6 @@ public static class NPCInformation
         DARK_KNIGHT,
         MYSTERIOUS_VAMPIRE,
         AKAI,
+        DREYAR,
     }
 }
