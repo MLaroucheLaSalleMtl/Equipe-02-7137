@@ -13,6 +13,7 @@ public class QuestHandler : MonoBehaviour
 {
     //glowing arrow
     public GameObject glowingArrow;
+    public GameObject knightFireIndicator;
 
     //the show more/less button
     public Button showButton;
@@ -172,6 +173,11 @@ public class QuestHandler : MonoBehaviour
             quest.FinishQuest();
             isQuestCompleted[id] = true;
             DisplayCurrentQuest();
+        }
+
+        if (id == (int)QuestsInformation.QuestIds.TUTORIAL_QUEST)
+        {
+            knightFireIndicator.SetActive(false);
         }
     }
 
