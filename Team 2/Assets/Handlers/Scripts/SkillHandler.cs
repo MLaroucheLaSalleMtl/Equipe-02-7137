@@ -15,7 +15,6 @@ public class SkillHandler : MonoBehaviour
         manager = GetComponent<GameManager>();
         playerScript = manager.player;
         skillTree = new SkillTree(manager);
-        Debug.Log("start");
     }
 
     // Update is called once per frame

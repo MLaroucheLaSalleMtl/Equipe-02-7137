@@ -289,8 +289,7 @@ public class Player : Entity
     public override void SetLevel(int level)
     {
         this.level = level;
-        //Debug.Log(this.level);
-        SetLevel(this.level);
+        SetStatsForLevel(this.level);
     }
 
     /// <summary>
@@ -351,6 +350,7 @@ public class Player : Entity
         float levelMod = Mathf.Pow(coeficient, exponent);
 
         maxHp = (int)(baseHp * levelMod);
+        currentHp = MaxHP;
         strength = (int)(baseStrength * levelMod);
         dexterity= (int)(baseDex * levelMod);
         inteligence= (int)(baseInt * levelMod);

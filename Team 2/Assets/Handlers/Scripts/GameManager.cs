@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         dialogueHandler = GetComponent<DialogueHandler>();
 
         playerHandler.CreatePlayer("Satucre", 5, 10, 10, 1, 1, 0, 150, new WarriorClass(), GameObject.Find("Player"));
-        Debug.Log(player);
     }
 
     private void Start()
