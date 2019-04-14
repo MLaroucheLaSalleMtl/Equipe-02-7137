@@ -729,7 +729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &753965923172266745
 Transform:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1625209249262539182
 Transform:
   m_ObjectHideFlags: 0
@@ -965,7 +965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6999740599295248103
 Transform:
   m_ObjectHideFlags: 0
@@ -999,7 +999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7116234088257479279
 Transform:
   m_ObjectHideFlags: 0
@@ -1681,7 +1681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4848552763152934252
 Transform:
   m_ObjectHideFlags: 0
@@ -1826,7 +1826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8765499376273723152
 Transform:
   m_ObjectHideFlags: 0
@@ -1946,7 +1946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2604992972543529145
 Transform:
   m_ObjectHideFlags: 0
@@ -2068,7 +2068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8615260945394140474
 Transform:
   m_ObjectHideFlags: 0
@@ -2499,7 +2499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4886844825689097294
 Transform:
   m_ObjectHideFlags: 0
@@ -3099,6 +3099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwingAttackHitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 7337732635328501083, guid: f869f5e4a8413a140b431e799eb43c4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7337732635328501092, guid: f869f5e4a8413a140b431e799eb43c4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3173,6 +3178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DoubleSwingAttackHitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337732635328501083, guid: 95c68d9659b1bbd4099f6935cc5b8dee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7337732635328501092, guid: 95c68d9659b1bbd4099f6935cc5b8dee,
         type: 3}
@@ -3249,6 +3259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicAttackHitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 7337732635328501083, guid: 89869d9fbe2ccb9449c78244c2ad7c4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7337732635328501092, guid: 89869d9fbe2ccb9449c78244c2ad7c4b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3324,6 +3339,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpAttackHitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 7337732635328501083, guid: 9f45da769035fb445aecf038ba1b1ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7337732635328501092, guid: 9f45da769035fb445aecf038ba1b1ab5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3398,6 +3418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 4333794347903135784, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8875307084854461219, guid: abd7f1fbd930d234c870e6cdbb6c53f5,
         type: 3}

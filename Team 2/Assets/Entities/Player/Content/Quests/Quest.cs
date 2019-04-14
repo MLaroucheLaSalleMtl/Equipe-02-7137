@@ -28,7 +28,7 @@ public abstract class Quest
     public int experienceReward;
 
     //items reward
-    public List<Item> itemsReward;
+    public List<ItemData> itemsReward;
 
     //states of the quest
     public List<QuestState> states;
