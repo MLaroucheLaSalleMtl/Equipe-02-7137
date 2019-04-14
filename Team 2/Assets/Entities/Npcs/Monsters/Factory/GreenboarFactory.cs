@@ -17,8 +17,6 @@ public class GreenboarFactory : MonsterFactory
     public override Monster CreateNewNpc(int instanceId, string displayName, int level, int maxHp, int currentHp)
     {
         GreenBoar newBoar = new GreenBoar(instanceId, displayName, level, maxHp, currentHp);
-        newBoar.DropTable.Add(new ItemDrop(new Item(0, 0, "Sword", "Nice sword", 5, null, null, ItemInformation.ItemRarity.LEGENDARY)
-                                    , ItemInformation.RarityChances.LEGENDARY, 1, 1));
         return newBoar;
     }
     

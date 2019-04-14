@@ -11,25 +11,34 @@ public class ItemHandler : MonoBehaviour
 {
     //bi directional link to the game manager
     GameManager Manager { get; set; }
+    Inventory inventory { get; set; }
+    public Transform inventoryParentObject;
+    InventorySlot[] inventorySlots;
 
     private void Awake()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        inventory = Manager.player.PlayerInventory;
+        inventory.onItemChangedCallBack += UpdateInventoryUI;
+        inventorySlots = inventoryParentObject.GetComponentsInChildren<InventorySlot>();
     }
 
     /// <summary>
-    /// Called at the start of the game
+    /// Updates the inventory UI
     /// </summary>
-    void Start()
+    void UpdateInventoryUI ()
     {
-
+        for (int index = 0; index < inventorySlots.Length; index++)
+        {
+            if (index < inventory.items.Count)
+            {
+                inventorySlots[index].AddItem(inventory.items[index]);
+            }
+            else
+            {
+                inventorySlots[index].ClearSlot();
+            }
+        }
     }
 
-    /// <summary>
-    /// Called each game tick
-    /// </summary>
-    void Update()
-    {
-        
-    }
 }

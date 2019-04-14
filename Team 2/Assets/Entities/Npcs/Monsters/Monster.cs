@@ -259,7 +259,7 @@ public abstract class Monster : Entity
         {
             if (DropTable.Count > 0)
             {
-                Debug.Log($"I dropped {DropTable[0].Loot.ItemName}");
+                //Debug.Log($"I dropped {DropTable[0].Loot.ItemName}");
             }
         }
         isDead = true;

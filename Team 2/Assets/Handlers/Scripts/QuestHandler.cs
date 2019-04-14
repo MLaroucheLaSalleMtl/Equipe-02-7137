@@ -13,6 +13,7 @@ public class QuestHandler : MonoBehaviour
 {
     //glowing arrow
     public GameObject glowingArrow;
+    public GameObject knightFireIndicator;
 
     //the show more/less button
     public Button showButton;
@@ -157,6 +158,9 @@ public class QuestHandler : MonoBehaviour
             case (int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_II:
                 currentQuests.Add(new SaveTheVillageII(manager.player));
                 break;
+            case (int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_III:
+                currentQuests.Add(new SaveTheVillageIII(manager.player));
+                break;
         }
         DisplayCurrentQuest();
         return true;
@@ -172,6 +176,11 @@ public class QuestHandler : MonoBehaviour
             quest.FinishQuest();
             isQuestCompleted[id] = true;
             DisplayCurrentQuest();
+        }
+
+        if (id == (int)QuestsInformation.QuestIds.TUTORIAL_QUEST)
+        {
+            knightFireIndicator.SetActive(false);
         }
     }
 
