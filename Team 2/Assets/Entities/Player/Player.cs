@@ -231,6 +231,7 @@ public class Player : Entity
     public override void LevelUp()
     {
         level++;
+        SetLevel(this.level);
     }
 
     /// <summary>
@@ -241,6 +242,7 @@ public class Player : Entity
         if (Experience >= GetXpToLevelUp(Level))
         {
             LevelUp();
+            SetLevel(this.level);
         }
     }
 
@@ -287,6 +289,8 @@ public class Player : Entity
     public override void SetLevel(int level)
     {
         this.level = level;
+        //Debug.Log(this.level);
+        SetLevel(this.level);
     }
 
     /// <summary>
@@ -331,5 +335,27 @@ public class Player : Entity
             return 0;
         return ((int)(Mathf.Ceil(level * 5 / 3)) + 83) + GetXpToLevelUp(level - 1);
     }
+
+    public virtual void SetStatsForLevel(int level)
+    {
+        int baseHp = 100;
+        int baseStrength = 10;
+        int baseDex = 10;
+        int baseInt = 10;
+        int baseDef = 10;
+
+
+        float coeficient = 1.1f;
+        float exponent = (Mathf.Sqrt(2) * level) - 5;
+
+        float levelMod = Mathf.Pow(coeficient, exponent);
+
+        maxHp = (int)(baseHp * levelMod);
+        strength = (int)(baseStrength * levelMod);
+        dexterity= (int)(baseDex * levelMod);
+        inteligence= (int)(baseInt * levelMod);
+        Defence= (int)(baseDef * levelMod);
+    }
+
 
 }

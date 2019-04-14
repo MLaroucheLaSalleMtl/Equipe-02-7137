@@ -38,7 +38,10 @@ public class Spawner : MonoBehaviour
             int spawnX = Random.Range(-spawnRange, spawnRange);
             int spawnZ = Random.Range(-spawnRange, spawnRange);
             string name = type[monster].ToString().Substring(0, 1) + type[monster].ToString().Substring(1).ToLower().Replace('_', ' ');
-            myMonsters.Add(manager.monsterHandler.SpawnMonster(type[monster], new Position(spawnX+ (int)transform.position.x, (int)transform.position.y, spawnZ+ (int)transform.position.z), name, 1, 100, 100));
+            var spawnPos = new Position(spawnX + (int)transform.position.x, (int)transform.position.y, spawnZ + (int)transform.position.z);
+            var newMonster = manager.monsterHandler.SpawnMonster(type[monster], spawnPos, name, 1, 100, 100);
+            manager.monsterHandler.SetStatsForLevel(manager.player.Level, newMonster, type[monster]);
+            myMonsters.Add(newMonster);
         }
         Invoke("Spawn", time);
     }

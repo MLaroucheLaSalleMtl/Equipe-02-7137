@@ -107,7 +107,7 @@ public class MonsterHandler : MonoBehaviour
                 throw new System.Exception("Invalid Monster ID");
         }
         m.Spawn(position);
-        SetStatsForLevel(level,m);
+        SetStatsForLevel(level,m,name);
         return m;
         
     }
@@ -296,11 +296,9 @@ public class MonsterHandler : MonoBehaviour
 
 
 
-    private void SetStatsForLevel(int level,Monster m)
+    public void SetStatsForLevel(int level,Monster m,MonsterInformation.Monsters type)
     {
-        int maxHp = 0;
-        int strenght = 0;
-        GetStatsForLevel(level, out maxHp, out strenght, m.Difficulty);
+        GetStatsForLevel(level, out int maxHp, out int strenght, MonsterInformation.monsterDificulties[type]);
         m.SetStats(maxHp, strenght);
     }
 
