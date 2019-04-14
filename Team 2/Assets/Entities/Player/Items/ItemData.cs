@@ -25,4 +25,11 @@ public class ItemData : ScriptableObject
         this.value = value;
         this.rarity = rarity;
     }
+
+    public virtual void Use ()
+    {
+        //Use the item and execute an action, equip, etc.
+        Debug.Log($"Using {name}");
+    }
+
 }

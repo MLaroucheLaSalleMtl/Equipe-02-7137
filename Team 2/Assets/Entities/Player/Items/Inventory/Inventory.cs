@@ -7,11 +7,11 @@ using UnityEngine;
 /// @date 11 avr 19
 /// @description Inventory of the player
 /// </summary>
-public class Inventory : MonoBehaviour
+public class Inventory
 {
     public List<ItemData> items = new List<ItemData>();
 
-    public const int Spaces = 20;
+    public const int Spaces = 16;
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallBack;
