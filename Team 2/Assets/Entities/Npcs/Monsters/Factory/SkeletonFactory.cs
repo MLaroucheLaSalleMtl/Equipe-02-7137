@@ -17,6 +17,12 @@ public class SkeletonFactory : MonsterFactory
     public override Monster CreateNewNpc(int instanceId, string displayName, int level, int maxHp, int currentHp)
     {
         Skeleton newNPC = new Skeleton(instanceId, displayName, level, maxHp, currentHp);
+
+        //Drops
+        newNPC.DropTable.Add(new ItemDrop(1, ItemInformation.RarityChances.COMMON, true, 1, 2));
+        newNPC.DropTable.Add(new ItemDrop(1, ItemInformation.RarityChances.COMMON, true, 1, 2));
+        newNPC.DropTable.Add(new ItemDrop(1, ItemInformation.RarityChances.COMMON, true, 1, 2));
+
         return newNPC;
     }
     

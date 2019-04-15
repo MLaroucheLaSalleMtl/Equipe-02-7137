@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca151eb7108fa94791fa3cdb01fe129, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cd5df2eb98e79d4482be84b1235d4dd, type: 3}
   m_Name: Cash
   m_EditorClassIdentifier: 
   itemId: 1
   name: Cash
   icon: {fileID: 0}
-  description: Some really valuable coins.
+  description: Some valuable coins.
   value: 1
   rarity: 0
+  amount: 5

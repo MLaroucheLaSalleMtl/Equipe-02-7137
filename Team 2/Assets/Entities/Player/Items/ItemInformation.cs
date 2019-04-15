@@ -28,10 +28,18 @@ public static class ItemInformation
     /// </summary>
     public enum RarityChances
     {
-        COMMON = 10,
-        UNCOMMON = 6,
-        RARE = 3,
-        MYTHIC = 1,
-        LEGENDARY = 0
+        COMMON = 75,
+        UNCOMMON = 14,
+        RARE = 6,
+        MYTHIC = 3,
+        LEGENDARY = 1
+    }
+
+    /// <summary>
+    /// Item ids of the type of currencies
+    /// </summary>
+    public enum MoneyIds
+    {
+        CASH = 1,
     }
 }
