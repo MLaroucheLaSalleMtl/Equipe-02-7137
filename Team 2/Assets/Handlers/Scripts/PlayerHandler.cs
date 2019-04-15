@@ -111,10 +111,10 @@ public class PlayerHandler : MonoBehaviour
     public void CreatePlayer (string name, int level, int maxhp, int strength, int intelligence, int dexterity, int defence, int money, PlayerClass playerclass, GameObject playerModel)
     {
         Manager.player = new Player(name, level, maxhp, strength, intelligence, dexterity, defence, money, playerclass, playerModel);
-        for (int index = 0; index < ClassesInformation.AmountOfAttacks; index++)
-        {
-            Manager.combatHandler.AttacksCooldown[index] = index + 1;
-        }
+        //for (int index = 0; index < ClassesInformation.AmountOfAttacks; index++)
+        //{
+        //    Manager.combatHandler.AttacksCooldown[index] = index + 1;
+        //}
         UpdatePlayerBarUI();
     }
 
