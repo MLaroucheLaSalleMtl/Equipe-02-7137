@@ -25,11 +25,16 @@ public abstract class PlayerClass
 
     public void ResetSkills()
     {
+        var temp = new List<Skill>();
         foreach(Skill s in UnlockedSkills)
+        {
+            temp.Add(s);
+        }
+        UnlockedSkills.Clear();
+        foreach(Skill s in temp)
         {
             s.Deactivate();
         }
-        UnlockedSkills.Clear();
     }
 
 }

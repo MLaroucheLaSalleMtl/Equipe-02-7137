@@ -76,6 +76,7 @@ public class WarriorClass : PlayerClass
     /// </summary>
     public void BasicAttack(Monster[] npcsGettingHit)
     {
+        
         if (npcsGettingHit.Length > 0)
         {
             manager.monsterHandler.ExecuteHits(basicAttackMod* manager.player.Strength, npcsGettingHit);
@@ -91,7 +92,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(swingAttackMod*manager.player.Strength, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits((int)(swingAttackMod * GetDmgMod() * manager.player.Strength), npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("SwingAttack");
     }
@@ -104,7 +105,7 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(jumpAttackMod * manager.player.Strength, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits((int)(jumpAttackMod * GetDmgMod() * manager.player.Strength), npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("JumpAttack");
     }
@@ -117,8 +118,18 @@ public class WarriorClass : PlayerClass
     {
         if (npcsGettingHit.Length > 0)
         {
-            manager.monsterHandler.ExecuteHits(doubleSwingAttackMod*manager.player.Strength, npcsGettingHit);
+            manager.monsterHandler.ExecuteHits((int)(doubleSwingAttackMod * GetDmgMod() * manager.player.Strength), npcsGettingHit);
         }
         manager.combatHandler.attacksAnimator[(int)ClassesInformation.ClassesId.WARRIOR].SetTrigger("DoubleSwingAttack");
+    }
+
+    private float GetDmgMod()
+    {
+        float dmgMod = 100;
+        foreach(Skill s in manager.player.Class.UnlockedSkills)
+        {
+            dmgMod += s.SpellDamageModifyer;
+        }
+        return dmgMod / 100;
     }
 }

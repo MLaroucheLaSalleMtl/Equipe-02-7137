@@ -44,5 +44,22 @@ public static class MonsterInformation
         DEATH,
     }
 
+    public static Dictionary<Monsters, float>monsterDificulties=new Dictionary<Monsters, float> {
+        { Monsters.RED_BOAR, 0.5f },
+        { Monsters.IMPLING, 1 },
+        { Monsters.SKELETON, 1 },
+        { Monsters.BLUE_BOAR, 1 },
+        { Monsters.GREEN_BOAR, 1 },
+        { Monsters.GOLD_BOAR, 1.5f },
+        { Monsters.BLUE_DRAGON, 2 },
+        { Monsters.GREEN_DRAGON, 2 },
+        { Monsters.PURPLE_DRAGON, 4 },
+        { Monsters.RED_DRAGON, 3 },
+
+
+
+    };
+        
+
     public const int HPRate = 10;
 }

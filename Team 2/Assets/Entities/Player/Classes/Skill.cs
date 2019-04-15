@@ -63,10 +63,12 @@ public class Skill
         bool activatable = Activatable();
         if (activatable)
         {
+            var preMaxHp = parent.Manager.player.MaxHP;
             isActive = true;
             Parent.Activated++;
             parent.Manager.player.Class.UnlockedSkills.Add(this);
-            parent.Manager.playerHandler.HealPlayer((int)(parent.Manager.player.MaxHP * healtModifyer / 100));
+            var postMaxHp = parent.Manager.player.MaxHP;
+            parent.Manager.playerHandler.HealPlayer(postMaxHp-preMaxHp);
         }
         return activatable;
     }
@@ -98,7 +100,9 @@ public class Skill
 
     public void Deactivate()
     {
-        parent.Manager.playerHandler.DamagePlayer((int)(parent.Manager.player.MaxHP * healtModifyer / 100));
+       var h = parent.Manager.player.MaxHP;
+       parent.Manager.playerHandler.DamagePlayer((int)(h*healtModifyer/100));
+
     }
 
 }
