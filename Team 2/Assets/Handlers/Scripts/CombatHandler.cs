@@ -26,7 +26,8 @@ public class CombatHandler : MonoBehaviour
     
     //hitboxes for the classes
     public Animator[] attacksAnimator;
- 
+
+    private float[] AnimationTimes { get; set; }
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class CombatHandler : MonoBehaviour
 
         //AttacksCooldown = attackCooldowns;
         AttacksCooldown = new float[] { 1.25f, 3f, 5f, 7f };
+        AnimationTimes = new float[] {1.25f,1.75f,2f,3.5f };
         TimeLeftOnCooldown = new float[ClassesInformation.AmountOfAttacks];
     }
 
@@ -125,7 +127,7 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
                     playerClass.DoubleSwingAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] * cooldownReduction;
-                    StartCoroutine(AttackChainingInterval(AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] * cooldownReduction));
+                    StartCoroutine(AttackChainingInterval(2.25f));
                 }
                 break;
         }
