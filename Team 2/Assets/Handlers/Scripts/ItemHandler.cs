@@ -16,7 +16,7 @@ public class ItemHandler : MonoBehaviour
     InventorySlot[] inventorySlots;
     public GameObject[] itemPrefabs;
 
-    private void Awake()
+    private void Start()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         inventory = Manager.player.PlayerInventory;

@@ -192,7 +192,7 @@ public class Player : Entity
     /// <summary>
     /// Inventory of the player
     /// </summary>
-    public Inventory PlayerInventory { get; set; } = new Inventory();
+    public Inventory PlayerInventory { get; set; }
 
     #endregion
 
@@ -317,6 +317,7 @@ public class Player : Entity
         IsAttacking = false;
         PlayerController = WorldModel.GetComponent<Animator>();
         IsDead = false;
+        PlayerInventory = new Inventory();
     }
 
     #endregion
