@@ -122,9 +122,18 @@ public class PlayerHandler : MonoBehaviour
     /// Damage the player
     /// </summary>
     /// <param name="amount"></param>
-    public void DamagePlayer (int amount)
+    public void DamagePlayer (int amount,bool ignorDeffence=false)
     {
-        Manager.player.RemoveHp(amount);
+        float dmgMod = 100;
+        if(!ignorDeffence)
+        {
+            foreach(Skill s in Manager.player.Class.UnlockedSkills)
+            {
+                dmgMod -= s.DefModifyer;
+            }
+        }
+        dmgMod /= 100;
+        Manager.player.RemoveHp((int)(amount*dmgMod));
         UpdatePlayerBarUI();
     }
 

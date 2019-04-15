@@ -27,12 +27,15 @@ public class CombatHandler : MonoBehaviour
     //hitboxes for the classes
     public Animator[] attacksAnimator;
 
+    private float[] attackCooldowns = new float[] { 1.25f, 3f, 50f, 7f };
+
     private void Awake()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         NpcsCurrentlyInHitbox = new List<Monster>();
 
 
+        //AttacksCooldown = attackCooldowns;
         AttacksCooldown = new float[ClassesInformation.AmountOfAttacks];
         TimeLeftOnCooldown = new float[ClassesInformation.AmountOfAttacks];
     }
@@ -81,6 +84,12 @@ public class CombatHandler : MonoBehaviour
     public void WarriorAttack (int keyIndex)
     {
         WarriorClass playerClass = Manager.player.Class as WarriorClass;
+        float cooldownReduction = 100;
+        foreach(Skill s in Manager.player.Class.UnlockedSkills)
+        {
+            cooldownReduction -= s.CooldownReduction;
+        }
+        cooldownReduction /= 100;
         switch (keyIndex)
         {
             case (int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK:
@@ -90,7 +99,7 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("BasicAttackHitbox");
                     playerClass.BasicAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.BASIC_ATTACK];
-                    StartCoroutine(AttackChainingInterval(1.25f));
+                    StartCoroutine(AttackChainingInterval(attackCooldowns[0]));
                 }
                 break;
             case (int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK:
@@ -99,7 +108,7 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("SwingAttackHitbox");
                     playerClass.SwingAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.SWING_ATTACK];
-                    StartCoroutine(AttackChainingInterval(1.75f));
+                    StartCoroutine(AttackChainingInterval(attackCooldowns[1]*cooldownReduction));
                 }
                 break;
             case (int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK:
@@ -108,7 +117,8 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("JumpAttackHitbox");
                     playerClass.JumpAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK];
-                    StartCoroutine(AttackChainingInterval(2f));
+                    //TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.JUMP_ATTACK];
+                    StartCoroutine(AttackChainingInterval(attackCooldowns[2] * cooldownReduction));
                 }
                 break;
             case (int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK:
@@ -117,7 +127,7 @@ public class CombatHandler : MonoBehaviour
                     CurrentHitbox = GameObject.Find("DoubleSwingAttackHitbox");
                     playerClass.DoubleSwingAttack(Manager.combatHandler.NpcsCurrentlyInHitbox.ToArray());
                     TimeLeftOnCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK] = AttacksCooldown[(int)ClassesInformation.WarriorKeyIndex.DOUBLE_SWING_ATTACK];
-                    StartCoroutine(AttackChainingInterval(3.5f));
+                    StartCoroutine(AttackChainingInterval(attackCooldowns[3] * cooldownReduction));
                 }
                 break;
         }

@@ -341,7 +341,7 @@ public class Player : Entity
         int baseStrength = 10;
         int baseDex = 10;
         int baseInt = 10;
-        int baseDef = 10;
+        int baseDef = 0;
 
 
         float coeficient = 1.1f;
