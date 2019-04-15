@@ -8,9 +8,9 @@
 public class ItemDrop
 {
     /// <summary>
-    /// The actual item
+    /// The id of the item
     /// </summary>
-    public ItemData Loot { get; set; }
+    public int DropId { get; set; }
 
     /// <summary>
     /// The percentage chances to receive the loot
@@ -27,11 +27,16 @@ public class ItemDrop
     /// </summary>
     public int MaximumAmount { get; set; }
     
+    /// <summary>
+    /// is it money or not
+    /// </summary>
+    public bool IsMoney { get; set; }
 
-    public ItemDrop (ItemData loot, RarityChances chances, int minAmount, int maxAmount)
+    public ItemDrop (int dropId, RarityChances chances, bool isMoney, int minAmount, int maxAmount)
     {
-        Loot = loot;
+        DropId = dropId;
         Chances = chances;
+        IsMoney = isMoney;
         MinimumAmount = minAmount;
         MaximumAmount = maxAmount;
     }

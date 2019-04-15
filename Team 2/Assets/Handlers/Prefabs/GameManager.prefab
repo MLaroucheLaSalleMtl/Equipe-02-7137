@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 624672885}
   - component: {fileID: 1951270442}
   - component: {fileID: 1951270443}
+  - component: {fileID: 1132075543}
+  - component: {fileID: 1132075544}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -128,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowingArrow: {fileID: 0}
+  knightFireIndicator: {fileID: 0}
   showButton: {fileID: 0}
   showImage: {fileID: 0}
   showSprites:
@@ -160,3 +163,31 @@ MonoBehaviour:
   dialoguePanelAnimator: {fileID: 0}
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
+--- !u!114 &1132075543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439887086803611260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840d5693520fe2b4a9ad8903533e0840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1132075544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439887086803611260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d487fb07947d0e0449e92f632aa1bad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryParentObject: {fileID: 0}
+  itemPrefabs:
+  - {fileID: 7664270626585946264, guid: 24b4336d64b8f704e8a205531e1ae94d, type: 3}
+  - {fileID: 7163914147912118935, guid: 9e87b17c3025042439e32e87224e7222, type: 3}

@@ -188,9 +188,9 @@ public class MonsterHandler : MonoBehaviour
         //Check for quests progression
         Manager.questHandler.CheckQuestsProgression(monster);
 
-        //Give xp and money, update UI
-        Manager.player.Money += Random.Range(1, 5);
+        //Give xp and drop items, update UI
         Manager.player.Experience += Random.Range(4, 7);
+        SpawnMonsterLoot(monster);
         Manager.playerHandler.UpdatePlayerBarUI();
     }
 
@@ -304,5 +304,31 @@ public class MonsterHandler : MonoBehaviour
         m.SetStats(maxHp, strenght);
     }
 
+    /// <summary>
+    /// Spawn the loot of the monster
+    /// </summary>
+    /// <param name="monster"></param>
+    private void SpawnMonsterLoot(Monster monster)
+    {
+        float randomNumber;
+        foreach (ItemDrop drop in monster.DropTable)
+        {
+            randomNumber = Random.Range(0f, 100f);
+            if (randomNumber <= (int)drop.Chances)
+            {
+                Vector3 newRandomPos = new Vector3(monster.WorldModel.transform.localPosition.x + Random.Range(-3f, 3f),
+                    monster.WorldModel.transform.localPosition.y,
+                    monster.WorldModel.transform.localPosition.z + Random.Range(-3f, 3f));
+
+                GameObject item = Manager.itemHandler.SpawnItem(drop.DropId, newRandomPos);
+                if (drop.IsMoney)
+                {
+                    CashData moneyData = (CashData)item.GetComponent<Item>().data;
+                    moneyData.amount = Random.Range(drop.MinimumAmount, drop.MaximumAmount + 1);
+                }
+                
+            }
+        }
+    }
 
 }

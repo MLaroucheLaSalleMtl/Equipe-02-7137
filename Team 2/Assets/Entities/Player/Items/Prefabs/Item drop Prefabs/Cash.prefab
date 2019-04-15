@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionRadius: 4
-  data: {fileID: 11400000, guid: 9b38453d374403d43b532ca4979df1de, type: 2}
+  data: {fileID: 11400000, guid: 4ac797141860b7a42a1988a7e0759e83, type: 2}
+  isMoney: 1
 --- !u!135 &664175879375160940
 SphereCollider:
   m_ObjectHideFlags: 0

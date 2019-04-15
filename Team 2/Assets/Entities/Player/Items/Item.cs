@@ -11,6 +11,7 @@ public class Item : Interactable
 {
 
     public ItemData data;
+    public bool isMoney = false;
 
     public override void ExecuteAction(Player player)
     {
@@ -22,8 +23,24 @@ public class Item : Interactable
     /// </summary>
     public void PickUp(Player player)
     {
-        bool wasPicked = player.PlayerInventory.Add(data);
-        if (wasPicked) 
+        bool wasPicked = false;
+        if (!isMoney)
+        {
+            wasPicked = player.PlayerInventory.Add(data);
+        }
+        else
+        {
+            switch (data.itemId)
+            {
+                case (int)ItemInformation.MoneyIds.CASH:
+                    player.Money += ((CashData)data).amount;
+                    FindObjectOfType<GameManager>().playerHandler.UpdatePlayerBarUI();
+                    break;
+            }
+        }
+            
+        //if the item was 
+        if (wasPicked || isMoney) 
             Destroy(gameObject);
     }
 

@@ -14,6 +14,7 @@ public class ItemHandler : MonoBehaviour
     Inventory inventory { get; set; }
     public Transform inventoryParentObject;
     InventorySlot[] inventorySlots;
+    public GameObject[] itemPrefabs;
 
     private void Awake()
     {
@@ -39,6 +40,20 @@ public class ItemHandler : MonoBehaviour
                 inventorySlots[index].ClearSlot();
             }
         }
+    }
+
+    /// <summary>
+    /// Spawns an item on the ground to pick-up
+    /// </summary>
+    /// <returns></returns>
+    public GameObject SpawnItem (int itemId, Vector3 pos)
+    {
+        GameObject itemToSpawn = null;
+        if (itemPrefabs[itemId] != null)
+        {
+            itemToSpawn = Instantiate(itemPrefabs[itemId], pos, Quaternion.identity);
+        }
+        return itemToSpawn;
     }
 
 }
