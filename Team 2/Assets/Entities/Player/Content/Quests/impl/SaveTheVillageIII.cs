@@ -22,8 +22,8 @@ public class SaveTheVillageIII : Quest
         id = QuestsInformation.QuestIds.SAVE_THE_VILLAGE_III;
         name = "Save the Village (III)";
         description = "You need to save the village from the green dragons! Please help the villagers!";
-        moneyReward = 600;
-        experienceReward = 800;
+        moneyReward = 300;
+        experienceReward = 200;
         itemsReward = null;
         currentStateId = 0;
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();

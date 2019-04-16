@@ -161,6 +161,9 @@ public class QuestHandler : MonoBehaviour
             case (int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_III:
                 currentQuests.Add(new SaveTheVillageIII(manager.player));
                 break;
+            case (int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_IV:
+                currentQuests.Add(new SaveTheVillageIV(manager.player));
+                break;
         }
         DisplayCurrentQuest();
         return true;

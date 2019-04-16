@@ -28,12 +28,13 @@ public class Ganfaul : NPC
         if (manager.questHandler.CanStart((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_IV))
         {
             manager.questHandler.StartQuest((int)QuestsInformation.QuestIds.SAVE_THE_VILLAGE_IV);
-            foreach (Quest quest in manager.questHandler.currentQuests)
+        }
+        if (manager.questHandler.IsStarted((int) QuestsInformation.QuestIds.SAVE_THE_VILLAGE_IV))
+        {
+            Quest quest = manager.questHandler.currentQuests.Find(x => x.id == QuestsInformation.QuestIds.SAVE_THE_VILLAGE_IV);
+            if (quest.GetCurrentState().Type == QuestsInformation.StateTypes.TALKING_STATE)
             {
-                if (quest.id == QuestsInformation.QuestIds.SAVE_THE_VILLAGE_IV)
-                {
-                    manager.dialogueHandler.StartDialogue(quest);
-                }
+                manager.dialogueHandler.StartDialogue(quest);
             }
         }
     }
