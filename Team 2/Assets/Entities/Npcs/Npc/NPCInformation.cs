@@ -16,5 +16,6 @@ public static class NPCInformation
         MYSTERIOUS_VAMPIRE,
         AKAI,
         DREYAR,
+        GANFAUL,
     }
 }
