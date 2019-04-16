@@ -10,6 +10,11 @@ using UnityEngine.AI;
 /// </summary>
 public class MoveToPlayer : MonoBehaviour
 {
+    //distance the monster can detect the player
+    public float followDistance = 25;
+
+    //monster walking around if the player isnt around
+    Vector3 idleDestination;
 
     //the transform of the player it is moving to
     Transform playerTransform;
@@ -77,25 +82,37 @@ public class MoveToPlayer : MonoBehaviour
             //if the npc is dead, is blocking or is attacking, npc wont move
             if (!movingNpc.isDead && !movingNpc.isBlocking && !movingNpc.isAttacking)
             {
-                //check the distance between the player and the npc, if its less or equal to 2.8, it stops moving
-                if (Mathf.Abs(Vector3.Distance(transform.position, playerTransform.position)) >= 2.80f)
+                float distanceToPlayer = Mathf.Abs(Vector3.Distance(transform.position, playerTransform.position));
+                //if the monster can see the player (distance to follow)
+                if (distanceToPlayer <= followDistance)
                 {
-                    npc.destination = playerTransform.position;
+                    //check the distance between the player and the npc, if its less or equal to 2.8, it stops moving
+                    if (distanceToPlayer >= 2.80f)
+                    {
+                        npc.destination = playerTransform.position;
+                    }
+                    else
+                    {
+                        //if the cooldown of the npc attacking is 0, then npc attacks
+                        if (movingNpc.CooldownLeft <= 0f)
+                        {
+                            manager.monsterHandler.HandleAttack(movingNpc);
+                            movingNpc.CooldownLeft = movingNpc.AttackCooldown;
+                        }
+                        npc.destination = transform.position;
+                    }
                 }
                 else
                 {
-                    //if the cooldown of the npc attacking is 0, then npc attacks
-                    if (movingNpc.CooldownLeft <= 0f)
+                    if (idleDestination == Vector3.zero || Vector3.Distance(idleDestination, transform.position) <= 2f)
                     {
-                        manager.monsterHandler.HandleAttack(movingNpc);
-                        movingNpc.CooldownLeft = movingNpc.AttackCooldown;
+                        idleDestination = new Vector3(sourcePosition.x + Random.Range(-10f, 10f), sourcePosition.y, sourcePosition.z + Random.Range(-10f, 10f));
                     }
-                    npc.destination = transform.position;
+                    else
+                    {
+                        npc.destination = idleDestination;
+                    }
                 }
-            }
-            else
-            {
-                npc.destination = transform.position;
             }
         }
         else
