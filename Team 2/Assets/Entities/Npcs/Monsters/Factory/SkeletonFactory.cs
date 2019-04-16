@@ -19,10 +19,10 @@ public class SkeletonFactory : MonsterFactory
         Skeleton newNPC = new Skeleton(instanceId, displayName, level, maxHp, currentHp);
 
         //Drops
-        newNPC.DropTable.Add(new ItemDrop(2, ItemInformation.RarityChances.COMMON, false, 1, 1));
-        newNPC.DropTable.Add(new ItemDrop(1, ItemInformation.RarityChances.COMMON, true, 1, 2));
-        newNPC.DropTable.Add(new ItemDrop(1, ItemInformation.RarityChances.COMMON, true, 1, 2));
-        newNPC.DropTable.Add(new ItemDrop(1, ItemInformation.RarityChances.COMMON, true, 1, 2));
+        newNPC.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.BONES, ItemInformation.RarityChances.COMMON, false, 1, 1));
+        newNPC.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 1, 2));
+        newNPC.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 1, 2));
+        newNPC.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 1, 2));
 
         return newNPC;
     }

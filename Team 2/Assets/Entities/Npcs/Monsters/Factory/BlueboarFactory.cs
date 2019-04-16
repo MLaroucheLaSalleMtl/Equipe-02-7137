@@ -17,6 +17,10 @@ public class BlueboarFactory : MonsterFactory
     public override Monster CreateNewNpc(int instanceId, string displayName, int level, int maxHp, int currentHp)
     {
         BlueBoar newBoar = new BlueBoar(instanceId, displayName, level, maxHp, currentHp);
+        newBoar.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.BLUE_HIDE, ItemInformation.RarityChances.COMMON, false, 1, 1));
+        newBoar.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 2, 3));
+        newBoar.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 2, 3));
+        newBoar.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 2, 3));
         return newBoar;
     }
     
