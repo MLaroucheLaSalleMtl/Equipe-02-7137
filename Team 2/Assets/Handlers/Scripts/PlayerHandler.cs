@@ -82,7 +82,7 @@ public class PlayerHandler : MonoBehaviour
                     PlayerBarTexts[index].text = $"{Manager.player.CurrentHp} / {Manager.player.MaxHP}";
                     break;
                 case (int)PlayerBarTextIds.MONEY:
-                    PlayerBarTexts[index].text = $"Money: {Manager.player.Money}$";
+                    PlayerBarTexts[index].text = $"{Manager.player.Money}";
                     break;
                 case (int)PlayerBarTextIds.LEVEL:
                     PlayerBarTexts[index].text = $"Level: {Manager.player.Level}";
