@@ -42,4 +42,18 @@ public static class ItemInformation
     {
         CASH = 1,
     }
+
+    /// <summary>
+    /// Item ids
+    /// </summary>
+    public enum ItemIds
+    {
+        BARBARIAN_AXE,
+        CASH,
+        BONES,
+        GREEN_HIDE,
+        BLUE_HIDE,
+        RED_HIDE,
+        GOLD_HIDE,
+    }
 }

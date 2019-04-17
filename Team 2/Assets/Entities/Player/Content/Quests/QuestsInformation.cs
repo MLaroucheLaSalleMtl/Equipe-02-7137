@@ -19,6 +19,7 @@ public static class QuestsInformation
         SAVE_THE_VILLAGE_I,
         SAVE_THE_VILLAGE_II,
         SAVE_THE_VILLAGE_III,
+        SAVE_THE_VILLAGE_IV,
     }
 
     public enum StateTypes

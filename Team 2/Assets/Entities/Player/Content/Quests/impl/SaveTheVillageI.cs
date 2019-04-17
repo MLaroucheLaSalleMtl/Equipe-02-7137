@@ -22,8 +22,8 @@ public class SaveTheVillageI : Quest
         id = QuestsInformation.QuestIds.SAVE_THE_VILLAGE_I;
         name = "Save the Village (I)";
         description = "You need to save the village from the red boars! Please help the villagers!";
-        moneyReward = 250;
-        experienceReward = 350;
+        moneyReward = 200;
+        experienceReward = 150;
         itemsReward = null;
         currentStateId = 0;
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
