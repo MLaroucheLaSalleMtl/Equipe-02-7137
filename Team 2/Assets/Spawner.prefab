@@ -9,7 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8032950560125076951}
+<<<<<<< HEAD
   - component: {fileID: 4958358289615372302}
+=======
+  - component: {fileID: 8032950560125076948}
+>>>>>>> Yassine
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -31,7 +35,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &4958358289615372302
+=======
+--- !u!114 &8032950560125076948
+>>>>>>> Yassine
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,6 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8032950560125076949}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: c1fbeadf750efc749b62ed6dc24f16ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -51,3 +60,15 @@ MonoBehaviour:
   type: 0000000000000000
   maxMonsterCount: 12
   respawnMonsters: 1
+=======
+  m_Script: {fileID: 11500000, guid: 1f8b4e2eb0f14204599e5b2cfcaf47ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mHandler: {fileID: 0}
+  spawnRange: 10
+  playerRange: 50000
+  minSpawnTime: 5
+  maxSpawnTime: 15
+  player: {fileID: 0}
+  type: 0200000000000000
+>>>>>>> Yassine
