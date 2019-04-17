@@ -1276,22 +1276,22 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 24
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -3710,7 +3710,7 @@ PrefabInstance:
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 460.7
+      value: 452.4
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -3720,7 +3720,7 @@ PrefabInstance:
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 561
+      value: 549.7
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -3805,27 +3805,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -5805,27 +5805,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -6241,7 +6241,7 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: type.Array.data[0]
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -6251,22 +6251,22 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 13
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 23
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -7477,7 +7477,7 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: type.Array.data[0]
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -7487,22 +7487,22 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 22
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -9186,27 +9186,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 18
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -10539,27 +10539,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -12326,17 +12326,17 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -13793,32 +13793,32 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: type.Array.data[0]
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -17338,32 +17338,32 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: type.Array.data[0]
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -17563,22 +17563,22 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 24
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -18611,7 +18611,7 @@ PrefabInstance:
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 557.1
+      value: 562.4
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -18621,7 +18621,7 @@ PrefabInstance:
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 610.4
+      value: 612.3
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -18706,27 +18706,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: spawnRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: playerRange
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: minSpawnTime
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
+      propertyPath: spawnRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: playerRange
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: minSpawnTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
       propertyPath: maxSpawnTime
-      value: 17
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -19345,22 +19345,22 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -20088,27 +20088,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 7
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 16
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -23918,27 +23918,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -27214,27 +27214,27 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: spawnRange
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
+      propertyPath: spawnRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: minSpawnTime
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxSpawnTime
-      value: 18
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
@@ -27863,17 +27863,22 @@ PrefabInstance:
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: maxMonsterCount
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: spawnRange
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: playerRange
-      value: 100
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958358289615372302, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: maxSpawnTime
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b, type: 3}
