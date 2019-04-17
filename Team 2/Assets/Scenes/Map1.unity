@@ -934,85 +934,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 49920496}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &50167768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 50167769}
-  - component: {fileID: 50167771}
-  - component: {fileID: 50167770}
-  m_Layer: 5
-  m_Name: Money
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &50167769
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50167768}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_Children: []
-  m_Father: {fileID: 757904423}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 87.859985, y: 29.6}
-  m_SizeDelta: {x: 162.4, y: 16.7}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &50167770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50167768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6037736, g: 0.45323706, b: 0.28764686, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: dab90a45cedf47b4291bd9816c597551, type: 3}
-    m_FontSize: 25
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Money: 100 $'
---- !u!222 &50167771
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50167768}
-  m_CullTransparentMesh: 0
 --- !u!1 &52059418
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,7 +7786,6 @@ RectTransform:
   - {fileID: 1182718293}
   - {fileID: 1095094798}
   - {fileID: 1786808014}
-  - {fileID: 50167769}
   - {fileID: 1633945580}
   - {fileID: 1534975156}
   m_Father: {fileID: 888441085}
@@ -9515,7 +9435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &888441081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12297,7 +12217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 86.17, y: 70.33}
+  m_AnchoredPosition: {x: 86.17, y: 55.6}
   m_SizeDelta: {x: 165.78, y: 22.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095094799
@@ -13673,8 +13593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 104.35, y: 45.000008}
-  m_SizeDelta: {x: 208.67, y: 90}
+  m_AnchoredPosition: {x: 103.81, y: 36.35}
+  m_SizeDelta: {x: 207.59, y: 72.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1182718294
 MonoBehaviour:
@@ -17587,7 +17507,7 @@ RectTransform:
   - {fileID: 25193095}
   - {fileID: 1742635901}
   m_Father: {fileID: 757904423}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -18661,7 +18581,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 757904423}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20856,7 +20776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 87.859985, y: 48.5}
+  m_AnchoredPosition: {x: 87.859985, y: 33.3}
   m_SizeDelta: {x: 162.4, y: 16.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786808015
@@ -25766,7 +25686,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerBarTexts.Array.data[2]
       value: 
-      objectReference: {fileID: 50167770}
+      objectReference: {fileID: 2071552838}
     - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
       propertyPath: PlayerBarTexts.Array.data[3]
