@@ -25,7 +25,11 @@ public class KnightSalesman : NPC
     /// <param name="player"></param>
     public override void ExecuteAction(Player player)
     {
-        
+        if (!manager.shopHandler.IsShopping)
+        {
+            manager.shopHandler.OpenShop();
+            manager.playerHandler.UpdatePlayerBarUI();
+        }
     }
 
 }

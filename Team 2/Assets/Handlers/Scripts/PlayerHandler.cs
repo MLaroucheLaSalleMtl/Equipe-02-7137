@@ -21,6 +21,7 @@ public class PlayerHandler : MonoBehaviour
         MONEY,
         LEVEL,
         PERCENTAGE_LEVEL,
+        SHOP_MONEY,
     }
 
     /// <summary>
@@ -91,6 +92,9 @@ public class PlayerHandler : MonoBehaviour
                     float experience = Manager.player.Experience - Manager.player.GetXpToLevelUp(Manager.player.Level - 1);
                     float xpToUp = Manager.player.GetXpToLevelUp(Manager.player.Level) - Manager.player.GetXpToLevelUp(Manager.player.Level - 1);
                     PlayerBarTexts[index].text = $"{Mathf.Floor(experience / xpToUp * 100)} %";
+                    break;
+                case (int)PlayerBarTextIds.SHOP_MONEY:
+                    PlayerBarTexts[index].text = $"{Manager.player.Money}";
                     break;
             }
         }

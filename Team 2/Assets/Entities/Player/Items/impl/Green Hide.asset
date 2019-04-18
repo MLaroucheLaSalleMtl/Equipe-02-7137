@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Green Hide
   icon: {fileID: 21300000, guid: b22b2e7d87d17814c997781707402332, type: 3}
   description: A green hide.
-  value: 7
+  value: 5
   rarity: 0

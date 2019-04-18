@@ -16,6 +16,8 @@ public class ItemData : ScriptableObject
     public int value = 0;
     public ItemInformation.ItemRarity rarity = ItemInformation.ItemRarity.COMMON;
 
+    GameManager manager;
+
     public ItemData (int itemId, string name, Sprite icon, string desc, int value, ItemInformation.ItemRarity rarity)
     {
         this.itemId = itemId;
@@ -28,8 +30,12 @@ public class ItemData : ScriptableObject
 
     public virtual void Use ()
     {
-        //Use the item and execute an action, equip, etc.
-        Debug.Log($"Using {name}");
+        if (manager == null)
+            manager = FindObjectOfType<GameManager>();
+        if (manager.shopHandler.IsShopping)
+        {
+            manager.shopHandler.SelectItem(this);
+        }
     }
 
 }
