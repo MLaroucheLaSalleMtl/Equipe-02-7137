@@ -124,7 +124,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 921320989635014033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921320989635014034}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b0931ded21455e40bd9c7e6e6306a38, type: 3}
@@ -10900,6 +10900,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterBasicNightime
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6b436d069d11415d1100ab9b44295342, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6b436d069d11415d1100ab9b44295342, type: 3}
       propertyPath: m_LocalPosition.x
       value: 437.6
@@ -16958,7 +16962,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 921320989635014033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921320989635014034}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 840d5693520fe2b4a9ad8903533e0840, type: 3}
@@ -29482,7 +29486,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 921320989635014033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921320989635014034}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9d8a08a5b7818245ae2d3e086b0778d, type: 3}
@@ -29494,7 +29498,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 921320989635014033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921320989635014034}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b408f6e5f4715ab46b41bb308fdeb7a8, type: 3}
@@ -30368,6 +30372,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6b436d069d11415d1100ab9b44295342, type: 3}
       propertyPath: m_Name
       value: WaterBasicNightime (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6b436d069d11415d1100ab9b44295342, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6b436d069d11415d1100ab9b44295342, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32950,11 +32958,6 @@ PrefabInstance:
       objectReference: {fileID: 7299533629709501280}
     - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
-      propertyPath: PlayerBarTexts.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
-        type: 3}
       propertyPath: PlayerBarTexts.Array.data[0]
       value: 
       objectReference: {fileID: 1095094799}
@@ -32980,6 +32983,11 @@ PrefabInstance:
       objectReference: {fileID: 1742635902}
     - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
         type: 3}
+      propertyPath: PlayerBarTexts.Array.data[5]
+      value: 
+      objectReference: {fileID: 1767741171}
+    - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
+        type: 3}
       propertyPath: PlayerBarMasks.Array.data[0]
       value: 
       objectReference: {fileID: 1941122723}
@@ -32988,39 +32996,39 @@ PrefabInstance:
       propertyPath: PlayerBarMasks.Array.data[1]
       value: 
       objectReference: {fileID: 1660415257}
-    - target: {fileID: 5439887086803611263, guid: dc826dc3a9a8f144997472abe4784cf8,
-        type: 3}
-      propertyPath: PlayerBarTexts.Array.data[5]
-      value: 
-      objectReference: {fileID: 1767741171}
     - target: {fileID: 1132075544, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
       propertyPath: inventoryParentObject
       value: 
       objectReference: {fileID: 1028980855}
+    - target: {fileID: 921320989635014035, guid: dc826dc3a9a8f144997472abe4784cf8,
+        type: 3}
+      propertyPath: sellingIcon
+      value: 
+      objectReference: {fileID: 5743313136571983233}
+    - target: {fileID: 921320989635014035, guid: dc826dc3a9a8f144997472abe4784cf8,
+        type: 3}
+      propertyPath: sellingCost
+      value: 
+      objectReference: {fileID: 126523399}
+    - target: {fileID: 921320989635014035, guid: dc826dc3a9a8f144997472abe4784cf8,
+        type: 3}
+      propertyPath: shopParentObject
+      value: 
+      objectReference: {fileID: 2068861155}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc826dc3a9a8f144997472abe4784cf8, type: 3}
---- !u!1 &921320989635014034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5439887086803611260, guid: dc826dc3a9a8f144997472abe4784cf8,
+--- !u!114 &921320989635014035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 921320989635014035, guid: dc826dc3a9a8f144997472abe4784cf8,
     type: 3}
   m_PrefabInstance: {fileID: 921320989635014033}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &921320989635014035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921320989635014034}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd0091c94d79ca41ab1fd2c8f355ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellingIcon: {fileID: 5743313136571983233}
-  sellingCost: {fileID: 126523399}
-  IsShopping: 0
-  shopParentObject: {fileID: 2068861155}
 --- !u!1001 &1321974986692915756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33491,6 +33499,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743313136779540382, guid: d251c214cd4882f48910180f9cdc6bcf,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743313136779540382, guid: d251c214cd4882f48910180f9cdc6bcf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d251c214cd4882f48910180f9cdc6bcf, type: 3}

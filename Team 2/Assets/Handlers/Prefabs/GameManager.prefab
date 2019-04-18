@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1951270443}
   - component: {fileID: 1132075543}
   - component: {fileID: 1132075544}
+  - component: {fileID: 921320989635014035}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerBarTexts:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -196,3 +198,24 @@ MonoBehaviour:
   - {fileID: 3676847263614915097, guid: ef6bbc9704acdd546a6d1df34e6f07ba, type: 3}
   - {fileID: 1445412367921020647, guid: 6b878eac096ced44a8a6b61c6b4ae13a, type: 3}
   - {fileID: 8086656199513156181, guid: 127faf2933e424246a7ea00149e4f6ea, type: 3}
+  - {fileID: 1739022576, guid: 549523def7f91fc438ed46d770ed1de6, type: 3}
+  - {fileID: 271982912, guid: 3bc083365cf9d3d44b7bbe2d7f577b61, type: 3}
+  - {fileID: 500774676, guid: 2738d474930163946afb7ce5c964e04c, type: 3}
+  - {fileID: 778736625, guid: 7c3b151af0dd804488490047dc2e6cd6, type: 3}
+  - {fileID: 68092851, guid: b372ebaec1f6c734abba5f02700b8b46, type: 3}
+--- !u!114 &921320989635014035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439887086803611260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0091c94d79ca41ab1fd2c8f355ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sellingIcon: {fileID: 0}
+  sellingCost: {fileID: 0}
+  IsShopping: 0
+  shopParentObject: {fileID: 0}

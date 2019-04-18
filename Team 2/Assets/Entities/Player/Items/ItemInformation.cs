@@ -55,5 +55,10 @@ public static class ItemInformation
         BLUE_HIDE,
         RED_HIDE,
         GOLD_HIDE,
+        DRAGON_BONES,
+        GREEN_DRAGON_TOOTH,
+        BLUE_DRAGON_TOOTH,
+        PURPLE_DRAGON_TOOTH,
+        RED_DRAGON_TOOTH,
     }
 }

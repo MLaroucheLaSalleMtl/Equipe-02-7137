@@ -17,6 +17,11 @@ public class PurpledragonFactory : MonsterFactory
     public override Monster CreateNewNpc(int instanceId, string displayName, int level, int maxHp, int currentHp)
     {
         PurpleDragon newNpc = new PurpleDragon(instanceId, displayName, level, maxHp, currentHp);
+        newNpc.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.PURPLE_DRAGON_TOOTH, ItemInformation.RarityChances.COMMON, false, 1, 1));
+        newNpc.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.DRAGON_BONES, ItemInformation.RarityChances.COMMON, false, 1, 1));
+        newNpc.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 7, 8));
+        newNpc.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 7, 8));
+        newNpc.DropTable.Add(new ItemDrop((int)ItemInformation.ItemIds.CASH, ItemInformation.RarityChances.COMMON, true, 7, 8));
         return newNpc;
     }
     
