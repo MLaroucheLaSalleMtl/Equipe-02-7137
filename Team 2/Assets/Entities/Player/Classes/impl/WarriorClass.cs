@@ -27,7 +27,7 @@ public class WarriorClass : PlayerClass
     public override Dictionary<int, Spell> Spells { get; set; }
     public override string DisplayName { get; set; }
     public override string Description { get; set; }
-    public override List<Skill> UnlockedSkills { get; set; }
+    public override List<Skill> UnlockedSkills { get; set; } 
     public override ClassesInformation.ClassesId Id { get; set; }
     public override double Strengh { get => strengh; set => strengh = value; }
     public override double Agility { get => agility; set => agility = value; }

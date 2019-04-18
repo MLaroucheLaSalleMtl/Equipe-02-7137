@@ -1163,6 +1163,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: PurpleDragonSpawnerGrindArea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1217,16 +1227,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: PurpleDragonSpawnerGrindArea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -3697,6 +3697,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: SkeletonSpawnerGrindArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3751,16 +3761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: SkeletonSpawnerGrindArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -4011,7 +4011,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 888441085}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5697,6 +5697,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: ImplingSpawnerGrindArea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5751,16 +5761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: ImplingSpawnerGrindArea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -6138,6 +6138,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueGreenDragonSpawnerGrindArea (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6192,16 +6202,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: BlueGreenDragonSpawnerGrindArea (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -6586,7 +6586,7 @@ RectTransform:
   - {fileID: 2122868351}
   - {fileID: 1129499493}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7196,7 +7196,7 @@ RectTransform:
   m_Children:
   - {fileID: 876678245}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7352,7 +7352,7 @@ RectTransform:
   m_Children:
   - {fileID: 1245762679}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -7374,6 +7374,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueGreenDragonSpawnerGrindArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7428,16 +7438,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: BlueGreenDragonSpawnerGrindArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -8623,7 +8623,7 @@ RectTransform:
   - {fileID: 1633945580}
   - {fileID: 1534975156}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9183,6 +9183,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueGreenBoarSpawnerGrindArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9237,16 +9247,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: BlueGreenBoarSpawnerGrindArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -10409,6 +10409,7 @@ GameObject:
   - component: {fileID: 888441083}
   - component: {fileID: 888441082}
   - component: {fileID: 888441081}
+  - component: {fileID: 888441086}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: MainCanvas
@@ -10510,6 +10511,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 2003421134}
   - {fileID: 567042073}
   - {fileID: 307616431}
   - {fileID: 996421572}
@@ -10529,6 +10531,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &888441086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888441080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47c0e1904f24a34faa18cf596c18644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &892348918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10536,6 +10550,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: RedGoldBoarSpawnerGrindArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10590,16 +10614,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: RedGoldBoarSpawnerGrindArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -12125,7 +12139,7 @@ RectTransform:
   - {fileID: 144587238}
   - {fileID: 1023548735}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12313,6 +12327,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: RedDragonSpawnerGrindArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12367,16 +12391,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: RedDragonSpawnerGrindArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -13123,7 +13137,7 @@ RectTransform:
   m_Children:
   - {fileID: 1202870590}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -13795,6 +13809,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueGreenDragonSpawnerGrindArea (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13849,16 +13873,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: BlueGreenDragonSpawnerGrindArea (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -15473,25 +15487,6 @@ MonoBehaviour:
   type: 02000000
   maxMonsterCount: 1
   respawnMonsters: 1
---- !u!1 &1208088227 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4748096595028702145, guid: c56b0e24d05a7304cacbd23789b9ae7b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1296391887}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1208088233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208088227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92c76582b645cc04fb48146e72285b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followDistance: 25
 --- !u!1001 &1211816913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17359,6 +17354,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueGreenDragonSpawnerGrindArea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17413,16 +17418,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: BlueGreenDragonSpawnerGrindArea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -17653,6 +17648,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: PurpleDragonSpawnerGrindArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17707,16 +17712,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: PurpleDragonSpawnerGrindArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -18801,6 +18796,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: ImplingSpawnerGrindArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18855,16 +18860,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: ImplingSpawnerGrindArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -18979,7 +18974,7 @@ RectTransform:
   - {fileID: 1677212005}
   - {fileID: 1590350069}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -19435,6 +19430,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: RedDragonSpawnerGrindArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19489,16 +19494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: RedDragonSpawnerGrindArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -20183,6 +20178,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: ImplingSpawnerGrindArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20237,16 +20242,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: ImplingSpawnerGrindArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -21762,7 +21757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717978452, guid: c6c0068b7a05b844a8e958afa39d1dea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1
+      value: -211.9
       objectReference: {fileID: 0}
     - target: {fileID: 1717978452, guid: c6c0068b7a05b844a8e958afa39d1dea, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21770,7 +21765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717978452, guid: c6c0068b7a05b844a8e958afa39d1dea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51.3
+      value: -9.7
       objectReference: {fileID: 0}
     - target: {fileID: 1717978452, guid: c6c0068b7a05b844a8e958afa39d1dea, type: 3}
       propertyPath: m_LocalRotation.x
@@ -23103,7 +23098,7 @@ RectTransform:
   - {fileID: 764628851}
   - {fileID: 342183786}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -23870,7 +23865,7 @@ RectTransform:
   - {fileID: 980152246}
   - {fileID: 1697413807}
   m_Father: {fileID: 888441085}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -24013,6 +24008,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: RedGoldBoarSpawnerGrindArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24067,16 +24072,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: RedGoldBoarSpawnerGrindArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -25757,6 +25752,166 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998492024}
   m_CullTransparentMesh: 0
+--- !u!1001 &2003421133
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 888441085}
+    m_Modifications:
+    - target: {fileID: 2729493584925105896, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_Name
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105896, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493585044285644, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 888441086}
+    - target: {fileID: 2729493585044285644, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493585114025201, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 888441086}
+    - target: {fileID: 2729493585114025201, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729493585983728211, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 888441086}
+    - target: {fileID: 2729493585983728211, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMain
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d26e3fe5a3c6594ea239f94672adcb0, type: 3}
+--- !u!224 &2003421134 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2729493584925105899, guid: 0d26e3fe5a3c6594ea239f94672adcb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2003421133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2006444912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27309,6 +27464,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueGreenBoarSpawnerGrindArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27363,16 +27528,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: BlueGreenBoarSpawnerGrindArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -27958,6 +28113,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539865196}
     m_Modifications:
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_Name
+      value: SkeletonSpawnerGrindArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076951, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28012,16 +28177,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_Name
-      value: SkeletonSpawnerGrindArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8032950560125076949, guid: 781d3caa7f505734abcd17ddbc26d76b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8032950560125076948, guid: 781d3caa7f505734abcd17ddbc26d76b,
         type: 3}
@@ -32309,7 +32464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7447387365794124450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -396.2, y: -0.5, z: -122.1}
+  m_LocalPosition: {x: -400.02, y: 0.09, z: -122.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6595159717216697006}
@@ -32989,7 +33144,7 @@ PrefabInstance:
     - target: {fileID: 9053008826006355212, guid: ad4caac5f5b9cfb48b3d223f0b316e78,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9053008826006355212, guid: ad4caac5f5b9cfb48b3d223f0b316e78,
         type: 3}

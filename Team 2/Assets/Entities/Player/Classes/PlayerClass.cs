@@ -15,7 +15,7 @@ public abstract class PlayerClass
     public abstract Dictionary<int, Spell> Spells { get; set; }
     public abstract string DisplayName { get; set; }
     public abstract string Description { get; set; }
-    public abstract List<Skill> UnlockedSkills { get; set; }
+    public abstract List<Skill> UnlockedSkills { get; set; } 
     public abstract ClassesInformation.ClassesId Id { get; set; }
     public abstract int Level { get; set; }
     public abstract double Strengh { get; set; }
