@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ca151eb7108fa94791fa3cdb01fe129, type: 3}
-  m_Name: Green Hide
+  m_Name: Red Dragon Tooth
   m_EditorClassIdentifier: 
-  itemId: 3
-  name: Green Hide
-  icon: {fileID: 21300000, guid: b22b2e7d87d17814c997781707402332, type: 3}
-  description: A green hide.
-  value: 5
+  itemId: 11
+  name: Red Dragon Tooth
+  icon: {fileID: 21300000, guid: a863df6eddc7aeb488144b2aeb2b4e45, type: 3}
+  description: A red dragon tooth.
+  value: 17
   rarity: 0

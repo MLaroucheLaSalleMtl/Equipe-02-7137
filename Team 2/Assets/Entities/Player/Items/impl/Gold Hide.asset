@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Gold Hide
   icon: {fileID: 21300000, guid: 7bdf2a36a12736940b6ea2ad6cafa96b, type: 3}
   description: A gold hide.
-  value: 9
+  value: 11
   rarity: 0

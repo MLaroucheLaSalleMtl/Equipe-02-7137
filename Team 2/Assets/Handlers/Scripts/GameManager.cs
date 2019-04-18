@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public NPCHandler npcHandler { get; set; }
     public QuestHandler questHandler { get; set; }
     public DialogueHandler dialogueHandler { get; set; }
+    public ShopHandler shopHandler { get; set; }
 
     public Interactable interactableFocus { get; set; }
     public LayerMask interactableMask;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
         npcHandler = GetComponent <NPCHandler>();
         questHandler = GetComponent<QuestHandler>();
         dialogueHandler = GetComponent<DialogueHandler>();
+        shopHandler = GetComponent<ShopHandler>();
         playerHandler.CreatePlayer("Satucre", 5, 10, 10, 1, 1, 0, 150, new WarriorClass(), GameObject.Find("Player"));
     }
 

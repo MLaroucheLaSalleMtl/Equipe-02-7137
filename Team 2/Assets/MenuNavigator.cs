@@ -10,11 +10,12 @@ public class MenuNavigator : MonoBehaviour
     Stack<GameObject> activePanels;
     bool isActive = false;
     bool wasButtonDown = false;
-
+    GameManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
         pan = new Dictionary<string, GameObject>();
         activePanels = new Stack<GameObject>();
         foreach (GameObject p in panels)
@@ -32,6 +33,8 @@ public class MenuNavigator : MonoBehaviour
         {
             if (activePanels.Count > 0)
             {
+                if (manager.shopHandler.IsShopping)
+                    manager.shopHandler.IsShopping = false;
                 ReturnToPrevPanel();
             }
             else

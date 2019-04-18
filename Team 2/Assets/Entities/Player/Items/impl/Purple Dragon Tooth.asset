@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ca151eb7108fa94791fa3cdb01fe129, type: 3}
-  m_Name: Green Hide
+  m_Name: Purple Dragon Tooth
   m_EditorClassIdentifier: 
-  itemId: 3
-  name: Green Hide
-  icon: {fileID: 21300000, guid: b22b2e7d87d17814c997781707402332, type: 3}
-  description: A green hide.
-  value: 5
+  itemId: 10
+  name: Purple Dragon Tooth
+  icon: {fileID: 21300000, guid: 88e5e77c27024d348bb7afad4e8ad8a6, type: 3}
+  description: A purple dragon tooth.
+  value: 15
   rarity: 0

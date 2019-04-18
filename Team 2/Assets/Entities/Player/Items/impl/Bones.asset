@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Bones
   icon: {fileID: 21300000, guid: af6e6b876ffbb0d42ac33cd5bc7cad67, type: 3}
   description: Some bones.
-  value: 5
+  value: 6
   rarity: 0
