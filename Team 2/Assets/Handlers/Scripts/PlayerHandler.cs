@@ -41,6 +41,7 @@ public class PlayerHandler : MonoBehaviour
     private void Awake()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        InvokeRepeating("HealOvertime", 1, 1);
     }
 
     /// <summary>
@@ -152,6 +153,23 @@ public class PlayerHandler : MonoBehaviour
             Manager.player.GiveHp(amount);
         }
         UpdatePlayerBarUI();
+    }
+    public void HealPlayer(int amount,bool capAtMax)
+    {
+        
+        if(capAtMax && Manager.player.CurrentHp + amount >= Manager.player.MaxHP)
+        {
+            Manager.player.GiveHp(Manager.player.MaxHP- Manager.player.CurrentHp);
+            return;
+        }
+        Manager.player.GiveHp(amount);
+    }
+
+    private void HealOvertime()
+    {
+        HealPlayer((int)(Manager.player.MaxHP / 100), true);
+        UpdatePlayerBarUI();
+
     }
 
     /// <summary>
