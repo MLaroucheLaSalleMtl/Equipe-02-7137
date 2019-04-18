@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ed108bb16019c46b1ecee4f6164938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionRadius: 4.5
+  actionRadius: 6
   data: {fileID: 11400000, guid: 365fdc04f1b480d4f9a135002f4e98ad, type: 2}
   isMoney: 0
 --- !u!135 &3145985365460565421

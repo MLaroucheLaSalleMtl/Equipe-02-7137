@@ -17,5 +17,6 @@ public static class NPCInformation
         AKAI,
         DREYAR,
         GANFAUL,
+        ARISSA,
     }
 }
