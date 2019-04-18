@@ -18,5 +18,6 @@ public static class NPCInformation
         DREYAR,
         GANFAUL,
         ARISSA,
+        WIEZZOREK,
     }
 }
