@@ -17,5 +17,9 @@ public static class NPCInformation
         AKAI,
         DREYAR,
         GANFAUL,
+        ARISSA,
+        WIEZZOREK,
+        EVE,
+        KNIGHT_SALESMAN,
     }
 }
