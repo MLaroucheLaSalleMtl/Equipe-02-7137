@@ -41,6 +41,7 @@ public class InventorySlot : MonoBehaviour
 
     public void OnRemoveButton ()
     {
+        DropItem();
         inventory.Remove(item);
     }
 
@@ -52,4 +53,18 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Drops an item on the floor
+    /// </summary>
+    /// <param name="itemId"></param>
+    /// <param name="pos"></param>
+    public void DropItem()
+    {
+        float randomX = Random.Range(-5f, 5f);
+        float randomZ = Random.Range(-5f, 5f);
+        Vector3 playerPos = manager.player.WorldModel.transform.position;
+        Vector3 dropPos = new Vector3(playerPos.x + randomX, playerPos.y, playerPos.z + randomZ);
+
+        manager.itemHandler.SpawnItem(item.itemId, dropPos);
+    }
 }

@@ -13,9 +13,10 @@ public class Inventory
 
     public const int Spaces = 16;
 
+    GameManager manager;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallBack;
-
+    
     /// <summary>
     /// Add an item to the inventory
     /// </summary>
@@ -47,4 +48,5 @@ public class Inventory
         }
         return false;
     }
+
 }
