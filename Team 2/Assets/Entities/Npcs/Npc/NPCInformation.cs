@@ -19,5 +19,6 @@ public static class NPCInformation
         GANFAUL,
         ARISSA,
         WIEZZOREK,
+        EVE,
     }
 }
