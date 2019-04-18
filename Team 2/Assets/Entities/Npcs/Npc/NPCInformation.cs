@@ -20,5 +20,6 @@ public static class NPCInformation
         ARISSA,
         WIEZZOREK,
         EVE,
+        KNIGHT_SALESMAN,
     }
 }
