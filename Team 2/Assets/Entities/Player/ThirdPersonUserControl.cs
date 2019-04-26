@@ -44,6 +44,11 @@ public class ThirdPersonUserControl : MonoBehaviour
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
+        if (manager.player == null)
+        {
+            return;
+        }
+
         if (!manager.player.IsDead)
         {
             // read inputs

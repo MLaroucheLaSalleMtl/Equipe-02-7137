@@ -19,8 +19,6 @@ public class ItemHandler : MonoBehaviour
     private void Start()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        inventory = Manager.player.PlayerInventory;
-        inventory.onItemChangedCallBack += UpdateInventoryUI;
         inventorySlots = inventoryParentObject.GetComponentsInChildren<InventorySlot>();
     }
 
@@ -54,6 +52,15 @@ public class ItemHandler : MonoBehaviour
             itemToSpawn = Instantiate(itemPrefabs[itemId], pos, Quaternion.identity);
         }
         return itemToSpawn;
+    }
+
+    void Update ()
+    {
+        if (inventory == null)
+        {
+            inventory = Manager.player.PlayerInventory;
+            inventory.onItemChangedCallBack += UpdateInventoryUI;
+        }
     }
 
 }

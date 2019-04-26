@@ -39,7 +39,7 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField] Text[] PlayerBarTexts;
     [SerializeField] Image[] PlayerBarMasks;
 
-    private void Awake()
+    private void Start()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         InvokeRepeating("HealOvertime", 1, 1);
@@ -173,14 +173,6 @@ public class PlayerHandler : MonoBehaviour
     {
         HealPlayer((int)(Manager.player.MaxHP / 100), true);
         UpdatePlayerBarUI();
-
-    }
-
-    /// <summary>
-    /// Called at the start of the game
-    /// </summary>
-    void Start()
-    {
 
     }
 

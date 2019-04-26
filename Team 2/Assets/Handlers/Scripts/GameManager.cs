@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Called when the game is launched
     /// </summary>
-    void Awake()
+    void Start()
     {
         monsterHandler = GetComponent<MonsterHandler>();
         playerHandler = GetComponent<PlayerHandler>();
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         questHandler = GetComponent<QuestHandler>();
         dialogueHandler = GetComponent<DialogueHandler>();
         shopHandler = GetComponent<ShopHandler>();
-        playerHandler.CreatePlayer("Satucre", 5, 10, 10, 1, 1, 0, 150, new WarriorClass(), GameObject.Find("Player"));
     }
 
     /// <summary>
@@ -141,6 +140,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if (player == null)
+            playerHandler.CreatePlayer("Satucre", 5, 10, 10, 1, 1, 0, 150, new WarriorClass(), GameObject.Find("Player"));
+
         if (!player.IsDead)
         {
             if (Input.GetButtonDown("Ability 1"))

@@ -29,7 +29,7 @@ public class CombatHandler : MonoBehaviour
 
     private float[] AnimationTimes { get; set; }
 
-    private void Awake()
+    private void Start()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         NpcsCurrentlyInHitbox = new List<Monster>();

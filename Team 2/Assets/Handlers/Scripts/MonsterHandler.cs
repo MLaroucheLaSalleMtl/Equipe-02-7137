@@ -271,7 +271,7 @@ public class MonsterHandler : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         SpawnedMonsters = new Dictionary<int, Monster>();
