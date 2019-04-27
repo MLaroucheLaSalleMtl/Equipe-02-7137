@@ -56,7 +56,7 @@ public class ItemHandler : MonoBehaviour
 
     void Update ()
     {
-        if (inventory == null)
+        if (inventory == null && Manager.player != null)
         {
             inventory = Manager.player.PlayerInventory;
             inventory.onItemChangedCallBack += UpdateInventoryUI;
